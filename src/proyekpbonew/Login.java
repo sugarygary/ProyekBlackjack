@@ -7,6 +7,7 @@ package proyekpbonew;
 import javax.accessibility.AccessibleContext;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JRootPane;
 import javax.swing.JTextField;
@@ -106,42 +107,43 @@ public class Login extends javax.swing.JFrame {
 
     private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameFieldActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_usernameFieldActionPerformed
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_loginBtnActionPerformed
 
     private void loginBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtnMouseClicked
         // TODO add your handling code here:
         String username = this.getUsernameField().getText();
         String password = this.getPasswordField().getText();
-        
-         boolean loginSuccess = false;
+
+        boolean loginSuccess = false;
         if (username.equalsIgnoreCase("admin") && password.equalsIgnoreCase("admin")) {
             this.setVisible(false);
-//            FrameAdmin frameAdmin = new FrameAdmin();
-//            frameAdmin.setVisible(true);
-            MainFrame mainFrame = new MainFrame();
-            mainFrame.setVisible(true);
-        }
-        else{
+            FrameAdmin frameAdmin = new FrameAdmin();
+            frameAdmin.setVisible(true);
+        } else {
             for (int i = 0; i < ProyekPBONew.getUserList().size(); i++) {
-                if (username.equals(ProyekPBONew.getUserList().get(i).getUsername()) && 
-                    password.equals(ProyekPBONew.getUserList().get(i).getPassword())) {
+                if (username.equals(ProyekPBONew.getUserList().get(i).getUsername())
+                        && password.equals(ProyekPBONew.getUserList().get(i).getPassword())) {
                     loginSuccess = true;
                 }
             }
-            if (loginSuccess) {
-                this.setVisible(false);
-                FrameUser frameUser = new FrameUser();
-                frameUser.setVisible(true);
+            if (password.equals("") || username.equals("")) {
+                JOptionPane.showMessageDialog(this, "Invalid input", "Warning", JOptionPane.WARNING_MESSAGE);
+            } else {
+                if (loginSuccess) {
+                    this.setVisible(false);
+                    FrameUser frameUser = new FrameUser();
+                    frameUser.setVisible(true);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Login Failed", "Warning", JOptionPane.WARNING_MESSAGE);
+                }
             }
-            else{
-                System.out.println("Login Failed");
-            }
+
         }
     }//GEN-LAST:event_loginBtnMouseClicked
 
@@ -227,5 +229,5 @@ public class Login extends javax.swing.JFrame {
     public void setUsernameField(JTextField usernameField) {
         this.usernameField = usernameField;
     }
-    
+
 }

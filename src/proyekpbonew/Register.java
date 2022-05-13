@@ -36,7 +36,7 @@ public class Register extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        confirmPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,9 +64,9 @@ public class Register extends javax.swing.JFrame {
 
         jLabel3.setText("Confirm Password :");
 
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        confirmPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                confirmPasswordActionPerformed(evt);
             }
         });
 
@@ -82,7 +82,7 @@ public class Register extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPasswordField1))
+                                .addComponent(confirmPassword))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -110,7 +110,7 @@ public class Register extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(confirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(registerBtn)
                 .addGap(49, 49, 49))
@@ -127,67 +127,48 @@ public class Register extends javax.swing.JFrame {
         // TODO add your handling code here:
         String uname = this.usernameField.getText();
         String pass = this.passwordField.getText();
+        String conpass = this.confirmPassword.getText();
         boolean usernameKembar = false;
-//        if (pass.equals("") || uname.equals("")) {
-//            JOptionPane.showMessageDialog(this, "Invalid Input", "Warning", JOptionPane.WARNING_MESSAGE);
-//            return;
-//        }
         for (int i = 0; i < ProyekPBONew.getUserList().size(); i++) {
-            if (uname.equals(ProyekPBONew.getUserList().get(i).getUsername())){
+            if (uname.equals(ProyekPBONew.getUserList().get(i).getUsername())) {
                 usernameKembar = true;
                 break;
             }
         }
         if (!usernameKembar) {
-            ProyekPBONew.getUserList().add(new User(uname,pass));
-            MainFrame mainFrame = new MainFrame();
-            this.setVisible(false);
-            mainFrame.setVisible(true);
-            System.out.println("berhasil");
-        }
-        else{
-            System.out.println("Username telah terpakai");
-            System.out.println("gagal");
+            if (pass.equals("") || uname.equals("")) {
+                JOptionPane.showMessageDialog(this, "Invalid input", "Warning", JOptionPane.WARNING_MESSAGE);
+            } else if (!pass.equals(conpass)) {
+                JOptionPane.showMessageDialog(this, "Confirm password doesn't match!", "Warning", JOptionPane.WARNING_MESSAGE);
+            } else {
+                ProyekPBONew.getUserList().add(new User(uname, pass));
+                MainFrame mainFrame = new MainFrame();
+                this.setVisible(false);
+                JOptionPane.showMessageDialog(this, "Succesfully registered", "Success", JOptionPane.PLAIN_MESSAGE);
+                mainFrame.setVisible(true);
+                mainFrame.setLocationRelativeTo(null);
+                mainFrame.setTitle("Blekjek");
+                mainFrame.setResizable(false);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Username already exists", "Warning", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_registerBtnActionPerformed
 
     private void registerBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerBtnMouseClicked
-        String uname = this.usernameField.getText();
-        String pass = this.passwordField.getText();
-        boolean usernameKembar = false;
-//        if (pass.equals("") || uname.equals("")) {
-//            JOptionPane.showMessageDialog(this, "Invalid Input", "Warning", JOptionPane.WARNING_MESSAGE);
-//            return;
-//        }
-        for (int i = 0; i < ProyekPBONew.getUserList().size(); i++) {
-            if (uname.equals(ProyekPBONew.getUserList().get(i).getUsername())){
-                usernameKembar = true;
-                break;
-            }
-        }
-        if (!usernameKembar) {
-            ProyekPBONew.getUserList().add(new User(uname,pass));
-            MainFrame mainFrame = new MainFrame();
-            this.setVisible(false);
-            mainFrame.setVisible(true);
-            System.out.println("berhasil");
-        }
-        else{
-            System.out.println("Username telah terpakai");
-            System.out.println("gagal");
-        }
+
     }//GEN-LAST:event_registerBtnMouseClicked
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void confirmPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_confirmPasswordActionPerformed
 
     public JPasswordField getjPasswordField1() {
-        return jPasswordField1;
+        return confirmPassword;
     }
 
     public void setjPasswordField1(JPasswordField jPasswordField1) {
-        this.jPasswordField1 = jPasswordField1;
+        this.confirmPassword = jPasswordField1;
     }
 
     public JPasswordField getPasswordField() {
@@ -207,10 +188,10 @@ public class Register extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField confirmPassword;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JButton registerBtn;
     private javax.swing.JTextField usernameField;
