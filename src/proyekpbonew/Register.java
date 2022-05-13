@@ -4,6 +4,7 @@
  */
 package proyekpbonew;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -38,6 +39,11 @@ public class Register extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         registerBtn.setText("Register");
+        registerBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                registerBtnMouseClicked(evt);
+            }
+        });
         registerBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registerBtnActionPerformed(evt);
@@ -102,6 +108,18 @@ public class Register extends javax.swing.JFrame {
     private void registerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_registerBtnActionPerformed
+
+    private void registerBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerBtnMouseClicked
+        String uname = usernameField.getText();
+        String pass = passwordField.getPassword().toString();
+        if (pass == "" || uname == "") {
+            JOptionPane.showMessageDialog(this, "Invalid Input", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        for (int i = 0; i < ProyekPBONew.getUserList().size(); i++) {
+
+        }
+    }//GEN-LAST:event_registerBtnMouseClicked
 
     public JPasswordField getPasswordField() {
         return passwordField;
