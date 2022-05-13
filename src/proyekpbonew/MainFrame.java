@@ -64,7 +64,7 @@ public class MainFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(134, 134, 134)
+                .addContainerGap(134, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(LeaderboardBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
                     .addComponent(LoginBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -143,6 +143,15 @@ public class MainFrame extends javax.swing.JFrame {
         this.RegisterBtn = jButton1;
     }
 
+    public JButton getRegisterBtn() {
+        return RegisterBtn;
+    }
+
+    public void setRegisterBtn(JButton RegisterBtn) {
+        this.RegisterBtn = RegisterBtn;
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LeaderboardBtn;
     private javax.swing.JButton LoginBtn;

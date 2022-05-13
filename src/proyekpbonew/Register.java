@@ -125,17 +125,56 @@ public class Register extends javax.swing.JFrame {
 
     private void registerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBtnActionPerformed
         // TODO add your handling code here:
+        String uname = this.usernameField.getText();
+        String pass = this.passwordField.getText();
+        boolean usernameKembar = false;
+//        if (pass.equals("") || uname.equals("")) {
+//            JOptionPane.showMessageDialog(this, "Invalid Input", "Warning", JOptionPane.WARNING_MESSAGE);
+//            return;
+//        }
+        for (int i = 0; i < ProyekPBONew.getUserList().size(); i++) {
+            if (uname.equals(ProyekPBONew.getUserList().get(i).getUsername())){
+                usernameKembar = true;
+                break;
+            }
+        }
+        if (!usernameKembar) {
+            ProyekPBONew.getUserList().add(new User(uname,pass));
+            MainFrame mainFrame = new MainFrame();
+            this.setVisible(false);
+            mainFrame.setVisible(true);
+            System.out.println("berhasil");
+        }
+        else{
+            System.out.println("Username telah terpakai");
+            System.out.println("gagal");
+        }
     }//GEN-LAST:event_registerBtnActionPerformed
 
     private void registerBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerBtnMouseClicked
-        String uname = usernameField.getText();
-        String pass = passwordField.getPassword().toString();
-        if (pass.equals("") || uname.equals("")) {
-            JOptionPane.showMessageDialog(this, "Invalid Input", "Warning", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
+        String uname = this.usernameField.getText();
+        String pass = this.passwordField.getText();
+        boolean usernameKembar = false;
+//        if (pass.equals("") || uname.equals("")) {
+//            JOptionPane.showMessageDialog(this, "Invalid Input", "Warning", JOptionPane.WARNING_MESSAGE);
+//            return;
+//        }
         for (int i = 0; i < ProyekPBONew.getUserList().size(); i++) {
-            
+            if (uname.equals(ProyekPBONew.getUserList().get(i).getUsername())){
+                usernameKembar = true;
+                break;
+            }
+        }
+        if (!usernameKembar) {
+            ProyekPBONew.getUserList().add(new User(uname,pass));
+            MainFrame mainFrame = new MainFrame();
+            this.setVisible(false);
+            mainFrame.setVisible(true);
+            System.out.println("berhasil");
+        }
+        else{
+            System.out.println("Username telah terpakai");
+            System.out.println("gagal");
         }
     }//GEN-LAST:event_registerBtnMouseClicked
 
