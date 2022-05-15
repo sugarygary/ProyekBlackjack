@@ -129,6 +129,7 @@ public class Register extends javax.swing.JFrame {
         String pass = this.passwordField.getText();
         String conpass = this.confirmPassword.getText();
         boolean usernameKembar = false;
+        
         for (int i = 0; i < ProyekPBONew.getUserList().size(); i++) {
             if (uname.equals(ProyekPBONew.getUserList().get(i).getUsername())) {
                 usernameKembar = true;
