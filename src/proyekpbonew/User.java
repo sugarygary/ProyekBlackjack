@@ -12,10 +12,20 @@ public class User {
 
     private String username;
     private String password;
+    private int saldo;
 
     public User(String username, String password) {
         this.username = username;
         this.password = password;
+        this.saldo = 0;
+    }
+
+    public int getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
     }
 
     public String getUsername() {

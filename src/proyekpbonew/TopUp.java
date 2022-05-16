@@ -4,22 +4,19 @@
  */
 package proyekpbonew;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-import javax.swing.JToggleButton;
 
 /**
  *
- * @author Calvin
+ * @author Gary
  */
-public class FrameCloseAcc extends javax.swing.JFrame {
+public class TopUp extends javax.swing.JFrame {
 
     /**
-     * Creates new form FrameCloseAcc
+     * Creates new form TopUp
      */
-    public FrameCloseAcc() {
+    public TopUp() {
         initComponents();
     }
 
@@ -32,23 +29,15 @@ public class FrameCloseAcc extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        usernameField = new javax.swing.JTextField();
         ConfBtn = new javax.swing.JToggleButton();
         BackBtn = new javax.swing.JButton();
+        usernameField = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        topUpValue = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel2.setText("Close Account");
-
-        jLabel1.setText("Username :");
-
-        usernameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameFieldActionPerformed(evt);
-            }
-        });
 
         ConfBtn.setText("Confirm");
         ConfBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -64,6 +53,18 @@ public class FrameCloseAcc extends javax.swing.JFrame {
             }
         });
 
+        usernameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usernameFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Username :");
+
+        jLabel2.setText("Top Up Account");
+
+        jLabel3.setText("Saldo :");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -74,15 +75,21 @@ public class FrameCloseAcc extends javax.swing.JFrame {
                         .addGap(155, 155, 155)
                         .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(139, 139, 139)
+                        .addGap(137, 137, 137)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(ConfBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BackBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE))))
+                            .addComponent(BackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(topUpValue))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(121, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -94,11 +101,15 @@ public class FrameCloseAcc extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(topUpValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addComponent(ConfBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addGap(46, 46, 46))
         );
 
         pack();
@@ -108,30 +119,31 @@ public class FrameCloseAcc extends javax.swing.JFrame {
         // TODO add your handling code here:
         String username = this.getUsernameField().getText();
         boolean checkUser = false;
-        int tempDel = 0;
+        int tempTopUp = 0;
         int i;
         for (i = 0; i < ProyekPBONew.getUserList().size(); i++) {
             if (username.equals(ProyekPBONew.getUserList().get(i).getUsername())) {
-                tempDel = i;
+                tempTopUp = i;
                 checkUser = true;
             }
         }
-        if (username.equals("")) {
+        if (username.equals("") || topUpValue.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Invalid Input", "Warning", JOptionPane.WARNING_MESSAGE);
         } else {
+            try {
+                Integer.parseInt(topUpValue.getText());
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "Invalid Input", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
             if (checkUser) {
-                ProyekPBONew.getUserList().remove(tempDel);
-                JOptionPane.showMessageDialog(this, "Account Deleted!", "Success", JOptionPane.PLAIN_MESSAGE);
+                ProyekPBONew.getUserList().get(tempTopUp).setSaldo(ProyekPBONew.getUserList().get(tempTopUp).getSaldo() + Integer.parseInt(this.topUpValue.getText()));
+                JOptionPane.showMessageDialog(this, "Top Up Success!", "Success", JOptionPane.PLAIN_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(this, "User not found!", "Warning", JOptionPane.WARNING_MESSAGE);
             }
         }
-
     }//GEN-LAST:event_ConfBtnActionPerformed
-
-    private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_usernameFieldActionPerformed
 
     private void BackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackBtnActionPerformed
         // TODO add your handling code here:
@@ -142,44 +154,21 @@ public class FrameCloseAcc extends javax.swing.JFrame {
         frameAdmin.setTitle("Menu Admin");
     }//GEN-LAST:event_BackBtnActionPerformed
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BackBtn;
-    private javax.swing.JToggleButton ConfBtn;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField usernameField;
-    // End of variables declaration//GEN-END:variables
-
-    public JToggleButton getConfBtn() {
-        return ConfBtn;
-    }
-
-    public void setConfBtn(JToggleButton ConfBtn) {
-        this.ConfBtn = ConfBtn;
-    }
-
-    public JLabel getjLabel1() {
-        return jLabel1;
-    }
-
-    public void setjLabel1(JLabel jLabel1) {
-        this.jLabel1 = jLabel1;
-    }
-
-    public JLabel getjLabel2() {
-        return jLabel2;
-    }
-
-    public void setjLabel2(JLabel jLabel2) {
-        this.jLabel2 = jLabel2;
-    }
+    private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameFieldActionPerformed
 
     public JTextField getUsernameField() {
         return usernameField;
     }
 
-    public void setUsernameField(JTextField usernameField) {
-        this.usernameField = usernameField;
-    }
-
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackBtn;
+    private javax.swing.JToggleButton ConfBtn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField topUpValue;
+    private javax.swing.JTextField usernameField;
+    // End of variables declaration//GEN-END:variables
 }

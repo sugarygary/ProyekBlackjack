@@ -95,6 +95,11 @@ public class FrameAdmin extends javax.swing.JFrame {
 
     private void TopUpBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TopUpBtnActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        TopUp frameTopUp = new TopUp();
+        frameTopUp.setVisible(true);
+        frameTopUp.setLocationRelativeTo(null);
+        frameTopUp.setTitle("Close Account");
     }//GEN-LAST:event_TopUpBtnActionPerformed
 
     private void CloseAccBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseAccBtnActionPerformed
