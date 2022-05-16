@@ -20,6 +20,58 @@ public class MainFrame extends javax.swing.JFrame {
         initComponents();
     }
 
+    public static void setFrameLogin(Login loginPage){
+        loginPage.setVisible(true);
+        loginPage.setLocationRelativeTo(null);
+        loginPage.setTitle("Login Page");
+        loginPage.setResizable(true);
+        
+        //set width, height frame login
+        loginPage.setSize(1100,700);
+        
+        //set width, height background image login frame
+        loginPage.getBackgroundImage().setSize(1100,700);
+        
+        //set x, y, width, height textfield
+        loginPage.getUsernameField().setBounds(450, 100, 150, 50);
+        loginPage.getPasswordField().setBounds(450, 200, 150, 50);
+        
+        //set x, y, width, height button
+        loginPage.getLoginBtn().setBounds(450,300 , 150, 50);
+        loginPage.getBackButton().setBounds(450,400,150,50);
+        
+        //set x,y, tulisan username,password
+        loginPage.getLabelUsername().setBounds(390,100,150,50);
+        loginPage.getLabelPassword().setBounds(390,200,150,50);
+    }
+    
+    public static void setFrameRegister(Register registerPage){
+        
+        registerPage.setVisible(true);
+        registerPage.setLocationRelativeTo(null);
+        registerPage.setTitle("Register Page");
+        registerPage.setResizable(true);
+        //set width, height frame login
+        registerPage.setSize(1100,700);
+        
+        //set width, height background image login frame
+        registerPage.getBackgroundImage().setSize(1100,700);
+        
+        //set x, y, width, height textfield
+        registerPage.getUsernameField().setBounds(450, 100, 150, 50);
+        registerPage.getPasswordField().setBounds(450, 200, 150, 50);
+        registerPage.getConfirmPassword().setBounds(450,300,150,50);   
+        
+        //set x, y, width, height button
+        registerPage.getRegisterBtn().setBounds(450,400,150,50);
+        registerPage.getBackButton().setBounds(450,500,150,50);
+        
+        //set x,y, tulisan username,password
+        registerPage.getLabelUsername().setBounds(390, 100, 150, 50);
+        registerPage.getLabelPassword().setBounds(390, 200, 150, 50);
+        registerPage.getLabelConfirm().setBounds(330, 300, 150, 50);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,8 +85,10 @@ public class MainFrame extends javax.swing.JFrame {
         RegisterBtn = new javax.swing.JButton();
         LeaderboardBtn = new javax.swing.JButton();
         TITLE = new javax.swing.JLabel();
+        backgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         LoginBtn.setText("Login");
         LoginBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -47,6 +101,8 @@ public class MainFrame extends javax.swing.JFrame {
                 LoginBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(LoginBtn);
+        LoginBtn.setBounds(134, 76, 128, 47);
 
         RegisterBtn.setText("Sign Up");
         RegisterBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -54,39 +110,20 @@ public class MainFrame extends javax.swing.JFrame {
                 RegisterBtnMouseClicked(evt);
             }
         });
+        getContentPane().add(RegisterBtn);
+        RegisterBtn.setBounds(134, 141, 128, 47);
 
         LeaderboardBtn.setText("Leaderboard");
+        getContentPane().add(LeaderboardBtn);
+        LeaderboardBtn.setBounds(134, 206, 128, 47);
 
         TITLE.setText("Blekjek");
+        getContentPane().add(TITLE);
+        TITLE.setBounds(178, 42, 38, 16);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(134, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(LeaderboardBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
-                    .addComponent(LoginBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(RegisterBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(TITLE)))
-                .addContainerGap(138, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(TITLE)
-                .addGap(18, 18, 18)
-                .addComponent(LoginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(RegisterBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(LeaderboardBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
-        );
+        backgroundImage.setIcon(new javax.swing.ImageIcon("E:\\new picture.jpg")); // NOI18N
+        getContentPane().add(backgroundImage);
+        backgroundImage.setBounds(0, 0, 400, 300);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -97,18 +134,14 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void LoginBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginBtnMouseClicked
         Login loginPage = new Login();
-        loginPage.setVisible(true);
-        loginPage.setLocationRelativeTo(null);
-        loginPage.setTitle("Login Page");
-        this.dispose();
+        ProyekPBONew.getLogframe().setVisible(false);
+        setFrameLogin(loginPage);
     }//GEN-LAST:event_LoginBtnMouseClicked
-
+ 
     private void RegisterBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterBtnMouseClicked
         Register registerPage = new Register();
-        registerPage.setVisible(true);
-        registerPage.setLocationRelativeTo(null);
-        registerPage.setTitle("Register Page");
-        this.dispose();
+        ProyekPBONew.getLogframe().setVisible(false);
+        setFrameRegister(registerPage);
     }//GEN-LAST:event_RegisterBtnMouseClicked
 
     public JButton getLeaderboardBtn() {
@@ -150,6 +183,18 @@ public class MainFrame extends javax.swing.JFrame {
     public void setRegisterBtn(JButton RegisterBtn) {
         this.RegisterBtn = RegisterBtn;
     }
+
+    public JLabel getBackgroundImage() {
+        return backgroundImage;
+    }
+
+    public void setBackgroundImage(JLabel backgroundImage) {
+        this.backgroundImage = backgroundImage;
+    }
+
+    
+    
+    
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -157,5 +202,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton LoginBtn;
     private javax.swing.JButton RegisterBtn;
     private javax.swing.JLabel TITLE;
+    private javax.swing.JLabel backgroundImage;
     // End of variables declaration//GEN-END:variables
 }

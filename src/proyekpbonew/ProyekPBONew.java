@@ -13,21 +13,46 @@ import java.util.ArrayList;
 public class ProyekPBONew {
 
     private static ArrayList<User> userList = new ArrayList<>();
-
-    public ProyekPBONew() {
-        MainFrame logframe = new MainFrame();
+    private static MainFrame logframe = new MainFrame();
+    public static void setFrame(MainFrame logframe){
         logframe.setVisible(true);
         logframe.setLocationRelativeTo(null);
         logframe.setTitle("Blekjek");
-        logframe.setResizable(false);
+        logframe.setResizable(true);
+        
+        //set width, height main frame
+        logframe.setSize(1100,700);
+        
+        //set width, height background image
+        logframe.getBackgroundImage().setSize(1100,700);
+        
+        //set x, y, width, height button
+        logframe.getLoginBtn().setBounds(450, 100, 175, 75);
+        logframe.getRegisterBtn().setBounds(450,200,175,75);
+        logframe.getLeaderboardBtn().setBounds(450,300,175,75);
+    }
+    public ProyekPBONew() {
+        setFrame(logframe);
+        
     }
 
     public static void main(String[] args) {
         new ProyekPBONew();
+        
     }
 
     public static ArrayList<User> getUserList() {
         return userList;
     }
 
+    public static MainFrame getLogframe() {
+        return logframe;
+    }
+
+    public static void setLogframe(MainFrame logframe) {
+        ProyekPBONew.logframe = logframe;
+    }
+    
+    
+    
 }
