@@ -3,12 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package proyekpbonew;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
-
 
 /**
  *
@@ -110,25 +110,22 @@ public class FrameCloseAcc extends javax.swing.JFrame {
         boolean checkUser = false;
         int tempDel = 0;
         int i;
-        for (i = 0 ; i < ProyekPBONew.getUserList().size() ; i++){
-            if (username.equals(ProyekPBONew.getUserList().get(i).getUsername())){
+        for (i = 0; i < ProyekPBONew.getUserList().size(); i++) {
+            if (username.equals(ProyekPBONew.getUserList().get(i).getUsername())) {
                 tempDel = i;
                 checkUser = true;
             }
         }
-        if (username.equals("")){
+        if (username.equals("")) {
             JOptionPane.showMessageDialog(this, "Invalid Input", "Warning", JOptionPane.WARNING_MESSAGE);
-        }
-        else {
-            if (checkUser){
-                ProyekPBONew.getUserList().remove(tempDel - 1);
+        } else {
+            if (checkUser) {
+                ProyekPBONew.getUserList().remove(tempDel);
                 JOptionPane.showMessageDialog(this, "Account Deleted!", "Warning", JOptionPane.WARNING_MESSAGE);
-            }
-            else {
-                JOptionPane.showMessageDialog(this, "User not found!" , "Warning", JOptionPane.WARNING_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "User not found!", "Warning", JOptionPane.WARNING_MESSAGE);
             }
         }
-        
 
     }//GEN-LAST:event_ConfBtnActionPerformed
 
@@ -139,47 +136,11 @@ public class FrameCloseAcc extends javax.swing.JFrame {
     private void BackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackBtnActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        MainFrame mainFrame = new MainFrame();
-        mainFrame.setVisible(true);
+        FrameAdmin frameAdmin = new FrameAdmin();
+        frameAdmin.setVisible(true);
+        frameAdmin.setLocationRelativeTo(null);
+        frameAdmin.setTitle("Menu Admin");
     }//GEN-LAST:event_BackBtnActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrameCloseAcc.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrameCloseAcc.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrameCloseAcc.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrameCloseAcc.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrameCloseAcc().setVisible(true);
-            }
-        });
-    }
-
-
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackBtn;
@@ -220,10 +181,5 @@ public class FrameCloseAcc extends javax.swing.JFrame {
     public void setUsernameField(JTextField usernameField) {
         this.usernameField = usernameField;
     }
-    
-    
-
 
 }
-
-
