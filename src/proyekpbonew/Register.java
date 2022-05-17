@@ -129,14 +129,14 @@ public class Register extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Confirm password doesn't match!", "Warning", JOptionPane.WARNING_MESSAGE);
             } else {
                 ProyekPBONew.getUserList().add(new User(uname, pass));
-                MainFrame mainFrame = new MainFrame();
+//                MainFrame mainFrame = new MainFrame();
                 this.setVisible(false);
                 JOptionPane.showMessageDialog(this, "Succesfully registered", "Success", JOptionPane.PLAIN_MESSAGE);
-                mainFrame.setVisible(true);
-                mainFrame.setLocationRelativeTo(null);
-                mainFrame.setTitle("Blekjek");
-                mainFrame.setResizable(false);
-                ProyekPBONew.setFrame(mainFrame);
+//                mainFrame.setVisible(true);
+//                mainFrame.setLocationRelativeTo(null);
+//                mainFrame.setTitle("Blekjek");
+//                mainFrame.setResizable(false);
+                ProyekPBONew.setFrame(ProyekPBONew.getLogframe());
             }
         } else {
             JOptionPane.showMessageDialog(this, "Username already exists", "Warning", JOptionPane.WARNING_MESSAGE);

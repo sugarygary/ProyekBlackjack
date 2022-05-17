@@ -112,14 +112,14 @@ public class FrameAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_CloseAccBtnActionPerformed
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
-        MainFrame logframe = new MainFrame();
-        logframe.setVisible(true);
-        logframe.setLocationRelativeTo(null);
-        logframe.setTitle("Blekjek");
-        logframe.setResizable(false);
+//        MainFrame logframe = new MainFrame();
+//        logframe.setVisible(true);
+//        logframe.setLocationRelativeTo(null);
+//        logframe.setTitle("Blekjek");
+//        logframe.setResizable(false);
         this.setVisible(false);
         
-        ProyekPBONew.setFrame(logframe);
+        ProyekPBONew.setFrame(ProyekPBONew.getLogframe());
     }//GEN-LAST:event_logoutBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
