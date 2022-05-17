@@ -26,21 +26,83 @@ public class FrameUser extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        GameBtn = new javax.swing.JToggleButton();
+        MainBtn = new javax.swing.JToggleButton();
+        LeaderboardBtn = new javax.swing.JToggleButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("USER");
+
+        GameBtn.setText("GAME");
+        GameBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GameBtnActionPerformed(evt);
+            }
+        });
+
+        MainBtn.setText("MAIN");
+        MainBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MainBtnActionPerformed(evt);
+            }
+        });
+
+        LeaderboardBtn.setText("LEADERBOARD");
+        LeaderboardBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LeaderboardBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(186, 186, 186)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(169, 169, 169)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(MainBtn)
+                            .addComponent(GameBtn)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addComponent(LeaderboardBtn)))
+                .addContainerGap(146, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(GameBtn)
+                .addGap(18, 18, 18)
+                .addComponent(MainBtn)
+                .addGap(18, 18, 18)
+                .addComponent(LeaderboardBtn)
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void GameBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GameBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GameBtnActionPerformed
+
+    private void MainBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MainBtnActionPerformed
+
+    private void LeaderboardBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeaderboardBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LeaderboardBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +140,9 @@ public class FrameUser extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton GameBtn;
+    private javax.swing.JToggleButton LeaderboardBtn;
+    private javax.swing.JToggleButton MainBtn;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
