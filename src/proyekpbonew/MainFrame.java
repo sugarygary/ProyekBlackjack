@@ -121,7 +121,7 @@ public class MainFrame extends javax.swing.JFrame {
         getContentPane().add(TITLE);
         TITLE.setBounds(178, 42, 38, 16);
 
-        backgroundImage.setIcon(new javax.swing.ImageIcon("E:\\new picture.jpg")); // NOI18N
+        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyekpbonew/background.jpg"))); // NOI18N
         getContentPane().add(backgroundImage);
         backgroundImage.setBounds(0, 0, 400, 300);
 

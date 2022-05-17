@@ -86,7 +86,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(backButton);
         backButton.setBounds(155, 248, 57, 25);
 
-        backgroundImage.setIcon(new javax.swing.ImageIcon("E:\\new picture.jpg")); // NOI18N
+        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyekpbonew/background.jpg"))); // NOI18N
         getContentPane().add(backgroundImage);
         backgroundImage.setBounds(0, 0, 400, 310);
 

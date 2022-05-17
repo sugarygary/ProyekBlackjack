@@ -22,7 +22,6 @@ public class ProyekPBONew {
         
         //set width, height main frame
         logframe.setSize(1100,700);
-        
         //set width, height background image
         logframe.getBackgroundImage().setSize(1100,700);
         
