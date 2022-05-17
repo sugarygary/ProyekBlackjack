@@ -118,6 +118,8 @@ public class FrameAdmin extends javax.swing.JFrame {
         logframe.setTitle("Blekjek");
         logframe.setResizable(false);
         this.setVisible(false);
+        
+        ProyekPBONew.setFrame(logframe);
     }//GEN-LAST:event_logoutBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

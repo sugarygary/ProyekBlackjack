@@ -136,6 +136,7 @@ public class Register extends javax.swing.JFrame {
                 mainFrame.setLocationRelativeTo(null);
                 mainFrame.setTitle("Blekjek");
                 mainFrame.setResizable(false);
+                ProyekPBONew.setFrame(mainFrame);
             }
         } else {
             JOptionPane.showMessageDialog(this, "Username already exists", "Warning", JOptionPane.WARNING_MESSAGE);
