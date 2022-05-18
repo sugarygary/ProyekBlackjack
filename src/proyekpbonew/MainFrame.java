@@ -20,58 +20,58 @@ public class MainFrame extends javax.swing.JFrame {
         initComponents();
     }
 
-    public static void setFrameLogin(Login loginPage){
+    public static void setFrameLogin(Login loginPage) {
         loginPage.setVisible(true);
-        loginPage.setLocationRelativeTo(null);
         loginPage.setTitle("Login Page");
-        loginPage.setResizable(true);
-        
+        loginPage.setResizable(false);
+
         //set width, height frame login
-        loginPage.setSize(1100,700);
-        
+        loginPage.setSize(1100, 700);
+
         //set width, height background image login frame
-        loginPage.getBackgroundImage().setSize(1100,700);
-        
+        loginPage.getBackgroundImage().setSize(1100, 700);
+
         //set x, y, width, height textfield
         loginPage.getUsernameField().setBounds(450, 100, 150, 50);
         loginPage.getPasswordField().setBounds(450, 200, 150, 50);
-        
+
         //set x, y, width, height button
-        loginPage.getLoginBtn().setBounds(450,300 , 150, 50);
-        loginPage.getBackButton().setBounds(450,400,150,50);
-        
+        loginPage.getLoginBtn().setBounds(450, 300, 150, 50);
+        loginPage.getBackButton().setBounds(450, 400, 150, 50);
+
         //set x,y, tulisan username,password
-        loginPage.getLabelUsername().setBounds(390,100,150,50);
-        loginPage.getLabelPassword().setBounds(390,200,150,50);
+        loginPage.getLabelUsername().setBounds(390, 100, 150, 50);
+        loginPage.getLabelPassword().setBounds(390, 200, 150, 50);
+        loginPage.setLocationRelativeTo(null);
     }
-    
-    public static void setFrameRegister(Register registerPage){
-        
+
+    public static void setFrameRegister(Register registerPage) {
+
         registerPage.setVisible(true);
-        registerPage.setLocationRelativeTo(null);
         registerPage.setTitle("Register Page");
-        registerPage.setResizable(true);
+        registerPage.setResizable(false);
         //set width, height frame login
-        registerPage.setSize(1100,700);
-        
+        registerPage.setSize(1100, 700);
+
         //set width, height background image login frame
-        registerPage.getBackgroundImage().setSize(1100,700);
-        
+        registerPage.getBackgroundImage().setSize(1100, 700);
+
         //set x, y, width, height textfield
         registerPage.getUsernameField().setBounds(450, 100, 150, 50);
         registerPage.getPasswordField().setBounds(450, 200, 150, 50);
-        registerPage.getConfirmPassword().setBounds(450,300,150,50);   
-        
+        registerPage.getConfirmPassword().setBounds(450, 300, 150, 50);
+
         //set x, y, width, height button
-        registerPage.getRegisterBtn().setBounds(450,400,150,50);
-        registerPage.getBackButton().setBounds(450,500,150,50);
-        
+        registerPage.getRegisterBtn().setBounds(450, 400, 150, 50);
+        registerPage.getBackButton().setBounds(450, 500, 150, 50);
+
         //set x,y, tulisan username,password
         registerPage.getLabelUsername().setBounds(390, 100, 150, 50);
         registerPage.getLabelPassword().setBounds(390, 200, 150, 50);
         registerPage.getLabelConfirm().setBounds(330, 300, 150, 50);
+        registerPage.setLocationRelativeTo(null);
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -137,7 +137,7 @@ public class MainFrame extends javax.swing.JFrame {
         ProyekPBONew.getLogframe().setVisible(false);
         setFrameLogin(loginPage);
     }//GEN-LAST:event_LoginBtnMouseClicked
- 
+
     private void RegisterBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterBtnMouseClicked
         Register registerPage = new Register();
         ProyekPBONew.getLogframe().setVisible(false);
@@ -192,11 +192,6 @@ public class MainFrame extends javax.swing.JFrame {
         this.backgroundImage = backgroundImage;
     }
 
-    
-    
-    
-    
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LeaderboardBtn;
     private javax.swing.JButton LoginBtn;

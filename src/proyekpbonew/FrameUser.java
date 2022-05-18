@@ -30,6 +30,7 @@ public class FrameUser extends javax.swing.JFrame {
         GameBtn = new javax.swing.JToggleButton();
         MainBtn = new javax.swing.JToggleButton();
         LeaderboardBtn = new javax.swing.JToggleButton();
+        logoutBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,6 +57,13 @@ public class FrameUser extends javax.swing.JFrame {
             }
         });
 
+        logoutBtn.setText("LOGOUT");
+        logoutBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -72,7 +80,10 @@ public class FrameUser extends javax.swing.JFrame {
                             .addComponent(GameBtn)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(144, 144, 144)
-                        .addComponent(LeaderboardBtn)))
+                        .addComponent(LeaderboardBtn))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(164, 164, 164)
+                        .addComponent(logoutBtn)))
                 .addContainerGap(146, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -86,7 +97,9 @@ public class FrameUser extends javax.swing.JFrame {
                 .addComponent(MainBtn)
                 .addGap(18, 18, 18)
                 .addComponent(LeaderboardBtn)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(logoutBtn)
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         pack();
@@ -104,45 +117,17 @@ public class FrameUser extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_LeaderboardBtnActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrameUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrameUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrameUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrameUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrameUser().setVisible(true);
-            }
-        });
-    }
+    private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        ProyekPBONew.setFrame(ProyekPBONew.getLogframe());
+    }//GEN-LAST:event_logoutBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton GameBtn;
     private javax.swing.JToggleButton LeaderboardBtn;
     private javax.swing.JToggleButton MainBtn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton logoutBtn;
     // End of variables declaration//GEN-END:variables
 }
