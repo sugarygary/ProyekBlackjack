@@ -18,59 +18,24 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         initComponents();
-    }
-
-    public static void setFrameLogin(Login loginPage) {
-        loginPage.setVisible(true);
-        loginPage.setTitle("Login Page");
-        loginPage.setResizable(false);
-
-        //set width, height frame login
-        loginPage.setSize(1100, 700);
-
-        //set width, height background image login frame
-        loginPage.getBackgroundImage().setSize(1100, 700);
-
-        //set x, y, width, height textfield
-        loginPage.getUsernameField().setBounds(450, 100, 150, 50);
-        loginPage.getPasswordField().setBounds(450, 200, 150, 50);
+        this.setTitle("Blekjek");
+        this.setResizable(false);
+        
+        //set width, height main frame
+        this.setSize(1100, 700);
+        //set width, height background image
+        this.getBackgroundImage().setSize(1100, 700);
 
         //set x, y, width, height button
-        loginPage.getLoginBtn().setBounds(450, 300, 150, 50);
-        loginPage.getBackButton().setBounds(450, 400, 150, 50);
-
-        //set x,y, tulisan username,password
-        loginPage.getLabelUsername().setBounds(390, 100, 150, 50);
-        loginPage.getLabelPassword().setBounds(390, 200, 150, 50);
-        loginPage.setLocationRelativeTo(null);
+        this.getLoginBtn().setBounds(450, 100, 175, 75);
+        this.getRegisterBtn().setBounds(450, 200, 175, 75);
+        this.getLeaderboardBtn().setBounds(450, 300, 175, 75);
+        this.setLocationRelativeTo(null);
     }
 
-    public static void setFrameRegister(Register registerPage) {
 
-        registerPage.setVisible(true);
-        registerPage.setTitle("Register Page");
-        registerPage.setResizable(false);
-        //set width, height frame login
-        registerPage.setSize(1100, 700);
 
-        //set width, height background image login frame
-        registerPage.getBackgroundImage().setSize(1100, 700);
 
-        //set x, y, width, height textfield
-        registerPage.getUsernameField().setBounds(450, 100, 150, 50);
-        registerPage.getPasswordField().setBounds(450, 200, 150, 50);
-        registerPage.getConfirmPassword().setBounds(450, 300, 150, 50);
-
-        //set x, y, width, height button
-        registerPage.getRegisterBtn().setBounds(450, 400, 150, 50);
-        registerPage.getBackButton().setBounds(450, 500, 150, 50);
-
-        //set x,y, tulisan username,password
-        registerPage.getLabelUsername().setBounds(390, 100, 150, 50);
-        registerPage.getLabelPassword().setBounds(390, 200, 150, 50);
-        registerPage.getLabelConfirm().setBounds(330, 300, 150, 50);
-        registerPage.setLocationRelativeTo(null);
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -133,15 +98,15 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_LoginBtnActionPerformed
 
     private void LoginBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginBtnMouseClicked
-        Login loginPage = new Login();
+
         ProyekPBONew.getLogframe().setVisible(false);
-        setFrameLogin(loginPage);
+        ProyekPBONew.getLoginFrame().setVisible(true);
     }//GEN-LAST:event_LoginBtnMouseClicked
 
     private void RegisterBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterBtnMouseClicked
-        Register registerPage = new Register();
+
         ProyekPBONew.getLogframe().setVisible(false);
-        setFrameRegister(registerPage);
+        ProyekPBONew.getRegisterFrame().setVisible(true);
     }//GEN-LAST:event_RegisterBtnMouseClicked
 
     public JButton getLeaderboardBtn() {

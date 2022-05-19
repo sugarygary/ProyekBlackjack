@@ -21,6 +21,21 @@ public class FrameCloseAcc extends javax.swing.JFrame {
      */
     public FrameCloseAcc() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setTitle("Close Account");
+        
+        //set width, height frame top up
+        this.setSize(1100,700);
+        
+        //set width, height background image top up frame
+        this.getBackgroundImage().setSize(1100,700);
+        
+        //set text field username
+        this.getUsernameField().setBounds(450, 100, 150, 50);
+        
+        //set button 
+        this.getConfBtn().setBounds(450, 200, 150, 50);
+        this.getBackBtn().setBounds(450, 300, 150, 50);
     }
 
     /**
@@ -37,18 +52,26 @@ public class FrameCloseAcc extends javax.swing.JFrame {
         usernameField = new javax.swing.JTextField();
         ConfBtn = new javax.swing.JToggleButton();
         BackBtn = new javax.swing.JButton();
+        backgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jLabel2.setText("Close Account");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(155, 35, 75, 26);
 
         jLabel1.setText("Username :");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(47, 103, 66, 25);
 
         usernameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameFieldActionPerformed(evt);
             }
         });
+        getContentPane().add(usernameField);
+        usernameField.setBounds(118, 104, 160, 22);
 
         ConfBtn.setText("Confirm");
         ConfBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -56,6 +79,8 @@ public class FrameCloseAcc extends javax.swing.JFrame {
                 ConfBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(ConfBtn);
+        ConfBtn.setBounds(139, 156, 111, 30);
 
         BackBtn.setText("Back");
         BackBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -63,43 +88,12 @@ public class FrameCloseAcc extends javax.swing.JFrame {
                 BackBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(BackBtn);
+        BackBtn.setBounds(139, 204, 111, 30);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(139, 139, 139)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ConfBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BackBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE))))
-                .addContainerGap(121, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addComponent(ConfBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(BackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
-        );
+        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyekpbonew/background.jpg"))); // NOI18N
+        getContentPane().add(backgroundImage);
+        backgroundImage.setBounds(0, 0, 400, 300);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -145,6 +139,7 @@ public class FrameCloseAcc extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackBtn;
     private javax.swing.JToggleButton ConfBtn;
+    private javax.swing.JLabel backgroundImage;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField usernameField;
@@ -178,6 +173,23 @@ public class FrameCloseAcc extends javax.swing.JFrame {
         return usernameField;
     }
 
+    public JButton getBackBtn() {
+        return BackBtn;
+    }
+
+    public void setBackBtn(JButton BackBtn) {
+        this.BackBtn = BackBtn;
+    }
+
+    public JLabel getBackgroundImage() {
+        return backgroundImage;
+    }
+
+    public void setBackgroundImage(JLabel backgroundImage) {
+        this.backgroundImage = backgroundImage;
+    }
+    
+    
     public void setUsernameField(JTextField usernameField) {
         this.usernameField = usernameField;
     }

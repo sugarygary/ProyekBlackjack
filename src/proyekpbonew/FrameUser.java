@@ -4,6 +4,10 @@
  */
 package proyekpbonew;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JToggleButton;
+
 /**
  *
  * @author Inghwe
@@ -15,6 +19,20 @@ public class FrameUser extends javax.swing.JFrame {
      */
     public FrameUser() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setTitle("Menu Admin");
+        
+          //set width, height frame admin
+        this.setSize(1100,700);
+        
+        //set width, height background image frame admin
+        this.getBackgroundImage().setSize(1100,700);
+        
+        //set button frame admin
+        this.getGameBtn().setBounds(450, 100, 150, 50);
+        this.getMainBtn().setBounds(450, 200, 150, 50);
+        this.getLeaderboardBtn().setBounds(450, 300, 150, 50);
+        this.getLogoutBtn().setBounds(450, 400, 150, 50);
     }
 
     /**
@@ -31,10 +49,14 @@ public class FrameUser extends javax.swing.JFrame {
         MainBtn = new javax.swing.JToggleButton();
         LeaderboardBtn = new javax.swing.JToggleButton();
         logoutBtn = new javax.swing.JButton();
+        backgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jLabel1.setText("USER");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(186, 37, 28, 16);
 
         GameBtn.setText("GAME");
         GameBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -42,6 +64,8 @@ public class FrameUser extends javax.swing.JFrame {
                 GameBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(GameBtn);
+        GameBtn.setBounds(169, 71, 65, 25);
 
         MainBtn.setText("MAIN");
         MainBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -49,6 +73,8 @@ public class FrameUser extends javax.swing.JFrame {
                 MainBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(MainBtn);
+        MainBtn.setBounds(169, 114, 63, 25);
 
         LeaderboardBtn.setText("LEADERBOARD");
         LeaderboardBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -56,6 +82,8 @@ public class FrameUser extends javax.swing.JFrame {
                 LeaderboardBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(LeaderboardBtn);
+        LeaderboardBtn.setBounds(144, 157, 115, 25);
 
         logoutBtn.setText("LOGOUT");
         logoutBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -63,44 +91,12 @@ public class FrameUser extends javax.swing.JFrame {
                 logoutBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(logoutBtn);
+        logoutBtn.setBounds(164, 210, 79, 25);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(186, 186, 186)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(169, 169, 169)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(MainBtn)
-                            .addComponent(GameBtn)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(144, 144, 144)
-                        .addComponent(LeaderboardBtn))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(164, 164, 164)
-                        .addComponent(logoutBtn)))
-                .addContainerGap(146, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(GameBtn)
-                .addGap(18, 18, 18)
-                .addComponent(MainBtn)
-                .addGap(18, 18, 18)
-                .addComponent(LeaderboardBtn)
-                .addGap(28, 28, 28)
-                .addComponent(logoutBtn)
-                .addContainerGap(77, Short.MAX_VALUE))
-        );
+        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyekpbonew/background.jpg"))); // NOI18N
+        getContentPane().add(backgroundImage);
+        backgroundImage.setBounds(0, 0, 410, 310);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -120,13 +116,37 @@ public class FrameUser extends javax.swing.JFrame {
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        ProyekPBONew.setFrame(ProyekPBONew.getLogframe());
+        ProyekPBONew.getLogframe().setVisible(true);
     }//GEN-LAST:event_logoutBtnActionPerformed
 
+    public JToggleButton getGameBtn() {
+        return GameBtn;
+    }
+
+    public JToggleButton getLeaderboardBtn() {
+        return LeaderboardBtn;
+    }
+
+    public JToggleButton getMainBtn() {
+        return MainBtn;
+    }
+
+    public JButton getLogoutBtn() {
+        return logoutBtn;
+    }
+
+    public JLabel getBackgroundImage() {
+        return backgroundImage;
+    }
+    
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton GameBtn;
     private javax.swing.JToggleButton LeaderboardBtn;
     private javax.swing.JToggleButton MainBtn;
+    private javax.swing.JLabel backgroundImage;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton logoutBtn;
     // End of variables declaration//GEN-END:variables

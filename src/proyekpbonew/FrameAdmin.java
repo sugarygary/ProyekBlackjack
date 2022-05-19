@@ -4,6 +4,10 @@
  */
 package proyekpbonew;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JToggleButton;
+
 /**
  *
  * @author Inghwe
@@ -13,8 +17,24 @@ public class FrameAdmin extends javax.swing.JFrame {
     /**
      * Creates new form FrameAdmin
      */
+    
+
+
     public FrameAdmin() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setTitle("Menu Admin");
+        
+          //set width, height frame admin
+        this.setSize(1100,700);
+        
+        //set width, height background image frame admin
+        this.getBackgroundImage().setSize(1100,700);
+        
+        //set button frame admin
+        this.getTopUpBtn().setBounds(450, 100, 150, 50);
+        this.getCloseAccBtn().setBounds(450, 200, 150, 50);
+        this.getLogoutBtn().setBounds(450, 200, 150, 50);
     }
 
     /**
@@ -30,10 +50,14 @@ public class FrameAdmin extends javax.swing.JFrame {
         TopUpBtn = new javax.swing.JToggleButton();
         CloseAccBtn = new javax.swing.JToggleButton();
         logoutBtn = new javax.swing.JButton();
+        backgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jLabel1.setText("Welcome, Admin!");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(157, 56, 94, 37);
 
         TopUpBtn.setText("Top-Up Saldo");
         TopUpBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -41,6 +65,8 @@ public class FrameAdmin extends javax.swing.JFrame {
                 TopUpBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(TopUpBtn);
+        TopUpBtn.setBounds(124, 100, 162, 37);
 
         CloseAccBtn.setText("Tutup Akun");
         CloseAccBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -48,6 +74,8 @@ public class FrameAdmin extends javax.swing.JFrame {
                 CloseAccBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(CloseAccBtn);
+        CloseAccBtn.setBounds(124, 150, 162, 44);
 
         logoutBtn.setText("Logout");
         logoutBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -55,40 +83,12 @@ public class FrameAdmin extends javax.swing.JFrame {
                 logoutBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(logoutBtn);
+        logoutBtn.setBounds(124, 207, 162, 46);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(124, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addGap(149, 149, 149))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(TopUpBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(114, 114, 114)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(CloseAccBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
-                            .addComponent(logoutBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TopUpBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CloseAccBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(logoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
-        );
+        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyekpbonew/background.jpg"))); // NOI18N
+        getContentPane().add(backgroundImage);
+        backgroundImage.setBounds(0, 0, 400, 300);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -96,35 +96,43 @@ public class FrameAdmin extends javax.swing.JFrame {
     private void TopUpBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TopUpBtnActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        TopUp frameTopUp = new TopUp();
-        frameTopUp.setVisible(true);
-        frameTopUp.setLocationRelativeTo(null);
-        frameTopUp.setTitle("Close Account");
+        ProyekPBONew.getFrameTopUp().setVisible(true);
     }//GEN-LAST:event_TopUpBtnActionPerformed
 
     private void CloseAccBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseAccBtnActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        FrameCloseAcc frameTutup = new FrameCloseAcc();
-        frameTutup.setVisible(true);
-        frameTutup.setLocationRelativeTo(null);
-        frameTutup.setTitle("Close Account");
+        ProyekPBONew.getFrameClose().setVisible(true);
+
     }//GEN-LAST:event_CloseAccBtnActionPerformed
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
-//        MainFrame logframe = new MainFrame();
-//        logframe.setVisible(true);
-//        logframe.setLocationRelativeTo(null);
-//        logframe.setTitle("Blekjek");
-//        logframe.setResizable(false);
+
         this.setVisible(false);
-        
-        ProyekPBONew.setFrame(ProyekPBONew.getLogframe());
+        ProyekPBONew.getLogframe().setVisible(true);
     }//GEN-LAST:event_logoutBtnActionPerformed
 
+    public JToggleButton getCloseAccBtn() {
+        return CloseAccBtn;
+    }
+
+    public JToggleButton getTopUpBtn() {
+        return TopUpBtn;
+    }
+
+    public JLabel getBackgroundImage() {
+        return backgroundImage;
+    }
+
+    public JButton getLogoutBtn() {
+        return logoutBtn;
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton CloseAccBtn;
     private javax.swing.JToggleButton TopUpBtn;
+    private javax.swing.JLabel backgroundImage;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton logoutBtn;
     // End of variables declaration//GEN-END:variables

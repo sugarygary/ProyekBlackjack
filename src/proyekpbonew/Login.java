@@ -21,8 +21,47 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
+    public static void setFrameUser(FrameUser frameUser){
+        frameUser.setLocationRelativeTo(null);
+        frameUser.setTitle("Menu User");
+        
+         //set width, height frame user
+//        frameUser.setSize(1100,700);
+//        
+//        //set width, height background image frame user
+//        frameUser.getBackgroundImage().setSize(1100,700);
+//        
+//        frameUser
+//        //set x, y, width, height button
+//        frameUser.getGameBtn().setBounds(450, 100, 150, 50);
+//        frameUser.getMainBtn().setBounds(450, 200, 150, 50);
+//        frameUser.getLeaderboardBtn().setBounds(450, 300, 150, 50);
+
+    }
+    
     public Login() {
         initComponents();
+        this.setTitle("Login Page");
+        this.setResizable(false);
+
+        //set width, height frame login
+        this.setSize(1100, 700);
+
+        //set width, height background image login frame
+        this.getBackgroundImage().setSize(1100, 700);
+
+        //set x, y, width, height textfield
+        this.getUsernameField().setBounds(450, 100, 150, 50);
+        this.getPasswordField().setBounds(450, 200, 150, 50);
+
+        //set x, y, width, height button
+        this.getLoginBtn().setBounds(450, 300, 150, 50);
+        this.getBackButton().setBounds(450, 400, 150, 50);
+
+        //set x,y, tulisan username,password
+        this.getLabelUsername().setBounds(390, 100, 150, 50);
+        this.getLabelPassword().setBounds(390, 200, 150, 50);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -111,10 +150,7 @@ public class Login extends javax.swing.JFrame {
         boolean loginSuccess = false;
         if (username.equalsIgnoreCase("admin") && password.equalsIgnoreCase("admin")) {
             this.setVisible(false);
-            FrameAdmin frameAdmin = new FrameAdmin();
-            frameAdmin.setLocationRelativeTo(null);
-            frameAdmin.setTitle("Menu Admin");
-            frameAdmin.setVisible(true);
+            ProyekPBONew.getFrameAdmin().setVisible(true);
         } else {
             for (int i = 0; i < ProyekPBONew.getUserList().size(); i++) {
                 if (username.equals(ProyekPBONew.getUserList().get(i).getUsername())
@@ -127,10 +163,8 @@ public class Login extends javax.swing.JFrame {
             } else {
                 if (loginSuccess) {
                     this.setVisible(false);
-                    FrameUser frameUser = new FrameUser();
-                    frameUser.setLocationRelativeTo(null);
-                    frameUser.setTitle("Menu User");
-                    frameUser.setVisible(true);
+                    ProyekPBONew.getFrameUser().setVisible(true);
+                    
                 } else {
                     JOptionPane.showMessageDialog(this, "Login Failed", "Warning", JOptionPane.WARNING_MESSAGE);
                 }
@@ -144,7 +178,7 @@ public class Login extends javax.swing.JFrame {
 //        logframe.setLocationRelativeTo(null);
 //        logframe.setTitle("Blekjek");
 //        logframe.setResizable(false);
-        ProyekPBONew.setFrame(ProyekPBONew.getLogframe());
+        ProyekPBONew.getLogframe().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_backButtonActionPerformed
 

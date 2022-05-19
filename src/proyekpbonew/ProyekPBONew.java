@@ -14,32 +14,21 @@ public class ProyekPBONew {
 
     private static ArrayList<User> userList = new ArrayList<>();
     private static MainFrame logframe = new MainFrame();
-
-    public static void setFrame(MainFrame logframe) {
-        logframe.setVisible(true);
-        logframe.setTitle("Blekjek");
-        logframe.setResizable(false);
-
-        //set width, height main frame
-        logframe.setSize(1100, 700);
-        //set width, height background image
-        logframe.getBackgroundImage().setSize(1100, 700);
-
-        //set x, y, width, height button
-        logframe.getLoginBtn().setBounds(450, 100, 175, 75);
-        logframe.getRegisterBtn().setBounds(450, 200, 175, 75);
-        logframe.getLeaderboardBtn().setBounds(450, 300, 175, 75);
-        logframe.setLocationRelativeTo(null);
-    }
+    private static Login loginFrame = new Login();
+    private static Register registerFrame = new Register();
+    private static FrameAdmin frameAdmin = new FrameAdmin();
+    private static FrameUser frameUser = new FrameUser();
+    private static FrameCloseAcc frameClose = new FrameCloseAcc();
+    private static TopUp frameTopUp = new TopUp();
+    
 
     public ProyekPBONew() {
-        setFrame(logframe);
 
     }
 
     public static void main(String[] args) {
         new ProyekPBONew();
-
+        logframe.setVisible(true);
     }
 
     public static ArrayList<User> getUserList() {
@@ -53,5 +42,31 @@ public class ProyekPBONew {
     public static void setLogframe(MainFrame logframe) {
         ProyekPBONew.logframe = logframe;
     }
+
+    public static Login getLoginFrame() {
+        return loginFrame;
+    }
+
+    public static Register getRegisterFrame() {
+        return registerFrame;
+    }
+
+    public static FrameAdmin getFrameAdmin() {
+        return frameAdmin;
+    }
+
+    public static FrameUser getFrameUser() {
+        return frameUser;
+    }
+
+    public static FrameCloseAcc getFrameClose() {
+        return frameClose;
+    }
+
+    public static TopUp getFrameTopUp() {
+        return frameTopUp;
+    }
+
+    
 
 }

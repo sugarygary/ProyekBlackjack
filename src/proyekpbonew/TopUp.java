@@ -4,8 +4,11 @@
  */
 package proyekpbonew;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import javax.swing.JToggleButton;
 
 /**
  *
@@ -18,6 +21,22 @@ public class TopUp extends javax.swing.JFrame {
      */
     public TopUp() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setTitle("Close Account");
+
+        //set width, height frame top up
+        this.setSize(1100,700);
+        
+        //set width, height background image top up frame
+        this.getBackgroundImage().setSize(1100,700);
+        
+        //set text field frame top up
+        this.getUsernameField().setBounds(450, 100, 150, 50);
+        this.getTopUpValue().setBounds(450, 200, 150, 50);
+        
+        //set button frame top up
+        this.getConfBtn().setBounds(450, 300, 150, 50);
+        this.getBackBtn().setBounds(450, 400, 150, 50);
     }
 
     /**
@@ -36,8 +55,10 @@ public class TopUp extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         topUpValue = new javax.swing.JTextField();
+        backgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         ConfBtn.setText("Confirm");
         ConfBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -45,6 +66,8 @@ public class TopUp extends javax.swing.JFrame {
                 ConfBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(ConfBtn);
+        ConfBtn.setBounds(137, 176, 111, 30);
 
         BackBtn.setText("Back");
         BackBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -52,65 +75,34 @@ public class TopUp extends javax.swing.JFrame {
                 BackBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(BackBtn);
+        BackBtn.setBounds(137, 224, 111, 30);
 
         usernameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameFieldActionPerformed(evt);
             }
         });
+        getContentPane().add(usernameField);
+        usernameField.setBounds(118, 104, 160, 22);
 
         jLabel1.setText("Username :");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(47, 103, 66, 25);
 
         jLabel2.setText("Top Up Account");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(155, 35, 86, 26);
 
         jLabel3.setText("Saldo :");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(47, 149, 58, 16);
+        getContentPane().add(topUpValue);
+        topUpValue.setBounds(117, 146, 161, 22);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ConfBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(topUpValue))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(121, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(topUpValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                .addComponent(ConfBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(BackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46))
-        );
+        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyekpbonew/background.jpg"))); // NOI18N
+        getContentPane().add(backgroundImage);
+        backgroundImage.setBounds(0, 0, 400, 300);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -162,9 +154,43 @@ public class TopUp extends javax.swing.JFrame {
         return usernameField;
     }
 
+    public JButton getBackBtn() {
+        return BackBtn;
+    }
+
+    public void setBackBtn(JButton BackBtn) {
+        this.BackBtn = BackBtn;
+    }
+
+    public JToggleButton getConfBtn() {
+        return ConfBtn;
+    }
+
+    public void setConfBtn(JToggleButton ConfBtn) {
+        this.ConfBtn = ConfBtn;
+    }
+
+    public JLabel getBackgroundImage() {
+        return backgroundImage;
+    }
+
+    public void setBackgroundImage(JLabel backgroundImage) {
+        this.backgroundImage = backgroundImage;
+    }
+
+    public JTextField getTopUpValue() {
+        return topUpValue;
+    }
+
+    public void setTopUpValue(JTextField topUpValue) {
+        this.topUpValue = topUpValue;
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackBtn;
     private javax.swing.JToggleButton ConfBtn;
+    private javax.swing.JLabel backgroundImage;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

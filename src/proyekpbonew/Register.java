@@ -21,6 +21,28 @@ public class Register extends javax.swing.JFrame {
      */
     public Register() {
         initComponents();
+        this.setTitle("Register Page");
+        this.setResizable(false);
+        //set width, height frame login
+        this.setSize(1100, 700);
+
+        //set width, height background image login frame
+        this.getBackgroundImage().setSize(1100, 700);
+
+        //set x, y, width, height textfield
+        this.getUsernameField().setBounds(450, 100, 150, 50);
+        this.getPasswordField().setBounds(450, 200, 150, 50);
+        this.getConfirmPassword().setBounds(450, 300, 150, 50);
+
+        //set x, y, width, height button
+        this.getRegisterBtn().setBounds(450, 400, 150, 50);
+        this.getBackButton().setBounds(450, 500, 150, 50);
+
+        //set x,y, tulisan username,password
+        this.getLabelUsername().setBounds(390, 100, 150, 50);
+        this.getLabelPassword().setBounds(390, 200, 150, 50);
+        this.getLabelConfirm().setBounds(330, 300, 150, 50);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -129,14 +151,10 @@ public class Register extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Confirm password doesn't match!", "Warning", JOptionPane.WARNING_MESSAGE);
             } else {
                 ProyekPBONew.getUserList().add(new User(uname, pass));
-//                MainFrame mainFrame = new MainFrame();
                 this.setVisible(false);
                 JOptionPane.showMessageDialog(this, "Succesfully registered", "Success", JOptionPane.PLAIN_MESSAGE);
-//                mainFrame.setVisible(true);
-//                mainFrame.setLocationRelativeTo(null);
-//                mainFrame.setTitle("Blekjek");
-//                mainFrame.setResizable(false);
-                ProyekPBONew.setFrame(ProyekPBONew.getLogframe());
+
+                ProyekPBONew.getLogframe().setVisible(true);
             }
         } else {
             JOptionPane.showMessageDialog(this, "Username already exists", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -152,12 +170,8 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_confirmPasswordActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-//        MainFrame logframe = new MainFrame();
-//        logframe.setVisible(true);
-//        logframe.setLocationRelativeTo(null);
-//        logframe.setTitle("Blekjek");
-//        logframe.setResizable(false);
-        ProyekPBONew.setFrame(ProyekPBONew.getLogframe());
+
+        ProyekPBONew.getLogframe().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_backButtonActionPerformed
 
