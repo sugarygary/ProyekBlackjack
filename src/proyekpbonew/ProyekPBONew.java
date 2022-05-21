@@ -20,6 +20,7 @@ public class ProyekPBONew {
     private static FrameUser frameUser = new FrameUser();
     private static FrameCloseAcc frameClose = new FrameCloseAcc();
     private static TopUp frameTopUp = new TopUp();
+    private static Leaderboard LB = new Leaderboard();
 
     public ProyekPBONew() {
 
@@ -73,5 +74,14 @@ public class ProyekPBONew {
     public static TopUp getFrameTopUp() {
         return frameTopUp;
     }
+
+    public static Leaderboard getLB() {
+        return LB;
+    }
+
+    public static void setLB(Leaderboard LB) {
+        ProyekPBONew.LB = LB;
+    }
+    
 
 }

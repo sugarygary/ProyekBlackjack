@@ -78,6 +78,11 @@ public class MainFrame extends javax.swing.JFrame {
         RegisterBtn.setBounds(134, 141, 128, 47);
 
         LeaderboardBtn.setText("Leaderboard");
+        LeaderboardBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LeaderboardBtnActionPerformed(evt);
+            }
+        });
         getContentPane().add(LeaderboardBtn);
         LeaderboardBtn.setBounds(134, 206, 128, 47);
 
@@ -108,6 +113,12 @@ public class MainFrame extends javax.swing.JFrame {
         ProyekPBONew.reInstanceRegister();
         ProyekPBONew.getRegisterFrame().setVisible(true);
     }//GEN-LAST:event_RegisterBtnMouseClicked
+
+    private void LeaderboardBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeaderboardBtnActionPerformed
+        // TODO add your handling code here:
+        ProyekPBONew.getLB().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_LeaderboardBtnActionPerformed
 
     public JButton getLeaderboardBtn() {
         return LeaderboardBtn;
