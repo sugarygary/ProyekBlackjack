@@ -30,8 +30,8 @@ public class FrameAdmin extends javax.swing.JFrame {
         //set button frame admin
         this.getTopUpBtn().setBounds(450, 100, 150, 50);
         this.getCloseAccBtn().setBounds(450, 200, 150, 50);
+        this.getLogoutBtn().setBounds(450, 300, 150, 50);
         this.setLocationRelativeTo(null);
-        this.getLogoutBtn().setBounds(450, 200, 150, 50);
     }
 
     /**
