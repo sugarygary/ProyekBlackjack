@@ -4,6 +4,9 @@
  */
 package proyekpbonew;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+
 /**
  *
  * @author 62812
@@ -15,6 +18,17 @@ public class Leaderboard extends javax.swing.JFrame {
      */
     public Leaderboard() {
         initComponents();
+        this.setTitle("Leaderboard");
+
+        //set width, height frame admin
+        this.setSize(1100, 700);
+
+        //set width, height background image frame admin
+        this.getBackgroundImage().setSize(1100, 700);
+
+        //set button frame admin
+        
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -93,6 +107,30 @@ public class Leaderboard extends javax.swing.JFrame {
                 new Leaderboard().setVisible(true);
             }
         });
+    }
+
+    public JButton getBackBtn() {
+        return BackBtn;
+    }
+
+    public void setBackBtn(JButton BackBtn) {
+        this.BackBtn = BackBtn;
+    }
+
+    public JLabel getBackgroundImage() {
+        return BackgroundImage;
+    }
+
+    public void setBackgroundImage(JLabel BackgroundImage) {
+        this.BackgroundImage = BackgroundImage;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
