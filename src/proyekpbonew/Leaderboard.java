@@ -28,10 +28,14 @@ public class Leaderboard extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         BackBtn = new javax.swing.JButton();
+        BackgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jLabel1.setText("Leaderboard");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(165, 33, 66, 26);
 
         BackBtn.setText("Back");
         BackBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -39,27 +43,12 @@ public class Leaderboard extends javax.swing.JFrame {
                 BackBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(BackBtn);
+        BackBtn.setBounds(165, 174, 66, 25);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(165, 165, 165)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(BackBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(163, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
-                .addComponent(BackBtn)
-                .addGap(104, 104, 104))
-        );
+        BackgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/background.jpg"))); // NOI18N
+        getContentPane().add(BackgroundImage);
+        BackgroundImage.setBounds(0, 0, 400, 310);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -108,6 +97,7 @@ public class Leaderboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackBtn;
+    private javax.swing.JLabel BackgroundImage;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
