@@ -28,10 +28,10 @@ public class MainFrame extends javax.swing.JFrame {
         this.getBackgroundImage().setSize(1100, 700);
 
         //set x, y, width, height button
-        this.getLoginBtn().setBounds(450, 200, 175, 75);
-        this.getRegisterBtn().setBounds(450, 300, 175, 75);
-        this.getLeaderboardBtn().setBounds(450, 400, 175, 75);
-        this.getLogo().setBounds(225, -20, 600, 253);
+        this.getLoginBtn().setBounds(450, 250, 175, 75);
+        this.getRegisterBtn().setBounds(450, 350, 175, 75);
+        this.getLeaderboardBtn().setBounds(450, 450, 175, 75);
+        this.getLogo().setBounds(300, 50, 450, 176);
         this.setLocationRelativeTo(null);
     }
 
@@ -81,7 +81,7 @@ public class MainFrame extends javax.swing.JFrame {
         getContentPane().add(LeaderboardBtn);
         LeaderboardBtn.setBounds(134, 206, 128, 47);
 
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/blackjack.png"))); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/output-onlinepngtools_1 (2).png"))); // NOI18N
         logo.setText("jLabel1");
         getContentPane().add(logo);
         logo.setBounds(-50, 20, 610, 140);
