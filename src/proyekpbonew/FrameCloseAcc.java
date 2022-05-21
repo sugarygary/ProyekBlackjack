@@ -21,21 +21,21 @@ public class FrameCloseAcc extends javax.swing.JFrame {
      */
     public FrameCloseAcc() {
         initComponents();
-        this.setLocationRelativeTo(null);
         this.setTitle("Close Account");
-        
+
         //set width, height frame top up
-        this.setSize(1100,700);
-        
+        this.setSize(1100, 700);
+
         //set width, height background image top up frame
-        this.getBackgroundImage().setSize(1100,700);
-        
+        this.getBackgroundImage().setSize(1100, 700);
+
         //set text field username
         this.getUsernameField().setBounds(450, 100, 150, 50);
-        
-        //set button 
+
+        //set button
         this.getConfBtn().setBounds(450, 200, 150, 50);
         this.getBackBtn().setBounds(450, 300, 150, 50);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -188,8 +188,7 @@ public class FrameCloseAcc extends javax.swing.JFrame {
     public void setBackgroundImage(JLabel backgroundImage) {
         this.backgroundImage = backgroundImage;
     }
-    
-    
+
     public void setUsernameField(JTextField usernameField) {
         this.usernameField = usernameField;
     }

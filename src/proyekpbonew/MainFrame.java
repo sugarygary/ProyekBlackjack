@@ -20,7 +20,7 @@ public class MainFrame extends javax.swing.JFrame {
         initComponents();
         this.setTitle("Blekjek");
         this.setResizable(false);
-        
+
         //set width, height main frame
         this.setSize(1100, 700);
         //set width, height background image
@@ -32,10 +32,6 @@ public class MainFrame extends javax.swing.JFrame {
         this.getLeaderboardBtn().setBounds(450, 300, 175, 75);
         this.setLocationRelativeTo(null);
     }
-
-
-
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -98,14 +94,14 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_LoginBtnActionPerformed
 
     private void LoginBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginBtnMouseClicked
-
         ProyekPBONew.getLogframe().setVisible(false);
+        ProyekPBONew.reInstanceLogin();
         ProyekPBONew.getLoginFrame().setVisible(true);
     }//GEN-LAST:event_LoginBtnMouseClicked
 
     private void RegisterBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterBtnMouseClicked
-
         ProyekPBONew.getLogframe().setVisible(false);
+        ProyekPBONew.reInstanceRegister();
         ProyekPBONew.getRegisterFrame().setVisible(true);
     }//GEN-LAST:event_RegisterBtnMouseClicked
 

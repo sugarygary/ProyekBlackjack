@@ -21,24 +21,23 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
-    public static void setFrameUser(FrameUser frameUser){
+    public static void setFrameUser(FrameUser frameUser) {
         frameUser.setLocationRelativeTo(null);
         frameUser.setTitle("Menu User");
-        
-         //set width, height frame user
+
+        //set width, height frame user
 //        frameUser.setSize(1100,700);
-//        
+//
 //        //set width, height background image frame user
 //        frameUser.getBackgroundImage().setSize(1100,700);
-//        
+//
 //        frameUser
 //        //set x, y, width, height button
 //        frameUser.getGameBtn().setBounds(450, 100, 150, 50);
 //        frameUser.getMainBtn().setBounds(450, 200, 150, 50);
 //        frameUser.getLeaderboardBtn().setBounds(450, 300, 150, 50);
-
     }
-    
+
     public Login() {
         initComponents();
         this.setTitle("Login Page");
@@ -164,7 +163,7 @@ public class Login extends javax.swing.JFrame {
                 if (loginSuccess) {
                     this.setVisible(false);
                     ProyekPBONew.getFrameUser().setVisible(true);
-                    
+
                 } else {
                     JOptionPane.showMessageDialog(this, "Login Failed", "Warning", JOptionPane.WARNING_MESSAGE);
                 }
@@ -298,7 +297,5 @@ public class Login extends javax.swing.JFrame {
     public void setBackButton(JButton backButton) {
         this.backButton = backButton;
     }
-    
-    
-    
+
 }

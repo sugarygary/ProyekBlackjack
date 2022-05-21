@@ -17,23 +17,20 @@ public class FrameAdmin extends javax.swing.JFrame {
     /**
      * Creates new form FrameAdmin
      */
-    
-
-
     public FrameAdmin() {
         initComponents();
-        this.setLocationRelativeTo(null);
         this.setTitle("Menu Admin");
-        
-          //set width, height frame admin
-        this.setSize(1100,700);
-        
+
+        //set width, height frame admin
+        this.setSize(1100, 700);
+
         //set width, height background image frame admin
-        this.getBackgroundImage().setSize(1100,700);
-        
+        this.getBackgroundImage().setSize(1100, 700);
+
         //set button frame admin
         this.getTopUpBtn().setBounds(450, 100, 150, 50);
         this.getCloseAccBtn().setBounds(450, 200, 150, 50);
+        this.setLocationRelativeTo(null);
         this.getLogoutBtn().setBounds(450, 200, 150, 50);
     }
 
@@ -127,8 +124,7 @@ public class FrameAdmin extends javax.swing.JFrame {
     public JButton getLogoutBtn() {
         return logoutBtn;
     }
-    
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton CloseAccBtn;
     private javax.swing.JToggleButton TopUpBtn;

@@ -20,7 +20,6 @@ public class ProyekPBONew {
     private static FrameUser frameUser = new FrameUser();
     private static FrameCloseAcc frameClose = new FrameCloseAcc();
     private static TopUp frameTopUp = new TopUp();
-    
 
     public ProyekPBONew() {
 
@@ -47,6 +46,14 @@ public class ProyekPBONew {
         return loginFrame;
     }
 
+    public static void reInstanceLogin() {
+        loginFrame = new Login();
+    }
+
+    public static void reInstanceRegister() {
+        registerFrame = new Register();
+    }
+
     public static Register getRegisterFrame() {
         return registerFrame;
     }
@@ -66,7 +73,5 @@ public class ProyekPBONew {
     public static TopUp getFrameTopUp() {
         return frameTopUp;
     }
-
-    
 
 }

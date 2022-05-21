@@ -19,20 +19,20 @@ public class FrameUser extends javax.swing.JFrame {
      */
     public FrameUser() {
         initComponents();
-        this.setLocationRelativeTo(null);
         this.setTitle("Menu Admin");
-        
-          //set width, height frame admin
-        this.setSize(1100,700);
-        
+
+        //set width, height frame admin
+        this.setSize(1100, 700);
+
         //set width, height background image frame admin
-        this.getBackgroundImage().setSize(1100,700);
-        
+        this.getBackgroundImage().setSize(1100, 700);
+
         //set button frame admin
         this.getGameBtn().setBounds(450, 100, 150, 50);
         this.getMainBtn().setBounds(450, 200, 150, 50);
         this.getLeaderboardBtn().setBounds(450, 300, 150, 50);
         this.getLogoutBtn().setBounds(450, 400, 150, 50);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -138,10 +138,7 @@ public class FrameUser extends javax.swing.JFrame {
     public JLabel getBackgroundImage() {
         return backgroundImage;
     }
-    
-    
-    
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton GameBtn;
     private javax.swing.JToggleButton LeaderboardBtn;

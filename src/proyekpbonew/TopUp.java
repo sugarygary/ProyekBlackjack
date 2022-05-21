@@ -21,22 +21,22 @@ public class TopUp extends javax.swing.JFrame {
      */
     public TopUp() {
         initComponents();
-        this.setLocationRelativeTo(null);
         this.setTitle("Close Account");
 
         //set width, height frame top up
-        this.setSize(1100,700);
-        
+        this.setSize(1100, 700);
+
         //set width, height background image top up frame
-        this.getBackgroundImage().setSize(1100,700);
-        
+        this.getBackgroundImage().setSize(1100, 700);
+
         //set text field frame top up
         this.getUsernameField().setBounds(450, 100, 150, 50);
         this.getTopUpValue().setBounds(450, 200, 150, 50);
-        
+
         //set button frame top up
         this.getConfBtn().setBounds(450, 300, 150, 50);
         this.getBackBtn().setBounds(450, 400, 150, 50);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -185,8 +185,7 @@ public class TopUp extends javax.swing.JFrame {
     public void setTopUpValue(JTextField topUpValue) {
         this.topUpValue = topUpValue;
     }
-    
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackBtn;
     private javax.swing.JToggleButton ConfBtn;
