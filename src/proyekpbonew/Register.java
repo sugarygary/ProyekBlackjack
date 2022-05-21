@@ -30,9 +30,9 @@ public class Register extends javax.swing.JFrame {
         this.getBackgroundImage().setSize(1100, 700);
 
         //set x, y, width, height textfield
-        this.getUsernameField().setBounds(450, 100, 150, 50);
-        this.getPasswordField().setBounds(450, 200, 150, 50);
-        this.getConfirmPassword().setBounds(450, 300, 150, 50);
+        this.getUsernameField().setBounds(450, 115, 150, 25);
+        this.getPasswordField().setBounds(450, 215, 150, 25);
+        this.getConfirmPassword().setBounds(450, 315, 150, 25);
 
         //set x, y, width, height button
         this.getRegisterBtn().setBounds(450, 400, 150, 50);

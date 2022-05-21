@@ -31,8 +31,8 @@ public class TopUp extends javax.swing.JFrame {
         this.getBackgroundImage().setSize(1100, 700);
 
         //set text field frame top up
-        this.getUsernameField().setBounds(450, 200, 150, 50);
-        this.getTopUpValue().setBounds(450, 300, 150, 50);
+        this.getUsernameField().setBounds(450, 215, 150, 25);
+        this.getTopUpValue().setBounds(450, 315, 150, 25);
 
         //set button frame top up
         this.getConfBtn().setBounds(450, 400, 150, 50);

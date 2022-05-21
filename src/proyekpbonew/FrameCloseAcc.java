@@ -32,7 +32,7 @@ public class FrameCloseAcc extends javax.swing.JFrame {
         this.getBackgroundImage().setSize(1100, 700);
 
         //set text field username
-        this.getUsernameField().setBounds(450, 200, 150, 50);
+        this.getUsernameField().setBounds(450, 215, 150, 25);
 
         //set button
         this.getConfBtn().setBounds(450, 300, 150, 50);
