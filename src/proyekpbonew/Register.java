@@ -39,9 +39,9 @@ public class Register extends javax.swing.JFrame {
         this.getBackButton().setBounds(450, 500, 150, 50);
 
         //set x,y, tulisan username,password
-        this.getLabelUsername().setBounds(390, 100, 150, 50);
-        this.getLabelPassword().setBounds(390, 200, 150, 50);
-        this.getLabelConfirm().setBounds(330, 300, 150, 50);
+        this.getLabelUsername().setBounds(340, 100, 150, 50);
+        this.getLabelPassword().setBounds(345, 200, 150, 50);
+        this.getLabelConfirm().setBounds(273, 300, 175, 50);
         this.setLocationRelativeTo(null);
     }
 
@@ -79,7 +79,7 @@ public class Register extends javax.swing.JFrame {
             }
         });
         getContentPane().add(registerBtn);
-        registerBtn.setBounds(157, 209, 73, 22);
+        registerBtn.setBounds(157, 209, 75, 25);
         getContentPane().add(passwordField);
         passwordField.setBounds(192, 121, 132, 22);
 
@@ -91,17 +91,23 @@ public class Register extends javax.swing.JFrame {
         getContentPane().add(usernameField);
         usernameField.setBounds(192, 81, 132, 22);
 
+        labelUsername.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelUsername.setForeground(java.awt.Color.lightGray);
         labelUsername.setText("Username :");
         getContentPane().add(labelUsername);
-        labelUsername.setBounds(83, 84, 76, 16);
+        labelUsername.setBounds(83, 84, 76, 25);
 
+        labelPassword.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelPassword.setForeground(java.awt.Color.lightGray);
         labelPassword.setText("Password : ");
         getContentPane().add(labelPassword);
-        labelPassword.setBounds(83, 124, 70, 16);
+        labelPassword.setBounds(83, 124, 70, 25);
 
+        labelConfirm.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelConfirm.setForeground(java.awt.Color.lightGray);
         labelConfirm.setText("Confirm Password :");
         getContentPane().add(labelConfirm);
-        labelConfirm.setBounds(83, 161, 101, 22);
+        labelConfirm.setBounds(83, 161, 163, 22);
 
         confirmPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,7 +124,7 @@ public class Register extends javax.swing.JFrame {
             }
         });
         getContentPane().add(backButton);
-        backButton.setBounds(157, 241, 73, 22);
+        backButton.setBounds(157, 241, 73, 25);
 
         backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/background.jpg"))); // NOI18N
         getContentPane().add(backgroundImage);

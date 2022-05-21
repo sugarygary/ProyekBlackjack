@@ -58,8 +58,8 @@ public class Login extends javax.swing.JFrame {
         this.getBackButton().setBounds(450, 400, 150, 50);
 
         //set x,y, tulisan username,password
-        this.getLabelUsername().setBounds(390, 100, 150, 50);
-        this.getLabelPassword().setBounds(390, 200, 150, 50);
+        this.getLabelUsername().setBounds(345, 100, 150, 50);
+        this.getLabelPassword().setBounds(350, 200, 150, 50);
         this.setLocationRelativeTo(null);
     }
 
@@ -93,13 +93,17 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(usernameField);
         usernameField.setBounds(165, 109, 132, 22);
 
+        labelUsername.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelUsername.setForeground(java.awt.Color.lightGray);
         labelUsername.setText("Username :");
         getContentPane().add(labelUsername);
-        labelUsername.setBounds(84, 112, 76, 16);
+        labelUsername.setBounds(84, 112, 76, 25);
 
+        labelPassword.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelPassword.setForeground(java.awt.Color.lightGray);
         labelPassword.setText("Password : ");
         getContentPane().add(labelPassword);
-        labelPassword.setBounds(84, 152, 70, 16);
+        labelPassword.setBounds(84, 152, 70, 25);
 
         loginBtn.setText("Login");
         loginBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -113,7 +117,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(loginBtn);
-        loginBtn.setBounds(155, 205, 72, 22);
+        loginBtn.setBounds(155, 205, 63, 25);
 
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +126,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(backButton);
-        backButton.setBounds(155, 248, 72, 22);
+        backButton.setBounds(155, 248, 57, 25);
 
         backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/background.jpg"))); // NOI18N
         getContentPane().add(backgroundImage);

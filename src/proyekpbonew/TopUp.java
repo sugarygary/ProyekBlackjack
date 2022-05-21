@@ -25,18 +25,23 @@ public class TopUp extends javax.swing.JFrame {
 
         //set width, height frame top up
         this.setSize(1100, 700);
-
+        this.getTitleTU().setBounds(390, 70, 300, 50);
+        
         //set width, height background image top up frame
         this.getBackgroundImage().setSize(1100, 700);
 
         //set text field frame top up
-        this.getUsernameField().setBounds(450, 100, 150, 50);
-        this.getTopUpValue().setBounds(450, 200, 150, 50);
+        this.getUsernameField().setBounds(450, 200, 150, 50);
+        this.getTopUpValue().setBounds(450, 300, 150, 50);
 
         //set button frame top up
-        this.getConfBtn().setBounds(450, 300, 150, 50);
-        this.getBackBtn().setBounds(450, 400, 150, 50);
+        this.getConfBtn().setBounds(450, 400, 150, 50);
+        this.getBackBtn().setBounds(450, 500, 150, 50);
         this.setLocationRelativeTo(null);
+        
+        //set x, y user saldo
+        this.getUserTU().setBounds(340, 200, 150, 50);
+        this.getSaldoTU().setBounds(380, 300, 150, 50);
     }
 
     /**
@@ -51,9 +56,9 @@ public class TopUp extends javax.swing.JFrame {
         ConfBtn = new javax.swing.JToggleButton();
         BackBtn = new javax.swing.JButton();
         usernameField = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        UserTU = new javax.swing.JLabel();
+        TitleTU = new javax.swing.JLabel();
+        SaldoTU = new javax.swing.JLabel();
         topUpValue = new javax.swing.JTextField();
         backgroundImage = new javax.swing.JLabel();
 
@@ -86,17 +91,23 @@ public class TopUp extends javax.swing.JFrame {
         getContentPane().add(usernameField);
         usernameField.setBounds(118, 104, 160, 22);
 
-        jLabel1.setText("Username :");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(47, 103, 66, 25);
+        UserTU.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        UserTU.setForeground(java.awt.Color.lightGray);
+        UserTU.setText("Username :");
+        getContentPane().add(UserTU);
+        UserTU.setBounds(47, 103, 66, 25);
 
-        jLabel2.setText("Top Up Account");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(155, 35, 86, 26);
+        TitleTU.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        TitleTU.setForeground(java.awt.Color.lightGray);
+        TitleTU.setText("Top Up Account");
+        getContentPane().add(TitleTU);
+        TitleTU.setBounds(155, 35, 272, 26);
 
-        jLabel3.setText("Saldo :");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(47, 149, 58, 16);
+        SaldoTU.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        SaldoTU.setForeground(java.awt.Color.lightGray);
+        SaldoTU.setText("Saldo :");
+        getContentPane().add(SaldoTU);
+        SaldoTU.setBounds(47, 149, 58, 25);
         getContentPane().add(topUpValue);
         topUpValue.setBounds(117, 146, 161, 22);
 
@@ -186,13 +197,37 @@ public class TopUp extends javax.swing.JFrame {
         this.topUpValue = topUpValue;
     }
 
+    public JLabel getSaldoTU() {
+        return SaldoTU;
+    }
+
+    public void setSaldoTU(JLabel SaldoTU) {
+        this.SaldoTU = SaldoTU;
+    }
+
+    public JLabel getTitleTU() {
+        return TitleTU;
+    }
+
+    public void setTitleTU(JLabel TitleTU) {
+        this.TitleTU = TitleTU;
+    }
+
+    public JLabel getUserTU() {
+        return UserTU;
+    }
+
+    public void setUserTU(JLabel UserTU) {
+        this.UserTU = UserTU;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackBtn;
     private javax.swing.JToggleButton ConfBtn;
+    private javax.swing.JLabel SaldoTU;
+    private javax.swing.JLabel TitleTU;
+    private javax.swing.JLabel UserTU;
     private javax.swing.JLabel backgroundImage;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField topUpValue;
     private javax.swing.JTextField usernameField;
     // End of variables declaration//GEN-END:variables

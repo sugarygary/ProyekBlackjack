@@ -22,19 +22,21 @@ public class FrameCloseAcc extends javax.swing.JFrame {
     public FrameCloseAcc() {
         initComponents();
         this.setTitle("Close Account");
-
+        this.getTitleCA().setBounds(400, 70, 250, 50);
         //set width, height frame top up
         this.setSize(1100, 700);
-
+        
+        this.getUserCA().setBounds(340, 200, 200, 50);
+        
         //set width, height background image top up frame
         this.getBackgroundImage().setSize(1100, 700);
 
         //set text field username
-        this.getUsernameField().setBounds(450, 100, 150, 50);
+        this.getUsernameField().setBounds(450, 200, 150, 50);
 
         //set button
-        this.getConfBtn().setBounds(450, 200, 150, 50);
-        this.getBackBtn().setBounds(450, 300, 150, 50);
+        this.getConfBtn().setBounds(450, 300, 150, 50);
+        this.getBackBtn().setBounds(450, 400, 150, 50);
         this.setLocationRelativeTo(null);
     }
 
@@ -47,8 +49,8 @@ public class FrameCloseAcc extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        TitleCA = new javax.swing.JLabel();
+        UserCA = new javax.swing.JLabel();
         usernameField = new javax.swing.JTextField();
         ConfBtn = new javax.swing.JToggleButton();
         BackBtn = new javax.swing.JButton();
@@ -57,13 +59,17 @@ public class FrameCloseAcc extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel2.setText("Close Account");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(155, 35, 75, 26);
+        TitleCA.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        TitleCA.setForeground(java.awt.Color.lightGray);
+        TitleCA.setText("Close Account");
+        getContentPane().add(TitleCA);
+        TitleCA.setBounds(155, 35, 238, 26);
 
-        jLabel1.setText("Username :");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(47, 103, 66, 25);
+        UserCA.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        UserCA.setForeground(java.awt.Color.lightGray);
+        UserCA.setText("Username :");
+        getContentPane().add(UserCA);
+        UserCA.setBounds(47, 103, 66, 25);
 
         usernameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,9 +145,9 @@ public class FrameCloseAcc extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackBtn;
     private javax.swing.JToggleButton ConfBtn;
+    private javax.swing.JLabel TitleCA;
+    private javax.swing.JLabel UserCA;
     private javax.swing.JLabel backgroundImage;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField usernameField;
     // End of variables declaration//GEN-END:variables
 
@@ -153,21 +159,23 @@ public class FrameCloseAcc extends javax.swing.JFrame {
         this.ConfBtn = ConfBtn;
     }
 
-    public JLabel getjLabel1() {
-        return jLabel1;
+    public JLabel getTitleCA() {
+        return TitleCA;
     }
 
-    public void setjLabel1(JLabel jLabel1) {
-        this.jLabel1 = jLabel1;
+    public void setTitleCA(JLabel TitleCA) {
+        this.TitleCA = TitleCA;
     }
 
-    public JLabel getjLabel2() {
-        return jLabel2;
+    public JLabel getUserCA() {
+        return UserCA;
     }
 
-    public void setjLabel2(JLabel jLabel2) {
-        this.jLabel2 = jLabel2;
+    public void setUserCA(JLabel UserCA) {
+        this.UserCA = UserCA;
     }
+
+
 
     public JTextField getUsernameField() {
         return usernameField;

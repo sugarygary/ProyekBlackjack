@@ -54,6 +54,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         TitleAdm.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        TitleAdm.setForeground(java.awt.Color.lightGray);
         TitleAdm.setText("Welcome, Admin!");
         getContentPane().add(TitleAdm);
         TitleAdm.setBounds(157, 56, 300, 37);

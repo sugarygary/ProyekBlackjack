@@ -19,7 +19,7 @@ public class FrameUser extends javax.swing.JFrame {
      */
     public FrameUser() {
         initComponents();
-        this.setTitle("Menu Admin");
+        this.setTitle("Menu User");
 
         //set width, height frame admin
         this.setSize(1100, 700);
