@@ -20,17 +20,18 @@ public class FrameAdmin extends javax.swing.JFrame {
     public FrameAdmin() {
         initComponents();
         this.setTitle("Menu Admin");
-
+        this.getTitleAdm().setBounds(375, 100, 350, 50);
         //set width, height frame admin
         this.setSize(1100, 700);
+        this.setResizable(false);
 
         //set width, height background image frame admin
         this.getBackgroundImage().setSize(1100, 700);
 
         //set button frame admin
-        this.getTopUpBtn().setBounds(450, 100, 150, 50);
-        this.getCloseAccBtn().setBounds(450, 200, 150, 50);
-        this.getLogoutBtn().setBounds(450, 300, 150, 50);
+        this.getTopUpBtn().setBounds(450, 200, 150, 50);
+        this.getCloseAccBtn().setBounds(450, 300, 150, 50);
+        this.getLogoutBtn().setBounds(450, 400, 150, 50);
         this.setLocationRelativeTo(null);
     }
 
@@ -43,7 +44,7 @@ public class FrameAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        TitleAdm = new javax.swing.JLabel();
         TopUpBtn = new javax.swing.JToggleButton();
         CloseAccBtn = new javax.swing.JToggleButton();
         logoutBtn = new javax.swing.JButton();
@@ -52,9 +53,10 @@ public class FrameAdmin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel1.setText("Welcome, Admin!");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(157, 56, 94, 37);
+        TitleAdm.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        TitleAdm.setText("Welcome, Admin!");
+        getContentPane().add(TitleAdm);
+        TitleAdm.setBounds(157, 56, 300, 37);
 
         TopUpBtn.setText("Top-Up Saldo");
         TopUpBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -102,7 +104,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         ProyekPBONew.getFrameClose().setVisible(true);
 
     }//GEN-LAST:event_CloseAccBtnActionPerformed
-
+    
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
 
         this.setVisible(false);
@@ -125,11 +127,19 @@ public class FrameAdmin extends javax.swing.JFrame {
         return logoutBtn;
     }
 
+    public JLabel getTitleAdm() {
+        return TitleAdm;
+    }
+
+    public void setTitleAdm(JLabel TitleAdm) {
+        this.TitleAdm = TitleAdm;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton CloseAccBtn;
+    private javax.swing.JLabel TitleAdm;
     private javax.swing.JToggleButton TopUpBtn;
     private javax.swing.JLabel backgroundImage;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton logoutBtn;
     // End of variables declaration//GEN-END:variables
 }

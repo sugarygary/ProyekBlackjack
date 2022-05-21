@@ -19,7 +19,7 @@ public class Leaderboard extends javax.swing.JFrame {
     public Leaderboard() {
         initComponents();
         this.setTitle("Leaderboard");
-        this.getTitleLB().setBounds(490, 100, 150, 50);
+        this.getTitleLB().setBounds(420, 100, 250, 50);
         //set width, height frame admin
         this.setSize(1100, 700);
 
@@ -47,9 +47,10 @@ public class Leaderboard extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
+        TitleLB.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         TitleLB.setText("Leaderboard");
         getContentPane().add(TitleLB);
-        TitleLB.setBounds(165, 33, 66, 26);
+        TitleLB.setBounds(165, 33, 210, 26);
 
         BackBtn.setText("Back");
         BackBtn.addActionListener(new java.awt.event.ActionListener() {
