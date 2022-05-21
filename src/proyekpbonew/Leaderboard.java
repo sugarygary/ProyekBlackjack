@@ -19,7 +19,7 @@ public class Leaderboard extends javax.swing.JFrame {
     public Leaderboard() {
         initComponents();
         this.setTitle("Leaderboard");
-
+        this.getTitleLB().setBounds(490, 100, 150, 50);
         //set width, height frame admin
         this.setSize(1100, 700);
 
@@ -27,7 +27,7 @@ public class Leaderboard extends javax.swing.JFrame {
         this.getBackgroundImage().setSize(1100, 700);
 
         //set button frame admin
-        
+        this.getBackBtn().setBounds(450, 300, 150, 50);
         this.setLocationRelativeTo(null);
     }
 
@@ -40,16 +40,16 @@ public class Leaderboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        TitleLB = new javax.swing.JLabel();
         BackBtn = new javax.swing.JButton();
         BackgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel1.setText("Leaderboard");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(165, 33, 66, 26);
+        TitleLB.setText("Leaderboard");
+        getContentPane().add(TitleLB);
+        TitleLB.setBounds(165, 33, 66, 26);
 
         BackBtn.setText("Back");
         BackBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -125,17 +125,19 @@ public class Leaderboard extends javax.swing.JFrame {
         this.BackgroundImage = BackgroundImage;
     }
 
-    public JLabel getjLabel1() {
-        return jLabel1;
+    public JLabel getTitleLB() {
+        return TitleLB;
     }
 
-    public void setjLabel1(JLabel jLabel1) {
-        this.jLabel1 = jLabel1;
+    public void setTitleLB(JLabel TitleLB) {
+        this.TitleLB = TitleLB;
     }
+
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackBtn;
     private javax.swing.JLabel BackgroundImage;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel TitleLB;
     // End of variables declaration//GEN-END:variables
 }

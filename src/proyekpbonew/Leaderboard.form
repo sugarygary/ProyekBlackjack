@@ -24,7 +24,7 @@
     <Property name="useNullLayout" type="boolean" value="true"/>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="TitleLB">
       <Properties>
         <Property name="text" type="java.lang.String" value="Leaderboard"/>
       </Properties>
