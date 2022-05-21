@@ -83,7 +83,7 @@ public class FrameAdmin extends javax.swing.JFrame {
         getContentPane().add(logoutBtn);
         logoutBtn.setBounds(124, 207, 162, 46);
 
-        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyekpbonew/background.jpg"))); // NOI18N
+        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/background.jpg"))); // NOI18N
         getContentPane().add(backgroundImage);
         backgroundImage.setBounds(0, 0, 400, 300);
 

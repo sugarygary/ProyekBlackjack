@@ -79,7 +79,7 @@ public class Register extends javax.swing.JFrame {
             }
         });
         getContentPane().add(registerBtn);
-        registerBtn.setBounds(157, 209, 75, 25);
+        registerBtn.setBounds(157, 209, 73, 22);
         getContentPane().add(passwordField);
         passwordField.setBounds(192, 121, 132, 22);
 
@@ -118,9 +118,9 @@ public class Register extends javax.swing.JFrame {
             }
         });
         getContentPane().add(backButton);
-        backButton.setBounds(157, 241, 73, 25);
+        backButton.setBounds(157, 241, 73, 22);
 
-        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyekpbonew/background.jpg"))); // NOI18N
+        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/background.jpg"))); // NOI18N
         getContentPane().add(backgroundImage);
         backgroundImage.setBounds(0, 0, 400, 310);
 
@@ -254,8 +254,6 @@ public class Register extends javax.swing.JFrame {
     public void setLabelUsername(JLabel labelUsername) {
         this.labelUsername = labelUsername;
     }
-    
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;

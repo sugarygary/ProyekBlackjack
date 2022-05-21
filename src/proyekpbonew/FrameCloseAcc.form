@@ -84,7 +84,7 @@
     <Component class="javax.swing.JLabel" name="backgroundImage">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/proyekpbonew/background.jpg"/>
+          <Image iconType="3" name="/res/background.jpg"/>
         </Property>
       </Properties>
       <Constraints>

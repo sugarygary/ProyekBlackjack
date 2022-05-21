@@ -65,7 +65,7 @@ public class FrameUser extends javax.swing.JFrame {
             }
         });
         getContentPane().add(GameBtn);
-        GameBtn.setBounds(169, 71, 65, 25);
+        GameBtn.setBounds(169, 71, 63, 22);
 
         MainBtn.setText("MAIN");
         MainBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -74,7 +74,7 @@ public class FrameUser extends javax.swing.JFrame {
             }
         });
         getContentPane().add(MainBtn);
-        MainBtn.setBounds(169, 114, 63, 25);
+        MainBtn.setBounds(169, 114, 60, 22);
 
         LeaderboardBtn.setText("LEADERBOARD");
         LeaderboardBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -83,7 +83,7 @@ public class FrameUser extends javax.swing.JFrame {
             }
         });
         getContentPane().add(LeaderboardBtn);
-        LeaderboardBtn.setBounds(144, 157, 115, 25);
+        LeaderboardBtn.setBounds(144, 157, 112, 22);
 
         logoutBtn.setText("LOGOUT");
         logoutBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -92,9 +92,9 @@ public class FrameUser extends javax.swing.JFrame {
             }
         });
         getContentPane().add(logoutBtn);
-        logoutBtn.setBounds(164, 210, 79, 25);
+        logoutBtn.setBounds(164, 210, 76, 22);
 
-        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyekpbonew/background.jpg"))); // NOI18N
+        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/background.jpg"))); // NOI18N
         getContentPane().add(backgroundImage);
         backgroundImage.setBounds(0, 0, 410, 310);
 

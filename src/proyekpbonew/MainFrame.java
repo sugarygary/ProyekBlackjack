@@ -6,6 +6,7 @@ package proyekpbonew;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.border.Border;
 
 /**
  *
@@ -27,9 +28,10 @@ public class MainFrame extends javax.swing.JFrame {
         this.getBackgroundImage().setSize(1100, 700);
 
         //set x, y, width, height button
-        this.getLoginBtn().setBounds(450, 100, 175, 75);
-        this.getRegisterBtn().setBounds(450, 200, 175, 75);
-        this.getLeaderboardBtn().setBounds(450, 300, 175, 75);
+        this.getLoginBtn().setBounds(450, 200, 175, 75);
+        this.getRegisterBtn().setBounds(450, 300, 175, 75);
+        this.getLeaderboardBtn().setBounds(450, 400, 175, 75);
+        this.getLogo().setBounds(225, -20, 600, 253);
         this.setLocationRelativeTo(null);
     }
 
@@ -45,12 +47,13 @@ public class MainFrame extends javax.swing.JFrame {
         LoginBtn = new javax.swing.JButton();
         RegisterBtn = new javax.swing.JButton();
         LeaderboardBtn = new javax.swing.JButton();
-        TITLE = new javax.swing.JLabel();
+        logo = new javax.swing.JLabel();
         backgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
+        LoginBtn.setBackground(new java.awt.Color(235, 103, 8));
         LoginBtn.setText("Login");
         LoginBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -78,11 +81,12 @@ public class MainFrame extends javax.swing.JFrame {
         getContentPane().add(LeaderboardBtn);
         LeaderboardBtn.setBounds(134, 206, 128, 47);
 
-        TITLE.setText("Blekjek");
-        getContentPane().add(TITLE);
-        TITLE.setBounds(178, 42, 38, 16);
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/blackjack.png"))); // NOI18N
+        logo.setText("jLabel1");
+        getContentPane().add(logo);
+        logo.setBounds(-50, 20, 610, 140);
 
-        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyekpbonew/background.jpg"))); // NOI18N
+        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/background.jpg"))); // NOI18N
         getContentPane().add(backgroundImage);
         backgroundImage.setBounds(0, 0, 400, 300);
 
@@ -113,20 +117,16 @@ public class MainFrame extends javax.swing.JFrame {
         this.LeaderboardBtn = LeaderboardBtn;
     }
 
+    public JLabel getLogo() {
+        return logo;
+    }
+
     public JButton getLoginBtn() {
         return LoginBtn;
     }
 
     public void setLoginBtn(JButton LoginBtn) {
         this.LoginBtn = LoginBtn;
-    }
-
-    public JLabel getTITLE() {
-        return TITLE;
-    }
-
-    public void setTITLE(JLabel TITLE) {
-        this.TITLE = TITLE;
     }
 
     public JButton getjButton1() {
@@ -157,7 +157,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton LeaderboardBtn;
     private javax.swing.JButton LoginBtn;
     private javax.swing.JButton RegisterBtn;
-    private javax.swing.JLabel TITLE;
     private javax.swing.JLabel backgroundImage;
+    private javax.swing.JLabel logo;
     // End of variables declaration//GEN-END:variables
 }

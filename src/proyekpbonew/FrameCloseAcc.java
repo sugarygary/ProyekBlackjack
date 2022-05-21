@@ -91,7 +91,7 @@ public class FrameCloseAcc extends javax.swing.JFrame {
         getContentPane().add(BackBtn);
         BackBtn.setBounds(139, 204, 111, 30);
 
-        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyekpbonew/background.jpg"))); // NOI18N
+        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/background.jpg"))); // NOI18N
         getContentPane().add(backgroundImage);
         backgroundImage.setBounds(0, 0, 400, 300);
 

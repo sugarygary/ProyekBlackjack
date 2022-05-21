@@ -100,7 +100,7 @@ public class TopUp extends javax.swing.JFrame {
         getContentPane().add(topUpValue);
         topUpValue.setBounds(117, 146, 161, 22);
 
-        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyekpbonew/background.jpg"))); // NOI18N
+        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/background.jpg"))); // NOI18N
         getContentPane().add(backgroundImage);
         backgroundImage.setBounds(0, 0, 400, 300);
 

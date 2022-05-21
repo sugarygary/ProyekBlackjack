@@ -113,7 +113,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(loginBtn);
-        loginBtn.setBounds(155, 205, 63, 25);
+        loginBtn.setBounds(155, 205, 72, 22);
 
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -122,9 +122,9 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(backButton);
-        backButton.setBounds(155, 248, 57, 25);
+        backButton.setBounds(155, 248, 72, 22);
 
-        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyekpbonew/background.jpg"))); // NOI18N
+        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/background.jpg"))); // NOI18N
         getContentPane().add(backgroundImage);
         backgroundImage.setBounds(0, 0, 400, 310);
 
