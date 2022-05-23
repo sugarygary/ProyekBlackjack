@@ -5,7 +5,10 @@
 package proyekpbonew;
 
 import java.util.ArrayList;
-
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+import javax.sound.sampled.*;
 /**
  *
  * @author Gary
@@ -26,9 +29,16 @@ public class ProyekPBONew {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         new ProyekPBONew();
         logframe.setVisible(true);
+        File file  = new File("BGM.wav");
+        AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioStream);
+        
+        clip.start();
+        clip.loop(clip.LOOP_CONTINUOUSLY);
     }
 
     public static ArrayList<User> getUserList() {
