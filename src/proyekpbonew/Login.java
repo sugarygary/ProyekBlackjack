@@ -159,6 +159,7 @@ public class Login extends javax.swing.JFrame {
                 if (username.equals(ProyekPBONew.getUserList().get(i).getUsername())
                         && password.equals(ProyekPBONew.getUserList().get(i).getPassword())) {
                     loginSuccess = true;
+                    ProyekPBONew.setLoggedUser(ProyekPBONew.getUserList().get(i));
                 }
             }
             if (password.equals("") || username.equals("")) {

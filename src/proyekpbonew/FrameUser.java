@@ -106,7 +106,10 @@ public class FrameUser extends javax.swing.JFrame {
     }//GEN-LAST:event_GameBtnActionPerformed
 
     private void MainBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainBtnActionPerformed
-        // TODO add your handling code here:
+        if (ProyekPBONew.getLoggedUser().getSaldo() > 0) {
+            ProyekPBONew.getFrameGame().setVisible(true);
+            ProyekPBONew.getFrameGame().getCurSaldo().setText("$" + ProyekPBONew.getLoggedUser().getSaldo());
+        }
     }//GEN-LAST:event_MainBtnActionPerformed
 
     private void LeaderboardBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeaderboardBtnActionPerformed

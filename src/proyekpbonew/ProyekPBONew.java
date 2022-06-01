@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 import javax.sound.sampled.*;
+
 /**
  *
  * @author Gary
@@ -24,19 +25,32 @@ public class ProyekPBONew {
     private static FrameCloseAcc frameClose = new FrameCloseAcc();
     private static TopUp frameTopUp = new TopUp();
     private static Leaderboard LB = new Leaderboard();
+    private static User LoggedUser;
+    private static Game frameGame = new Game();
+
+    public static Game getFrameGame() {
+        return frameGame;
+    }
 
     public ProyekPBONew() {
+//        frameGame.setVisible(true);
+    }
 
+    public static User getLoggedUser() {
+        return LoggedUser;
+    }
+
+    public static void setLoggedUser(User LoggedUser) {
+        ProyekPBONew.LoggedUser = LoggedUser;
     }
 
     public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         new ProyekPBONew();
         logframe.setVisible(true);
-        File file  = new File("BGM.wav");
+        File file = new File("BGM.wav");
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
         Clip clip = AudioSystem.getClip();
         clip.open(audioStream);
-        
         clip.start();
         clip.loop(clip.LOOP_CONTINUOUSLY);
     }
@@ -92,6 +106,5 @@ public class ProyekPBONew {
     public static void setLB(Leaderboard LB) {
         ProyekPBONew.LB = LB;
     }
-    
 
 }
