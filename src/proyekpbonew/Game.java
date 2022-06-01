@@ -4,6 +4,9 @@
  */
 package proyekpbonew;
 
+import java.awt.Image;
+import java.util.Stack;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -27,6 +30,20 @@ public class Game extends javax.swing.JFrame {
         this.getCurSaldo().setBounds(675, 100, 250, 50);
         this.getSaldoLabel().setBounds(590, 100, 250, 50);
         this.setLocationRelativeTo(null);
+        this.jLabel1.setVisible(false);
+        Stack<Card> Deck = new Stack<>();
+        for (int i = 1; i <= 13; i++) {
+            Deck.push(new Clubs(i));
+        }
+        for (int i = 1; i <= 13; i++) {
+            Deck.push(new Clubs(i));
+        }
+        for (int i = 1; i <= 13; i++) {
+            Deck.push(new Clubs(i));
+        }
+        for (int i = 1; i <= 13; i++) {
+            Deck.push(new Clubs(i));
+        }
     }
 
     public JLabel getSaldoLabel() {
@@ -96,9 +113,10 @@ public class Game extends javax.swing.JFrame {
         getContentPane().add(SaldoLabel);
         SaldoLabel.setBounds(90, 80, 37, 32);
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png"))); // NOI18N
         jLabel1.setText("tes");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(70, 240, 15, 16);
+        jLabel1.setBounds(30, 290, 110, 90);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -112,6 +130,13 @@ public class Game extends javax.swing.JFrame {
             this.getBetConfirm().setVisible(false);
             this.getCurSaldo().setVisible(false);
             this.getSaldoLabel().setVisible(false);
+            this.jLabel1.setVisible(true);
+            ImageIcon imageIcon = new ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png")); // load the image to a imageIcon
+            Image image = imageIcon.getImage(); // transform it
+            Image newimg = image.getScaledInstance(100, 149, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+            imageIcon = new ImageIcon(newimg);  // transform it back
+            jLabel1.setIcon(imageIcon);
+            jLabel1.setBounds(100, 100, 100, 149);
         } else {
             JOptionPane.showMessageDialog(this, "Invalid Input", "Warning", JOptionPane.WARNING_MESSAGE);
         }

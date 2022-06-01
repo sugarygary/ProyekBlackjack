@@ -91,11 +91,14 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="tes"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="70" y="240" width="-1" height="-1"/>
+          <AbsoluteConstraints x="30" y="290" width="110" height="90"/>
         </Constraint>
       </Constraints>
     </Component>

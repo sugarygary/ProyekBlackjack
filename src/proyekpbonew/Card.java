@@ -4,13 +4,20 @@
  */
 package proyekpbonew;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Inghwe
  */
-public class Card {
+public abstract class Card {
 
-    private int value;
+    protected int value;
+    protected ImageIcon png;
+
+    public Card(int value) {
+        this.value = value;
+    }
 
     public int getValue() {
         return value;
@@ -18,6 +25,14 @@ public class Card {
 
     public void setValue(int value) {
         this.value = value;
+    }
+
+    public ImageIcon getPng() {
+        return png;
+    }
+
+    public void setPng(ImageIcon png) {
+        this.png = png;
     }
 
 }
