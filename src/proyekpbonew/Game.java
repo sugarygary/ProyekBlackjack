@@ -63,6 +63,7 @@ public class Game extends javax.swing.JFrame {
         BetConfirm = new javax.swing.JButton();
         CurSaldo = new javax.swing.JLabel();
         SaldoLabel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -83,7 +84,7 @@ public class Game extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BetConfirm);
-        BetConfirm.setBounds(130, 170, 72, 22);
+        BetConfirm.setBounds(140, 150, 72, 22);
 
         CurSaldo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         CurSaldo.setText("jLabel1");
@@ -94,6 +95,10 @@ public class Game extends javax.swing.JFrame {
         SaldoLabel.setText("Saldo :");
         getContentPane().add(SaldoLabel);
         SaldoLabel.setBounds(90, 80, 37, 32);
+
+        jLabel1.setText("tes");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(70, 240, 15, 16);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -118,5 +123,6 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JLabel BetLabel;
     private javax.swing.JLabel CurSaldo;
     private javax.swing.JLabel SaldoLabel;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
