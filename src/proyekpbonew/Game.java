@@ -151,6 +151,27 @@ public class Game extends javax.swing.JFrame {
         dealerCard2.setIcon(dealerDeck.get(1).getPng());
         boolean gameover = false;
     }
+    
+    public int getValue(ArrayList<Card> deck){
+        int total = 0;
+        int asCtr = 0;
+        for (int i = 0 ; i < deck.size() ; i++){
+            if (deck.get(i).getValue() == 1){
+                asCtr++;
+                total += 11;
+            }
+            else if (deck.get(i).getValue() > 10){
+                total += 10;
+            }
+            else {
+                total += deck.get(i).getValue();
+            }
+        }
+        if (total > 21){
+            total -= asCtr * 10;
+        }
+        return total;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -174,6 +195,7 @@ public class Game extends javax.swing.JFrame {
         HitBtn = new javax.swing.JButton();
         StandBtn = new javax.swing.JButton();
         playerCard3 = new javax.swing.JLabel();
+        playerVal = new javax.swing.JLabel();
         BackgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -254,6 +276,10 @@ public class Game extends javax.swing.JFrame {
         getContentPane().add(playerCard3);
         playerCard3.setBounds(350, 450, 0, 0);
 
+        playerVal.setText("Player : ");
+        getContentPane().add(playerVal);
+        playerVal.setBounds(350, 510, 41, 16);
+
         BackgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/background.jpg"))); // NOI18N
         getContentPane().add(BackgroundImage);
         BackgroundImage.setBounds(0, 0, 630, 430);
@@ -295,5 +321,6 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JLabel playerCard1;
     private javax.swing.JLabel playerCard2;
     private javax.swing.JLabel playerCard3;
+    private javax.swing.JLabel playerVal;
     // End of variables declaration//GEN-END:variables
 }
