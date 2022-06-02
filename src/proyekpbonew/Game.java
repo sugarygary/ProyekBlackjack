@@ -24,11 +24,17 @@ public class Game extends javax.swing.JFrame {
     public Game() {
         initComponents();
         this.setSize(1920, 1080);
-        this.getBetField().setBounds(675, 162, 250, 30);
-        this.getBetLabel().setBounds(550, 150, 250, 50);
-        this.getBetConfirm().setBounds(590, 400, 250, 50);
-        this.getCurSaldo().setBounds(675, 100, 250, 50);
-        this.getSaldoLabel().setBounds(590, 100, 250, 50);
+        this.getBetField().setBounds(925, 262, 350, 30);
+        this.getBetLabel().setBounds(750, 250, 350, 50);
+        this.getBetConfirm().setBounds(840, 500, 350, 50);
+        this.getCurSaldo().setBounds(925, 200, 350, 50);
+        this.getSaldoLabel().setBounds(790, 200, 350, 50);
+        ImageIcon imageIcon = new ImageIcon(getClass().getResource("/res/background.jpg")); // load the image to a imageIcon
+        Image image = imageIcon.getImage(); // transform it
+        Image newimg = image.getScaledInstance(1920, 1080, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+        imageIcon = new ImageIcon(newimg);  // transform it back
+        BackgroundImage.setIcon(imageIcon);
+        BackgroundImage.setBounds(0, 0, 1920, 1080);
         this.setLocationRelativeTo(null);
         this.jLabel1.setVisible(false);
         Stack<Card> Deck = new Stack<>();
@@ -66,6 +72,15 @@ public class Game extends javax.swing.JFrame {
         return BetLabel;
     }
 
+    public JLabel getBackgroundImage() {
+        return BackgroundImage;
+    }
+
+    public void setBackgroundImage(JLabel BackgroundImage) {
+        this.BackgroundImage = BackgroundImage;
+    }
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -81,16 +96,23 @@ public class Game extends javax.swing.JFrame {
         CurSaldo = new javax.swing.JLabel();
         SaldoLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        BackgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        BetLabel.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        BetLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        BetLabel.setForeground(java.awt.Color.lightGray);
         BetLabel.setText("Input Bet :");
         getContentPane().add(BetLabel);
         BetLabel.setBounds(93, 107, 65, 32);
 
         BetField.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        BetField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BetFieldActionPerformed(evt);
+            }
+        });
         getContentPane().add(BetField);
         BetField.setBounds(180, 110, 103, 20);
 
@@ -103,12 +125,13 @@ public class Game extends javax.swing.JFrame {
         getContentPane().add(BetConfirm);
         BetConfirm.setBounds(140, 150, 72, 22);
 
-        CurSaldo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        CurSaldo.setText("jLabel1");
+        CurSaldo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        CurSaldo.setForeground(java.awt.Color.lightGray);
         getContentPane().add(CurSaldo);
-        CurSaldo.setBounds(140, 80, 37, 32);
+        CurSaldo.setBounds(140, 80, 37, 0);
 
-        SaldoLabel.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        SaldoLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        SaldoLabel.setForeground(java.awt.Color.lightGray);
         SaldoLabel.setText("Saldo :");
         getContentPane().add(SaldoLabel);
         SaldoLabel.setBounds(90, 80, 37, 32);
@@ -117,6 +140,10 @@ public class Game extends javax.swing.JFrame {
         jLabel1.setText("tes");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(30, 290, 110, 90);
+
+        BackgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/background.jpg"))); // NOI18N
+        getContentPane().add(BackgroundImage);
+        BackgroundImage.setBounds(0, 0, 630, 430);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -142,7 +169,12 @@ public class Game extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BetConfirmActionPerformed
 
+    private void BetFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BetFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BetFieldActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BackgroundImage;
     private javax.swing.JButton BetConfirm;
     private javax.swing.JTextField BetField;
     private javax.swing.JLabel BetLabel;
