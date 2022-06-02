@@ -28,7 +28,7 @@ public class Hearts extends Card {
             imageIcon = new ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Hearts/" + this.value + ".png")); // load the image to a imageIcon
         }
         Image image = imageIcon.getImage(); // transform it
-        Image newimg = image.getScaledInstance(100, 149, java.awt.Image.SCALE_SMOOTH);
+        Image newimg = image.getScaledInstance(150, 224, java.awt.Image.SCALE_SMOOTH);
         imageIcon = new ImageIcon(newimg); // transform it back
         this.png = imageIcon;
     }

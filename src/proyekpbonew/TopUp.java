@@ -26,7 +26,7 @@ public class TopUp extends javax.swing.JFrame {
         //set width, height frame top up
         this.setSize(1100, 700);
         this.getTitleTU().setBounds(390, 70, 300, 50);
-        
+
         //set width, height background image top up frame
         this.getBackgroundImage().setSize(1100, 700);
 
@@ -38,7 +38,7 @@ public class TopUp extends javax.swing.JFrame {
         this.getConfBtn().setBounds(450, 400, 150, 50);
         this.getBackBtn().setBounds(450, 500, 150, 50);
         this.setLocationRelativeTo(null);
-        
+
         //set x, y user saldo
         this.getUserTU().setBounds(340, 200, 150, 50);
         this.getSaldoTU().setBounds(380, 300, 150, 50);
@@ -142,6 +142,8 @@ public class TopUp extends javax.swing.JFrame {
             if (checkUser) {
                 ProyekPBONew.getUserList().get(tempTopUp).setSaldo(ProyekPBONew.getUserList().get(tempTopUp).getSaldo() + Integer.parseInt(this.topUpValue.getText()));
                 JOptionPane.showMessageDialog(this, "Top Up Success!", "Success", JOptionPane.PLAIN_MESSAGE);
+                this.usernameField.setText("");
+                this.topUpValue.setText("");
             } else {
                 JOptionPane.showMessageDialog(this, "User not found!", "Warning", JOptionPane.WARNING_MESSAGE);
             }
@@ -151,6 +153,8 @@ public class TopUp extends javax.swing.JFrame {
     private void BackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackBtnActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
+        this.usernameField.setText("");
+        this.topUpValue.setText("");
         FrameAdmin frameAdmin = new FrameAdmin();
         frameAdmin.setVisible(true);
         frameAdmin.setLocationRelativeTo(null);

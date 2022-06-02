@@ -5,6 +5,8 @@
 package proyekpbonew;
 
 import java.awt.Image;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Stack;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -36,20 +38,12 @@ public class Game extends javax.swing.JFrame {
         BackgroundImage.setIcon(imageIcon);
         BackgroundImage.setBounds(0, 0, 1920, 1080);
         this.setLocationRelativeTo(null);
-        this.jLabel1.setVisible(false);
-        Stack<Card> Deck = new Stack<>();
-        for (int i = 1; i <= 13; i++) {
-            Deck.push(new Clubs(i));
-        }
-//        for (int i = 1; i <= 13; i++) {
-//            Deck.push(new Spades(i));
-//        }
-//        for (int i = 1; i <= 13; i++) {
-//            Deck.push(new Diamonds(i));
-//        }
-//        for (int i = 1; i <= 13; i++) {
-//            Deck.push(new Hearts(i));
-//        }
+        this.dealerCard1.setVisible(false);
+        this.dealerCard2.setVisible(false);
+        this.playerCard1.setVisible(false);
+        this.playerCard2.setVisible(false);
+        this.COVERDEALER.setVisible(false);
+
     }
 
     public JLabel getSaldoLabel() {
@@ -79,7 +73,56 @@ public class Game extends javax.swing.JFrame {
     public void setBackgroundImage(JLabel BackgroundImage) {
         this.BackgroundImage = BackgroundImage;
     }
-    
+
+    private void StartGame() {
+        //game
+        this.getBetField().setVisible(false);
+        this.getBetLabel().setVisible(false);
+        this.getBetConfirm().setVisible(false);
+        this.getCurSaldo().setVisible(false);
+        this.getSaldoLabel().setVisible(false);
+        this.dealerCard1.setVisible(true);
+        this.dealerCard2.setVisible(true);
+        this.playerCard1.setVisible(true);
+        this.playerCard2.setVisible(true);
+        this.COVERDEALER.setVisible(true);
+        ImageIcon imageIcon = new ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png")); // load the image to a imageIcon
+        Image image = imageIcon.getImage(); // transform it
+        Image newimg = image.getScaledInstance(150, 224, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+        imageIcon = new ImageIcon(newimg);  // transform it back
+        COVERDEALER.setIcon(imageIcon);
+        dealerCard1.setBounds(100, 100, 150, 224);
+        COVERDEALER.setBounds(100, 100, 150, 224);
+        dealerCard2.setBounds(300, 100, 150, 224);
+        playerCard1.setBounds(100, 400, 150, 224);
+        playerCard2.setBounds(300, 400, 150, 224);
+        Stack<Card> Deck = new Stack<>();
+        for (int i = 1; i <= 13; i++) {
+            Deck.push(new Clubs(i));
+        }
+        for (int i = 1; i <= 13; i++) {
+            Deck.push(new Spades(i));
+        }
+        for (int i = 1; i <= 13; i++) {
+            Deck.push(new Diamonds(i));
+        }
+        for (int i = 1; i <= 13; i++) {
+            Deck.push(new Hearts(i));
+        }
+        Collections.shuffle(Deck);
+        Collections.shuffle(Deck);
+        ArrayList<Card> playerDeck = new ArrayList<>();
+        ArrayList<Card> dealerDeck = new ArrayList<>();
+        dealerDeck.add(Deck.pop());
+        dealerDeck.add(Deck.pop());
+        playerDeck.add(Deck.pop());
+        playerDeck.add(Deck.pop());
+        playerCard1.setIcon(playerDeck.get(0).getPng());
+        playerCard2.setIcon(playerDeck.get(1).getPng());
+        dealerCard1.setIcon(dealerDeck.get(0).getPng());
+        dealerCard2.setIcon(dealerDeck.get(1).getPng());
+        boolean gameover = false;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -95,7 +138,11 @@ public class Game extends javax.swing.JFrame {
         BetConfirm = new javax.swing.JButton();
         CurSaldo = new javax.swing.JLabel();
         SaldoLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        COVERDEALER = new javax.swing.JLabel();
+        dealerCard1 = new javax.swing.JLabel();
+        dealerCard2 = new javax.swing.JLabel();
+        playerCard1 = new javax.swing.JLabel();
+        playerCard2 = new javax.swing.JLabel();
         BackgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -136,10 +183,30 @@ public class Game extends javax.swing.JFrame {
         getContentPane().add(SaldoLabel);
         SaldoLabel.setBounds(90, 80, 37, 32);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png"))); // NOI18N
-        jLabel1.setText("tes");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(30, 290, 110, 90);
+        COVERDEALER.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png"))); // NOI18N
+        COVERDEALER.setText("tes");
+        getContentPane().add(COVERDEALER);
+        COVERDEALER.setBounds(670, 390, 110, 90);
+
+        dealerCard1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png"))); // NOI18N
+        dealerCard1.setText("tes");
+        getContentPane().add(dealerCard1);
+        dealerCard1.setBounds(10, 360, 110, 90);
+
+        dealerCard2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png"))); // NOI18N
+        dealerCard2.setText("tes");
+        getContentPane().add(dealerCard2);
+        dealerCard2.setBounds(160, 360, 110, 90);
+
+        playerCard1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png"))); // NOI18N
+        playerCard1.setText("tes");
+        getContentPane().add(playerCard1);
+        playerCard1.setBounds(10, 530, 110, 90);
+
+        playerCard2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png"))); // NOI18N
+        playerCard2.setText("tes");
+        getContentPane().add(playerCard2);
+        playerCard2.setBounds(160, 520, 110, 90);
 
         BackgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/background.jpg"))); // NOI18N
         getContentPane().add(BackgroundImage);
@@ -151,19 +218,7 @@ public class Game extends javax.swing.JFrame {
     private void BetConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BetConfirmActionPerformed
         // TODO add your handling code here
         if (ProyekPBONew.getLoggedUser().getSaldo() >= Integer.parseInt(BetField.getText())) {
-            //game
-            this.getBetField().setVisible(false);
-            this.getBetLabel().setVisible(false);
-            this.getBetConfirm().setVisible(false);
-            this.getCurSaldo().setVisible(false);
-            this.getSaldoLabel().setVisible(false);
-            this.jLabel1.setVisible(true);
-            ImageIcon imageIcon = new ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png")); // load the image to a imageIcon
-            Image image = imageIcon.getImage(); // transform it
-            Image newimg = image.getScaledInstance(100, 149, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
-            imageIcon = new ImageIcon(newimg);  // transform it back
-            jLabel1.setIcon(imageIcon);
-            jLabel1.setBounds(100, 100, 100, 149);
+            StartGame();
         } else {
             JOptionPane.showMessageDialog(this, "Invalid Input", "Warning", JOptionPane.WARNING_MESSAGE);
         }
@@ -178,8 +233,12 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JButton BetConfirm;
     private javax.swing.JTextField BetField;
     private javax.swing.JLabel BetLabel;
+    private javax.swing.JLabel COVERDEALER;
     private javax.swing.JLabel CurSaldo;
     private javax.swing.JLabel SaldoLabel;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel dealerCard1;
+    private javax.swing.JLabel dealerCard2;
+    private javax.swing.JLabel playerCard1;
+    private javax.swing.JLabel playerCard2;
     // End of variables declaration//GEN-END:variables
 }

@@ -157,9 +157,8 @@ public class Register extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Confirm password doesn't match!", "Warning", JOptionPane.WARNING_MESSAGE);
             } else {
                 ProyekPBONew.getUserList().add(new User(uname, pass));
-                this.setVisible(false);
                 JOptionPane.showMessageDialog(this, "Succesfully registered", "Success", JOptionPane.PLAIN_MESSAGE);
-
+                this.setVisible(false);
                 ProyekPBONew.getLogframe().setVisible(true);
             }
         } else {
@@ -176,7 +175,6 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_confirmPasswordActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-
         ProyekPBONew.getLogframe().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_backButtonActionPerformed
