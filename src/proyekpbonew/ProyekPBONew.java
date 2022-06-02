@@ -28,6 +28,10 @@ public class ProyekPBONew {
     private static User LoggedUser;
     private static Game frameGame = new Game();
 
+    public static void setFrameGame(Game frameGame) {
+        ProyekPBONew.frameGame = frameGame;
+    }
+
     public static Game getFrameGame() {
         return frameGame;
     }

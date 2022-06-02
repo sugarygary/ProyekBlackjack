@@ -18,7 +18,6 @@ import javax.swing.JTextField;
  *
  * @author Gary
  */
-
 public class Game extends javax.swing.JFrame {
 
     /**
@@ -27,6 +26,7 @@ public class Game extends javax.swing.JFrame {
     private ArrayList<Card> playerDeck = new ArrayList<>();
     private ArrayList<Card> dealerDeck = new ArrayList<>();
     private Stack<Card> Deck = new Stack<>();
+
     public Game() {
         initComponents();
         this.setSize(1920, 1080);
@@ -50,6 +50,8 @@ public class Game extends javax.swing.JFrame {
         this.COVERDEALER.setVisible(false);
         this.getHitBtn().setVisible(false);
         this.getStandBtn().setVisible(false);
+        this.playerVal.setVisible(false);
+        this.dealerVal.setVisible(false);
     }
 
     public JLabel getSaldoLabel() {
@@ -96,8 +98,6 @@ public class Game extends javax.swing.JFrame {
         this.StandBtn = StandBtn;
     }
 
-    
-    
     private void StartGame() {
         //game
         this.getBetField().setVisible(false);
@@ -113,6 +113,10 @@ public class Game extends javax.swing.JFrame {
         this.playerCard2.setVisible(true);
         this.playerCard3.setVisible(true);
         this.COVERDEALER.setVisible(true);
+        this.playerVal.setVisible(true);
+        this.dealerVal.setVisible(true);
+        this.playerVal.setBounds(100, 760, 150, 40);
+        this.dealerVal.setBounds(100, 50, 150, 40);
         ImageIcon imageIcon = new ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png")); // load the image to a imageIcon
         Image image = imageIcon.getImage(); // transform it
         Image newimg = image.getScaledInstance(150, 224, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
@@ -126,7 +130,7 @@ public class Game extends javax.swing.JFrame {
         playerCard3.setBounds(500, 400, 150, 224);
         this.getHitBtn().setBounds(750, 750, 150, 40);
         this.getStandBtn().setBounds(1000, 750, 150, 40);
-        
+
         for (int i = 1; i <= 13; i++) {
             Deck.push(new Clubs(i));
         }
@@ -149,25 +153,24 @@ public class Game extends javax.swing.JFrame {
         playerCard2.setIcon(playerDeck.get(1).getPng());
         dealerCard1.setIcon(dealerDeck.get(0).getPng());
         dealerCard2.setIcon(dealerDeck.get(1).getPng());
-        boolean gameover = false;
+        this.playerVal.setText("Player : " + getValue(playerDeck));
+        this.dealerVal.setText("Dealer : ?");
     }
-    
-    public int getValue(ArrayList<Card> deck){
+
+    public int getValue(ArrayList<Card> deck) {
         int total = 0;
         int asCtr = 0;
-        for (int i = 0 ; i < deck.size() ; i++){
-            if (deck.get(i).getValue() == 1){
+        for (int i = 0; i < deck.size(); i++) {
+            if (deck.get(i).getValue() == 1) {
                 asCtr++;
                 total += 11;
-            }
-            else if (deck.get(i).getValue() > 10){
+            } else if (deck.get(i).getValue() > 10) {
                 total += 10;
-            }
-            else {
+            } else {
                 total += deck.get(i).getValue();
             }
         }
-        if (total > 21){
+        if (total > 21) {
             total -= asCtr * 10;
         }
         return total;
@@ -196,6 +199,7 @@ public class Game extends javax.swing.JFrame {
         StandBtn = new javax.swing.JButton();
         playerCard3 = new javax.swing.JLabel();
         playerVal = new javax.swing.JLabel();
+        dealerVal = new javax.swing.JLabel();
         BackgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -276,9 +280,17 @@ public class Game extends javax.swing.JFrame {
         getContentPane().add(playerCard3);
         playerCard3.setBounds(350, 450, 0, 0);
 
+        playerVal.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        playerVal.setForeground(java.awt.Color.lightGray);
         playerVal.setText("Player : ");
         getContentPane().add(playerVal);
-        playerVal.setBounds(350, 510, 41, 16);
+        playerVal.setBounds(570, 30, 140, 16);
+
+        dealerVal.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        dealerVal.setForeground(java.awt.Color.lightGray);
+        dealerVal.setText("Dealer :");
+        getContentPane().add(dealerVal);
+        dealerVal.setBounds(570, 80, 140, 16);
 
         BackgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/background.jpg"))); // NOI18N
         getContentPane().add(BackgroundImage);
@@ -303,7 +315,22 @@ public class Game extends javax.swing.JFrame {
     private void HitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HitBtnActionPerformed
         // TODO add your handling code here:
         playerDeck.add(Deck.pop());
-        playerCard3.setIcon(playerDeck.get(2).getPng());
+        int ctr = playerDeck.size();
+        if (ctr == 3) {
+            playerCard3.setIcon(playerDeck.get(2).getPng());
+        } else if (ctr == 4) {
+//            playerCard4.setIcon(playerDeck.get(2).getPng()); coming soon
+        }
+        this.playerVal.setText("Player : " + getValue(playerDeck));
+
+        if (getValue(playerDeck) > 21) {
+            ProyekPBONew.getLoggedUser().setSaldo(ProyekPBONew.getLoggedUser().getSaldo() - Integer.parseInt(this.BetField.getText()));
+            JOptionPane.showMessageDialog(this, "You Lost", "Game", JOptionPane.PLAIN_MESSAGE);
+            ProyekPBONew.setFrameGame(new Game());
+            this.setVisible(false);
+            ProyekPBONew.getFrameUser().setVisible(true);
+            System.out.println("SUDAH BERAKHIR");
+        }
     }//GEN-LAST:event_HitBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -318,6 +345,7 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JButton StandBtn;
     private javax.swing.JLabel dealerCard1;
     private javax.swing.JLabel dealerCard2;
+    private javax.swing.JLabel dealerVal;
     private javax.swing.JLabel playerCard1;
     private javax.swing.JLabel playerCard2;
     private javax.swing.JLabel playerCard3;
