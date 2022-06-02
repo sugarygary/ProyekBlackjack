@@ -43,7 +43,8 @@ public class Game extends javax.swing.JFrame {
         this.playerCard1.setVisible(false);
         this.playerCard2.setVisible(false);
         this.COVERDEALER.setVisible(false);
-
+        this.getHitBtn().setVisible(false);
+        this.getStandBtn().setVisible(false);
     }
 
     public JLabel getSaldoLabel() {
@@ -74,6 +75,24 @@ public class Game extends javax.swing.JFrame {
         this.BackgroundImage = BackgroundImage;
     }
 
+    public JButton getHitBtn() {
+        return HitBtn;
+    }
+
+    public void setHitBtn(JButton HitBtn) {
+        this.HitBtn = HitBtn;
+    }
+
+    public JButton getStandBtn() {
+        return StandBtn;
+    }
+
+    public void setStandBtn(JButton StandBtn) {
+        this.StandBtn = StandBtn;
+    }
+
+    
+    
     private void StartGame() {
         //game
         this.getBetField().setVisible(false);
@@ -81,6 +100,8 @@ public class Game extends javax.swing.JFrame {
         this.getBetConfirm().setVisible(false);
         this.getCurSaldo().setVisible(false);
         this.getSaldoLabel().setVisible(false);
+        this.getHitBtn().setVisible(true);
+        this.getStandBtn().setVisible(true);
         this.dealerCard1.setVisible(true);
         this.dealerCard2.setVisible(true);
         this.playerCard1.setVisible(true);
@@ -96,6 +117,8 @@ public class Game extends javax.swing.JFrame {
         dealerCard2.setBounds(300, 100, 150, 224);
         playerCard1.setBounds(100, 400, 150, 224);
         playerCard2.setBounds(300, 400, 150, 224);
+        this.getHitBtn().setBounds(750, 750, 150, 40);
+        this.getStandBtn().setBounds(1000, 750, 150, 40);
         Stack<Card> Deck = new Stack<>();
         for (int i = 1; i <= 13; i++) {
             Deck.push(new Clubs(i));
@@ -143,6 +166,8 @@ public class Game extends javax.swing.JFrame {
         dealerCard2 = new javax.swing.JLabel();
         playerCard1 = new javax.swing.JLabel();
         playerCard2 = new javax.swing.JLabel();
+        HitBtn = new javax.swing.JButton();
+        StandBtn = new javax.swing.JButton();
         BackgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -208,6 +233,19 @@ public class Game extends javax.swing.JFrame {
         getContentPane().add(playerCard2);
         playerCard2.setBounds(160, 520, 110, 90);
 
+        HitBtn.setText("Hit");
+        HitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HitBtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(HitBtn);
+        HitBtn.setBounds(400, 420, 75, 22);
+
+        StandBtn.setText("Stand");
+        getContentPane().add(StandBtn);
+        StandBtn.setBounds(510, 420, 72, 22);
+
         BackgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/background.jpg"))); // NOI18N
         getContentPane().add(BackgroundImage);
         BackgroundImage.setBounds(0, 0, 630, 430);
@@ -228,6 +266,10 @@ public class Game extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BetFieldActionPerformed
 
+    private void HitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HitBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HitBtnActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BackgroundImage;
     private javax.swing.JButton BetConfirm;
@@ -235,7 +277,9 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JLabel BetLabel;
     private javax.swing.JLabel COVERDEALER;
     private javax.swing.JLabel CurSaldo;
+    private javax.swing.JButton HitBtn;
     private javax.swing.JLabel SaldoLabel;
+    private javax.swing.JButton StandBtn;
     private javax.swing.JLabel dealerCard1;
     private javax.swing.JLabel dealerCard2;
     private javax.swing.JLabel playerCard1;
