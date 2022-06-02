@@ -18,11 +18,15 @@ import javax.swing.JTextField;
  *
  * @author Gary
  */
+
 public class Game extends javax.swing.JFrame {
 
     /**
      * Creates new form Game
      */
+    private ArrayList<Card> playerDeck = new ArrayList<>();
+    private ArrayList<Card> dealerDeck = new ArrayList<>();
+    private Stack<Card> Deck = new Stack<>();
     public Game() {
         initComponents();
         this.setSize(1920, 1080);
@@ -42,6 +46,7 @@ public class Game extends javax.swing.JFrame {
         this.dealerCard2.setVisible(false);
         this.playerCard1.setVisible(false);
         this.playerCard2.setVisible(false);
+        this.playerCard3.setVisible(false);
         this.COVERDEALER.setVisible(false);
         this.getHitBtn().setVisible(false);
         this.getStandBtn().setVisible(false);
@@ -106,6 +111,7 @@ public class Game extends javax.swing.JFrame {
         this.dealerCard2.setVisible(true);
         this.playerCard1.setVisible(true);
         this.playerCard2.setVisible(true);
+        this.playerCard3.setVisible(true);
         this.COVERDEALER.setVisible(true);
         ImageIcon imageIcon = new ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png")); // load the image to a imageIcon
         Image image = imageIcon.getImage(); // transform it
@@ -117,9 +123,10 @@ public class Game extends javax.swing.JFrame {
         dealerCard2.setBounds(300, 100, 150, 224);
         playerCard1.setBounds(100, 400, 150, 224);
         playerCard2.setBounds(300, 400, 150, 224);
+        playerCard3.setBounds(500, 400, 150, 224);
         this.getHitBtn().setBounds(750, 750, 150, 40);
         this.getStandBtn().setBounds(1000, 750, 150, 40);
-        Stack<Card> Deck = new Stack<>();
+        
         for (int i = 1; i <= 13; i++) {
             Deck.push(new Clubs(i));
         }
@@ -134,8 +141,6 @@ public class Game extends javax.swing.JFrame {
         }
         Collections.shuffle(Deck);
         Collections.shuffle(Deck);
-        ArrayList<Card> playerDeck = new ArrayList<>();
-        ArrayList<Card> dealerDeck = new ArrayList<>();
         dealerDeck.add(Deck.pop());
         dealerDeck.add(Deck.pop());
         playerDeck.add(Deck.pop());
@@ -168,6 +173,7 @@ public class Game extends javax.swing.JFrame {
         playerCard2 = new javax.swing.JLabel();
         HitBtn = new javax.swing.JButton();
         StandBtn = new javax.swing.JButton();
+        playerCard3 = new javax.swing.JLabel();
         BackgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -245,6 +251,8 @@ public class Game extends javax.swing.JFrame {
         StandBtn.setText("Stand");
         getContentPane().add(StandBtn);
         StandBtn.setBounds(510, 420, 72, 22);
+        getContentPane().add(playerCard3);
+        playerCard3.setBounds(350, 450, 0, 0);
 
         BackgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/background.jpg"))); // NOI18N
         getContentPane().add(BackgroundImage);
@@ -268,6 +276,8 @@ public class Game extends javax.swing.JFrame {
 
     private void HitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HitBtnActionPerformed
         // TODO add your handling code here:
+        playerDeck.add(Deck.pop());
+        playerCard3.setIcon(playerDeck.get(2).getPng());
     }//GEN-LAST:event_HitBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -284,5 +294,6 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JLabel dealerCard2;
     private javax.swing.JLabel playerCard1;
     private javax.swing.JLabel playerCard2;
+    private javax.swing.JLabel playerCard3;
     // End of variables declaration//GEN-END:variables
 }
