@@ -35,15 +35,15 @@ public class Game extends javax.swing.JFrame {
         for (int i = 1; i <= 13; i++) {
             Deck.push(new Clubs(i));
         }
-        for (int i = 1; i <= 13; i++) {
-            Deck.push(new Clubs(i));
-        }
-        for (int i = 1; i <= 13; i++) {
-            Deck.push(new Clubs(i));
-        }
-        for (int i = 1; i <= 13; i++) {
-            Deck.push(new Clubs(i));
-        }
+//        for (int i = 1; i <= 13; i++) {
+//            Deck.push(new Spades(i));
+//        }
+//        for (int i = 1; i <= 13; i++) {
+//            Deck.push(new Diamonds(i));
+//        }
+//        for (int i = 1; i <= 13; i++) {
+//            Deck.push(new Hearts(i));
+//        }
     }
 
     public JLabel getSaldoLabel() {
