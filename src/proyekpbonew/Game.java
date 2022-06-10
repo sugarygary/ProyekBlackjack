@@ -8,6 +8,8 @@ import java.awt.Image;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Stack;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -44,9 +46,16 @@ public class Game extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.dealerCard1.setVisible(false);
         this.dealerCard2.setVisible(false);
+        this.dealerCard3.setVisible(false);
+        this.dealerCard4.setVisible(false);
+        this.dealerCard5.setVisible(false);
+        this.dealerCard6.setVisible(false);
         this.playerCard1.setVisible(false);
         this.playerCard2.setVisible(false);
         this.playerCard3.setVisible(false);
+        this.playerCard4.setVisible(false);
+        this.playerCard5.setVisible(false);
+        this.playerCard6.setVisible(false);
         this.COVERDEALER.setVisible(false);
         this.getHitBtn().setVisible(false);
         this.getStandBtn().setVisible(false);
@@ -111,7 +120,6 @@ public class Game extends javax.swing.JFrame {
         this.dealerCard2.setVisible(true);
         this.playerCard1.setVisible(true);
         this.playerCard2.setVisible(true);
-        this.playerCard3.setVisible(true);
         this.COVERDEALER.setVisible(true);
         this.playerVal.setVisible(true);
         this.dealerVal.setVisible(true);
@@ -125,9 +133,16 @@ public class Game extends javax.swing.JFrame {
         dealerCard1.setBounds(100, 100, 150, 224);
         COVERDEALER.setBounds(100, 100, 150, 224);
         dealerCard2.setBounds(300, 100, 150, 224);
+        dealerCard3.setBounds(500, 100, 150, 224);
+        dealerCard4.setBounds(700, 100, 150, 224);
+        dealerCard5.setBounds(900, 100, 150, 224);
+        dealerCard6.setBounds(1100, 100, 150, 224);
         playerCard1.setBounds(100, 400, 150, 224);
         playerCard2.setBounds(300, 400, 150, 224);
         playerCard3.setBounds(500, 400, 150, 224);
+        playerCard4.setBounds(700, 400, 150, 224);
+        playerCard5.setBounds(900, 400, 150, 224);
+        playerCard6.setBounds(1100, 400, 150, 224);
         this.getHitBtn().setBounds(750, 750, 150, 40);
         this.getStandBtn().setBounds(1000, 750, 150, 40);
 
@@ -200,6 +215,13 @@ public class Game extends javax.swing.JFrame {
         playerCard3 = new javax.swing.JLabel();
         playerVal = new javax.swing.JLabel();
         dealerVal = new javax.swing.JLabel();
+        playerCard4 = new javax.swing.JLabel();
+        playerCard5 = new javax.swing.JLabel();
+        playerCard6 = new javax.swing.JLabel();
+        dealerCard3 = new javax.swing.JLabel();
+        dealerCard4 = new javax.swing.JLabel();
+        dealerCard5 = new javax.swing.JLabel();
+        dealerCard6 = new javax.swing.JLabel();
         BackgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -253,7 +275,7 @@ public class Game extends javax.swing.JFrame {
         dealerCard2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png"))); // NOI18N
         dealerCard2.setText("tes");
         getContentPane().add(dealerCard2);
-        dealerCard2.setBounds(160, 360, 110, 90);
+        dealerCard2.setBounds(140, 360, 110, 90);
 
         playerCard1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png"))); // NOI18N
         playerCard1.setText("tes");
@@ -263,7 +285,7 @@ public class Game extends javax.swing.JFrame {
         playerCard2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png"))); // NOI18N
         playerCard2.setText("tes");
         getContentPane().add(playerCard2);
-        playerCard2.setBounds(160, 520, 110, 90);
+        playerCard2.setBounds(160, 530, 110, 90);
 
         HitBtn.setText("Hit");
         HitBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -272,11 +294,16 @@ public class Game extends javax.swing.JFrame {
             }
         });
         getContentPane().add(HitBtn);
-        HitBtn.setBounds(400, 420, 75, 22);
+        HitBtn.setBounds(480, 420, 75, 22);
 
         StandBtn.setText("Stand");
+        StandBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StandBtnActionPerformed(evt);
+            }
+        });
         getContentPane().add(StandBtn);
-        StandBtn.setBounds(510, 420, 72, 22);
+        StandBtn.setBounds(590, 420, 72, 22);
         getContentPane().add(playerCard3);
         playerCard3.setBounds(350, 450, 0, 0);
 
@@ -291,6 +318,41 @@ public class Game extends javax.swing.JFrame {
         dealerVal.setText("Dealer :");
         getContentPane().add(dealerVal);
         dealerVal.setBounds(570, 80, 140, 16);
+
+        playerCard4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png"))); // NOI18N
+        playerCard4.setText("tes");
+        getContentPane().add(playerCard4);
+        playerCard4.setBounds(280, 530, 110, 90);
+
+        playerCard5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png"))); // NOI18N
+        playerCard5.setText("tes");
+        getContentPane().add(playerCard5);
+        playerCard5.setBounds(400, 530, 110, 90);
+
+        playerCard6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png"))); // NOI18N
+        playerCard6.setText("tes");
+        getContentPane().add(playerCard6);
+        playerCard6.setBounds(530, 530, 110, 90);
+
+        dealerCard3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png"))); // NOI18N
+        dealerCard3.setText("tes");
+        getContentPane().add(dealerCard3);
+        dealerCard3.setBounds(260, 360, 110, 90);
+
+        dealerCard4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png"))); // NOI18N
+        dealerCard4.setText("tes");
+        getContentPane().add(dealerCard4);
+        dealerCard4.setBounds(380, 360, 110, 90);
+
+        dealerCard5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png"))); // NOI18N
+        dealerCard5.setText("tes");
+        getContentPane().add(dealerCard5);
+        dealerCard5.setBounds(490, 360, 110, 90);
+
+        dealerCard6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/Flat-Playing-Cards-Set/Flat Playing Cards Set/Back Covers/Pomegranate.png"))); // NOI18N
+        dealerCard6.setText("tes");
+        getContentPane().add(dealerCard6);
+        dealerCard6.setBounds(590, 360, 110, 90);
 
         BackgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/background.jpg"))); // NOI18N
         getContentPane().add(BackgroundImage);
@@ -318,8 +380,16 @@ public class Game extends javax.swing.JFrame {
         int ctr = playerDeck.size();
         if (ctr == 3) {
             playerCard3.setIcon(playerDeck.get(2).getPng());
+            playerCard3.setVisible(true);
         } else if (ctr == 4) {
-//            playerCard4.setIcon(playerDeck.get(2).getPng()); coming soon
+            playerCard4.setIcon(playerDeck.get(3).getPng());
+            playerCard4.setVisible(true);
+        } else if (ctr == 5) {
+            playerCard5.setIcon(playerDeck.get(4).getPng());
+            playerCard5.setVisible(true);
+        } else if (ctr == 6) {
+            playerCard6.setIcon(playerDeck.get(5).getPng());
+            playerCard6.setVisible(true);
         }
         this.playerVal.setText("Player : " + getValue(playerDeck));
 
@@ -333,6 +403,61 @@ public class Game extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_HitBtnActionPerformed
 
+    private void StandBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StandBtnActionPerformed
+        // TODO add your handling code here:
+        COVERDEALER.setVisible(false);
+        this.HitBtn.setVisible(false);
+        this.dealerVal.setText("Dealer : " + getValue(dealerDeck));
+        while (getValue(dealerDeck) < 19) {
+            DealerHit();
+        }
+        if (getValue(dealerDeck) > 21) {
+            ProyekPBONew.getLoggedUser().setSaldo(ProyekPBONew.getLoggedUser().getSaldo() + Integer.parseInt(this.BetField.getText()));
+            JOptionPane.showMessageDialog(this, "You Won!", "Game", JOptionPane.PLAIN_MESSAGE);
+            ProyekPBONew.setFrameGame(new Game());
+            this.setVisible(false);
+            ProyekPBONew.getFrameUser().setVisible(true);
+        } else {
+            if (getValue(playerDeck) > getValue(dealerDeck)) {
+                ProyekPBONew.getLoggedUser().setSaldo(ProyekPBONew.getLoggedUser().getSaldo() + Integer.parseInt(this.BetField.getText()));
+                JOptionPane.showMessageDialog(this, "You Won!", "Game", JOptionPane.PLAIN_MESSAGE);
+                ProyekPBONew.setFrameGame(new Game());
+                this.setVisible(false);
+                ProyekPBONew.getFrameUser().setVisible(true);
+            } else if (getValue(playerDeck) < getValue(dealerDeck)) {
+                ProyekPBONew.getLoggedUser().setSaldo(ProyekPBONew.getLoggedUser().getSaldo() - Integer.parseInt(this.BetField.getText()));
+                JOptionPane.showMessageDialog(this, "You Lost!", "Game", JOptionPane.PLAIN_MESSAGE);
+                ProyekPBONew.setFrameGame(new Game());
+                this.setVisible(false);
+                ProyekPBONew.getFrameUser().setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Draw!", "Game", JOptionPane.PLAIN_MESSAGE);
+                ProyekPBONew.setFrameGame(new Game());
+                this.setVisible(false);
+                ProyekPBONew.getFrameUser().setVisible(true);
+            }
+        }
+
+    }//GEN-LAST:event_StandBtnActionPerformed
+
+    private void DealerHit() {
+        dealerDeck.add(Deck.pop());
+        int ctr = dealerDeck.size();
+        if (ctr == 3) {
+            dealerCard3.setIcon(dealerDeck.get(2).getPng());
+            dealerCard3.setVisible(true);
+        } else if (ctr == 4) {
+            dealerCard4.setIcon(dealerDeck.get(3).getPng());
+            dealerCard4.setVisible(true);
+        } else if (ctr == 5) {
+            dealerCard5.setIcon(dealerDeck.get(4).getPng());
+            dealerCard5.setVisible(true);
+        } else if (ctr == 6) {
+            dealerCard6.setIcon(dealerDeck.get(5).getPng());
+            dealerCard6.setVisible(true);
+        }
+        this.dealerVal.setText("Dealer : " + getValue(dealerDeck));
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BackgroundImage;
     private javax.swing.JButton BetConfirm;
@@ -345,10 +470,17 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JButton StandBtn;
     private javax.swing.JLabel dealerCard1;
     private javax.swing.JLabel dealerCard2;
+    private javax.swing.JLabel dealerCard3;
+    private javax.swing.JLabel dealerCard4;
+    private javax.swing.JLabel dealerCard5;
+    private javax.swing.JLabel dealerCard6;
     private javax.swing.JLabel dealerVal;
     private javax.swing.JLabel playerCard1;
     private javax.swing.JLabel playerCard2;
     private javax.swing.JLabel playerCard3;
+    private javax.swing.JLabel playerCard4;
+    private javax.swing.JLabel playerCard5;
+    private javax.swing.JLabel playerCard6;
     private javax.swing.JLabel playerVal;
     // End of variables declaration//GEN-END:variables
 }
