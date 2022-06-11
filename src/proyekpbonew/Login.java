@@ -4,7 +4,14 @@
  */
 package proyekpbonew;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.accessibility.AccessibleContext;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -147,6 +154,29 @@ public class Login extends javax.swing.JFrame {
 
     private void loginBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtnMouseClicked
         // TODO add your handling code here:
+         ProyekPBONew.setFileClick(new File("src/res/Click.wav"));
+        try {
+            ProyekPBONew.setAudioClick(AudioSystem.getAudioInputStream(ProyekPBONew.getFileClick()));
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            ProyekPBONew.setClick(AudioSystem.getClip());
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            ProyekPBONew.getClick().open(ProyekPBONew.getAudioClick());
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        ProyekPBONew.getClick().start();
         String username = this.getUsernameField().getText();
         String password = this.getPasswordField().getText();
 
@@ -182,6 +212,29 @@ public class Login extends javax.swing.JFrame {
 //        logframe.setLocationRelativeTo(null);
 //        logframe.setTitle("Blekjek");
 //        logframe.setResizable(false);
+ ProyekPBONew.setFileClick(new File("src/res/Click.wav"));
+        try {
+            ProyekPBONew.setAudioClick(AudioSystem.getAudioInputStream(ProyekPBONew.getFileClick()));
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            ProyekPBONew.setClick(AudioSystem.getClip());
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            ProyekPBONew.getClick().open(ProyekPBONew.getAudioClick());
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        ProyekPBONew.getClick().start();
         ProyekPBONew.getLogframe().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_backButtonActionPerformed

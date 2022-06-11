@@ -4,6 +4,13 @@
  */
 package proyekpbonew;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -106,6 +113,29 @@ public class FrameCloseAcc extends javax.swing.JFrame {
 
     private void ConfBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfBtnActionPerformed
         // TODO add your handling code here:
+         ProyekPBONew.setFileClick(new File("src/res/Click.wav"));
+        try {
+            ProyekPBONew.setAudioClick(AudioSystem.getAudioInputStream(ProyekPBONew.getFileClick()));
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            ProyekPBONew.setClick(AudioSystem.getClip());
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            ProyekPBONew.getClick().open(ProyekPBONew.getAudioClick());
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        ProyekPBONew.getClick().start();
         String username = this.getUsernameField().getText();
         boolean checkUser = false;
         int tempDel = 0;
@@ -135,6 +165,29 @@ public class FrameCloseAcc extends javax.swing.JFrame {
 
     private void BackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackBtnActionPerformed
         // TODO add your handling code here:
+         ProyekPBONew.setFileClick(new File("src/res/Click.wav"));
+        try {
+            ProyekPBONew.setAudioClick(AudioSystem.getAudioInputStream(ProyekPBONew.getFileClick()));
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            ProyekPBONew.setClick(AudioSystem.getClip());
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            ProyekPBONew.getClick().open(ProyekPBONew.getAudioClick());
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        ProyekPBONew.getClick().start();
         this.setVisible(false);
         FrameAdmin frameAdmin = new FrameAdmin();
         frameAdmin.setVisible(true);

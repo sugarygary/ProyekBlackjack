@@ -27,7 +27,11 @@ public class ProyekPBONew {
     private static Leaderboard LB = new Leaderboard();
     private static User LoggedUser;
     private static Game frameGame = new Game();
-
+    private static Clip BGM;
+    private static File fileClick;
+    private static Clip Click;
+    private static AudioInputStream audioClick;
+    
     public static void setFrameGame(Game frameGame) {
         ProyekPBONew.frameGame = frameGame;
     }
@@ -51,12 +55,18 @@ public class ProyekPBONew {
     public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         new ProyekPBONew();
         logframe.setVisible(true);
-        File file = new File("BGM.wav");
+        File file = new File("src/res/BGM.wav");
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
-        Clip clip = AudioSystem.getClip();
-        clip.open(audioStream);
-        clip.start();
-        clip.loop(clip.LOOP_CONTINUOUSLY);
+        BGM = AudioSystem.getClip();
+        BGM.open(audioStream);
+        BGM.start();
+        BGM.loop(BGM.LOOP_CONTINUOUSLY);
+        FloatControl volume = (FloatControl) BGM.getControl(FloatControl.Type.MASTER_GAIN);
+        double percent = 0.3;   
+        float dB = (float) (Math.log(percent) / Math.log(10.0) * 20.0);
+        volume.setValue(dB);
+        
+        //sound effect
     }
 
     public static ArrayList<User> getUserList() {
@@ -111,4 +121,37 @@ public class ProyekPBONew {
         ProyekPBONew.LB = LB;
     }
 
+    public static Clip getBGM() {
+        return BGM;
+    }
+
+    public static Clip getClick() {
+        return Click;
+    }
+
+    public static File getFileClick() {
+        return fileClick;
+    }
+
+    public static AudioInputStream getAudioClick() {
+        return audioClick;
+    }
+
+    public static void setBGM(Clip BGM) {
+        ProyekPBONew.BGM = BGM;
+    }
+
+    public static void setFileClick(File fileClick) {
+        ProyekPBONew.fileClick = fileClick;
+    }
+
+    public static void setClick(Clip Click) {
+        ProyekPBONew.Click = Click;
+    }
+
+    public static void setAudioClick(AudioInputStream audioClick) {
+        ProyekPBONew.audioClick = audioClick;
+    }
+    
+    
 }

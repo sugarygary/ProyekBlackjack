@@ -4,6 +4,13 @@
  */
 package proyekpbonew;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -139,6 +146,29 @@ public class Register extends javax.swing.JFrame {
 
     private void registerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBtnActionPerformed
         // TODO add your handling code here:
+         ProyekPBONew.setFileClick(new File("src/res/Click.wav"));
+        try {
+            ProyekPBONew.setAudioClick(AudioSystem.getAudioInputStream(ProyekPBONew.getFileClick()));
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            ProyekPBONew.setClick(AudioSystem.getClip());
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            ProyekPBONew.getClick().open(ProyekPBONew.getAudioClick());
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        ProyekPBONew.getClick().start();
         String uname = this.usernameField.getText();
         String pass = this.passwordField.getText();
         String conpass = this.confirmPassword.getText();
@@ -175,6 +205,29 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_confirmPasswordActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+         ProyekPBONew.setFileClick(new File("src/res/Click.wav"));
+        try {
+            ProyekPBONew.setAudioClick(AudioSystem.getAudioInputStream(ProyekPBONew.getFileClick()));
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            ProyekPBONew.setClick(AudioSystem.getClip());
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            ProyekPBONew.getClick().open(ProyekPBONew.getAudioClick());
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        ProyekPBONew.getClick().start();
         ProyekPBONew.getLogframe().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_backButtonActionPerformed

@@ -4,6 +4,16 @@
  */
 package proyekpbonew;
 
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.border.Border;
@@ -26,7 +36,8 @@ public class MainFrame extends javax.swing.JFrame {
         this.setSize(1100, 700);
         //set width, height background image
         this.getBackgroundImage().setSize(1100, 700);
-
+        ImageIcon icon = new ImageIcon("src/res/background.jpg");
+        Image scaleImage = icon.getImage().getScaledInstance(500, 400, Image.SCALE_DEFAULT);
         //set x, y, width, height button
         this.getLoginBtn().setBounds(450, 250, 175, 75);
         this.getRegisterBtn().setBounds(450, 350, 175, 75);
@@ -103,12 +114,58 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_LoginBtnActionPerformed
 
     private void LoginBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginBtnMouseClicked
+        ProyekPBONew.setFileClick(new File("src/res/Click.wav"));
+        try {
+            ProyekPBONew.setAudioClick(AudioSystem.getAudioInputStream(ProyekPBONew.getFileClick()));
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            ProyekPBONew.setClick(AudioSystem.getClip());
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            ProyekPBONew.getClick().open(ProyekPBONew.getAudioClick());
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        ProyekPBONew.getClick().start();
         ProyekPBONew.getLogframe().setVisible(false);
         ProyekPBONew.reInstanceLogin();
         ProyekPBONew.getLoginFrame().setVisible(true);
     }//GEN-LAST:event_LoginBtnMouseClicked
 
     private void RegisterBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterBtnMouseClicked
+         ProyekPBONew.setFileClick(new File("src/res/Click.wav"));
+        try {
+            ProyekPBONew.setAudioClick(AudioSystem.getAudioInputStream(ProyekPBONew.getFileClick()));
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            ProyekPBONew.setClick(AudioSystem.getClip());
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            ProyekPBONew.getClick().open(ProyekPBONew.getAudioClick());
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        ProyekPBONew.getClick().start();
         ProyekPBONew.getLogframe().setVisible(false);
         ProyekPBONew.reInstanceRegister();
         ProyekPBONew.getRegisterFrame().setVisible(true);
@@ -116,6 +173,29 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void LeaderboardBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeaderboardBtnActionPerformed
         // TODO add your handling code here:
+         ProyekPBONew.setFileClick(new File("src/res/Click.wav"));
+        try {
+            ProyekPBONew.setAudioClick(AudioSystem.getAudioInputStream(ProyekPBONew.getFileClick()));
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            ProyekPBONew.setClick(AudioSystem.getClip());
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            ProyekPBONew.getClick().open(ProyekPBONew.getAudioClick());
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        ProyekPBONew.getClick().start();
         ProyekPBONew.getLB().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_LeaderboardBtnActionPerformed
