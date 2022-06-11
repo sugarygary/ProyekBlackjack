@@ -493,6 +493,7 @@ public class Game extends javax.swing.JFrame {
             ProyekPBONew.setFrameGame(new Game());
             this.setVisible(false);
             ProyekPBONew.getFrameUser().setVisible(true);
+            ProyekPBONew.getLoggedUser().setTotalWin(ProyekPBONew.getLoggedUser().getTotalWin() + Integer.parseInt(this.BetField.getText()));
         } else {
             if (getValue(playerDeck) > getValue(dealerDeck)) {
                 ProyekPBONew.getLoggedUser().setSaldo(ProyekPBONew.getLoggedUser().getSaldo() + Integer.parseInt(this.BetField.getText()));
@@ -500,6 +501,7 @@ public class Game extends javax.swing.JFrame {
                 ProyekPBONew.setFrameGame(new Game());
                 this.setVisible(false);
                 ProyekPBONew.getFrameUser().setVisible(true);
+                ProyekPBONew.getLoggedUser().setTotalWin(ProyekPBONew.getLoggedUser().getTotalWin() + Integer.parseInt(this.BetField.getText()));
             } else if (getValue(playerDeck) < getValue(dealerDeck)) {
                 ProyekPBONew.getLoggedUser().setSaldo(ProyekPBONew.getLoggedUser().getSaldo() - Integer.parseInt(this.BetField.getText()));
                 JOptionPane.showMessageDialog(this, "You Lost!", "Game", JOptionPane.PLAIN_MESSAGE);

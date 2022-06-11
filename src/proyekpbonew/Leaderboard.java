@@ -4,6 +4,8 @@
  */
 package proyekpbonew;
 
+import java.util.Collections;
+import java.util.Comparator;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
@@ -18,6 +20,7 @@ public class Leaderboard extends javax.swing.JFrame {
      */
     public Leaderboard() {
         initComponents();
+        
         this.setTitle("Leaderboard");
         this.getTitleLB().setBounds(420, 100, 250, 50);
         //set width, height frame admin
@@ -50,7 +53,7 @@ public class Leaderboard extends javax.swing.JFrame {
         TitleLB.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         TitleLB.setText("Leaderboard");
         getContentPane().add(TitleLB);
-        TitleLB.setBounds(165, 33, 210, 26);
+        TitleLB.setBounds(165, 33, 214, 26);
 
         BackBtn.setText("Back");
         BackBtn.addActionListener(new java.awt.event.ActionListener() {

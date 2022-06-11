@@ -7,6 +7,7 @@ package proyekpbonew;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sound.sampled.AudioInputStream;
@@ -195,6 +196,10 @@ public class MainFrame extends javax.swing.JFrame {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        Collections.sort(ProyekPBONew.getUserList(), new Compare());
+        for (int i = 0; i < ProyekPBONew.getUserList().size(); i++) {
+            System.out.println(ProyekPBONew.getUserList().get(i).getUsername() + "     " + ProyekPBONew.getUserList().get(i).getTotalWin());
+        }
         ProyekPBONew.getClick().start();
         ProyekPBONew.getLB().setVisible(true);
         this.setVisible(false);
