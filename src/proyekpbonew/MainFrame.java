@@ -43,7 +43,7 @@ public class MainFrame extends javax.swing.JFrame {
         this.getLoginBtn().setBounds(450, 250, 175, 75);
         this.getRegisterBtn().setBounds(450, 350, 175, 75);
         this.getLeaderboardBtn().setBounds(450, 450, 175, 75);
-        this.getLogo().setBounds(300, 50, 450, 176);
+        this.getLogo().setBounds(125, -100, 820, 446);
         this.setLocationRelativeTo(null);
     }
 
@@ -65,7 +65,6 @@ public class MainFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        LoginBtn.setBackground(new java.awt.Color(235, 103, 8));
         LoginBtn.setText("Login");
         LoginBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -98,7 +97,7 @@ public class MainFrame extends javax.swing.JFrame {
         getContentPane().add(LeaderboardBtn);
         LeaderboardBtn.setBounds(134, 206, 128, 47);
 
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/output-onlinepngtools_1 (2).png"))); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/My_project_2.png"))); // NOI18N
         logo.setText("jLabel1");
         getContentPane().add(logo);
         logo.setBounds(-50, 20, 610, 140);
@@ -130,8 +129,8 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void LeaderboardBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeaderboardBtnActionPerformed
         // TODO add your handling code here:
-         ProyekPBONew.clickSound();
-        
+        ProyekPBONew.clickSound();
+
         Collections.sort(ProyekPBONew.getUserList(), new Compare());
         for (int i = 0; i < ProyekPBONew.getUserList().size(); i++) {
             System.out.println(ProyekPBONew.getUserList().get(i).getUsername() + "     " + ProyekPBONew.getUserList().get(i).getTotalWin());

@@ -27,9 +27,6 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="LoginBtn">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="8" green="67" red="eb" type="rgb"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Login"/>
       </Properties>
       <Events>
@@ -71,7 +68,7 @@
     <Component class="javax.swing.JLabel" name="logo">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/res/output-onlinepngtools_1 (2).png"/>
+          <Image iconType="3" name="/res/My_project_2.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>

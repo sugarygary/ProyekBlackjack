@@ -20,7 +20,7 @@ public class Leaderboard extends javax.swing.JFrame {
      */
     public Leaderboard() {
         initComponents();
-        
+
         this.setTitle("Leaderboard");
         this.getTitleLB().setBounds(420, 50, 250, 50);
         //set width, height frame admin
@@ -32,48 +32,43 @@ public class Leaderboard extends javax.swing.JFrame {
         //set button frame admin
         this.getBackBtn().setBounds(450, 550, 150, 50);
         this.setLocationRelativeTo(null);
-        
+
         this.getUser1().setBounds(375, 150, 100, 50);
         this.getUser2().setBounds(375, 225, 100, 50);
         this.getUser3().setBounds(375, 300, 100, 50);
         this.getUser4().setBounds(375, 375, 100, 50);
         this.getUser5().setBounds(375, 450, 100, 50);
-        
+
         if (ProyekPBONew.getUserList().size() > 0) {
             this.getUser1().setText("1.  " + ProyekPBONew.getUserList().get(0).getUsername() + "     " + ProyekPBONew.getUserList().get(0).getTotalWin());
+        } else {
+            this.getUser1().setText("1.  -");
         }
-        else{
-             this.getUser1().setText("1.  -");
-        }
-        
+
         if (ProyekPBONew.getUserList().size() > 1) {
             this.getUser2().setText("2.  " + ProyekPBONew.getUserList().get(1).getUsername() + "     " + ProyekPBONew.getUserList().get(1).getTotalWin());
+        } else {
+            this.getUser2().setText("2.  -");
         }
-        else{
-             this.getUser2().setText("2.  -");
-        }
-        
+
         if (ProyekPBONew.getUserList().size() > 2) {
             this.getUser3().setText("3.  " + ProyekPBONew.getUserList().get(2).getUsername() + "     " + ProyekPBONew.getUserList().get(2).getTotalWin());
+        } else {
+            this.getUser3().setText("3.  -");
         }
-        else{
-             this.getUser3().setText("3.  -");
-        }
-        
+
         if (ProyekPBONew.getUserList().size() > 3) {
             this.getUser4().setText("4.  " + ProyekPBONew.getUserList().get(3).getUsername() + "     " + ProyekPBONew.getUserList().get(3).getTotalWin());
+        } else {
+            this.getUser4().setText("4.  -");
         }
-        else{
-             this.getUser4().setText("4.  -");
-        }
-        
+
         if (ProyekPBONew.getUserList().size() > 4) {
             this.getUser5().setText("5.  " + ProyekPBONew.getUserList().get(4).getUsername() + "     " + ProyekPBONew.getUserList().get(4).getTotalWin());
+        } else {
+            this.getUser5().setText("5.  -");
         }
-        else{
-             this.getUser5().setText("5.  -");
-        }
-        
+
     }
 
     /**
@@ -145,6 +140,7 @@ public class Leaderboard extends javax.swing.JFrame {
 
     private void BackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackBtnActionPerformed
         // TODO add your handling code here:
+        ProyekPBONew.clickSound();
         this.setVisible(false);
         MainFrame mainFrame = new MainFrame();
         mainFrame.setVisible(true);
@@ -157,7 +153,7 @@ public class Leaderboard extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -228,8 +224,6 @@ public class Leaderboard extends javax.swing.JFrame {
     public JLabel getUser5() {
         return user5;
     }
-
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackBtn;

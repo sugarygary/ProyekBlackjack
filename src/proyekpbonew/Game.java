@@ -175,6 +175,43 @@ public class Game extends javax.swing.JFrame {
         dealerCard2.setIcon(dealerDeck.get(1).getPng());
         this.playerVal.setText("Player : " + getValue(playerDeck));
         this.dealerVal.setText("Dealer : ?");
+        if (getValue(playerDeck) == 21) {
+            this.HitBtn.setVisible(false);
+            this.StandBtn.setVisible(false);
+            this.dealerVal.setText("Dealer : " + getValue(dealerDeck));
+            this.COVERDEALER.setVisible(false);
+            if (getValue(dealerDeck) == 21) {
+                JOptionPane.showMessageDialog(this, "Draw!", "Game", JOptionPane.PLAIN_MESSAGE);
+                ProyekPBONew.setFrameGame(new Game());
+                this.setVisible(false);
+                ProyekPBONew.getFrameUser().setVisible(true);
+            } else {
+                ProyekPBONew.getLoggedUser().setSaldo(ProyekPBONew.getLoggedUser().getSaldo() + Integer.parseInt(this.BetField.getText()));
+                JOptionPane.showMessageDialog(this, "You Won!", "Game", JOptionPane.PLAIN_MESSAGE);
+                ProyekPBONew.setFrameGame(new Game());
+                this.setVisible(false);
+                ProyekPBONew.getFrameUser().setVisible(true);
+                ProyekPBONew.getLoggedUser().setTotalWin(ProyekPBONew.getLoggedUser().getTotalWin() + Integer.parseInt(this.BetField.getText()));
+            }
+        }
+        if (getValue(dealerDeck) == 21) {
+            this.HitBtn.setVisible(false);
+            this.StandBtn.setVisible(false);
+            this.dealerVal.setText("Dealer : " + getValue(dealerDeck));
+            this.COVERDEALER.setVisible(false);
+            if (getValue(playerDeck) == 21) {
+                JOptionPane.showMessageDialog(this, "Draw!", "Game", JOptionPane.PLAIN_MESSAGE);
+                ProyekPBONew.setFrameGame(new Game());
+                this.setVisible(false);
+                ProyekPBONew.getFrameUser().setVisible(true);
+            } else {
+                ProyekPBONew.getLoggedUser().setSaldo(ProyekPBONew.getLoggedUser().getSaldo() - Integer.parseInt(this.BetField.getText()));
+                JOptionPane.showMessageDialog(this, "You Lost!", "Game", JOptionPane.PLAIN_MESSAGE);
+                ProyekPBONew.setFrameGame(new Game());
+                this.setVisible(false);
+                ProyekPBONew.getFrameUser().setVisible(true);
+            }
+        }
     }
 
     public int getValue(ArrayList<Card> deck) {
@@ -368,7 +405,7 @@ public class Game extends javax.swing.JFrame {
 
     private void BetConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BetConfirmActionPerformed
         // TODO add your handling code here
-         ProyekPBONew.clickSound();
+        ProyekPBONew.clickSound();
         if (ProyekPBONew.getLoggedUser().getSaldo() >= Integer.parseInt(BetField.getText())) {
             StartGame();
         } else {
@@ -383,7 +420,7 @@ public class Game extends javax.swing.JFrame {
     private void HitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HitBtnActionPerformed
         // TODO add your handling code here:
         ProyekPBONew.clickSound();
-        
+
         playerDeck.add(Deck.pop());
         int ctr = playerDeck.size();
         if (ctr == 3) {
@@ -414,7 +451,7 @@ public class Game extends javax.swing.JFrame {
     private void StandBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StandBtnActionPerformed
         // TODO add your handling code here:
         ProyekPBONew.clickSound();
-        
+
         COVERDEALER.setVisible(false);
         this.HitBtn.setVisible(false);
         this.dealerVal.setText("Dealer : " + getValue(dealerDeck));
@@ -453,8 +490,7 @@ public class Game extends javax.swing.JFrame {
     }//GEN-LAST:event_StandBtnActionPerformed
 
     private void DealerHit() {
-        
-        
+
         dealerDeck.add(Deck.pop());
         int ctr = dealerDeck.size();
         if (ctr == 3) {
