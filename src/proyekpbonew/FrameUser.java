@@ -51,7 +51,6 @@ public class FrameUser extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         GameBtn = new javax.swing.JToggleButton();
         MainBtn = new javax.swing.JToggleButton();
         LeaderboardBtn = new javax.swing.JToggleButton();
@@ -60,10 +59,6 @@ public class FrameUser extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
-
-        jLabel1.setText("USER");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(186, 37, 28, 16);
 
         GameBtn.setText("GAME");
         GameBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -113,7 +108,7 @@ public class FrameUser extends javax.swing.JFrame {
     }//GEN-LAST:event_GameBtnActionPerformed
 
     private void MainBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainBtnActionPerformed
-         ProyekPBONew.clickSound();
+        ProyekPBONew.clickSound();
         if (ProyekPBONew.getLoggedUser().getSaldo() > 0) {
             ProyekPBONew.getFrameGame().setVisible(true);
             ProyekPBONew.getFrameGame().getCurSaldo().setText("$" + ProyekPBONew.getLoggedUser().getSaldo());
@@ -157,7 +152,6 @@ public class FrameUser extends javax.swing.JFrame {
     private javax.swing.JToggleButton LeaderboardBtn;
     private javax.swing.JToggleButton MainBtn;
     private javax.swing.JLabel backgroundImage;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton logoutBtn;
     // End of variables declaration//GEN-END:variables
 }

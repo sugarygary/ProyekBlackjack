@@ -33,42 +33,108 @@ public class Leaderboard extends javax.swing.JFrame {
         this.getBackBtn().setBounds(450, 550, 150, 50);
         this.setLocationRelativeTo(null);
 
-        this.getUser1().setBounds(375, 150, 100, 50);
-        this.getUser2().setBounds(375, 225, 100, 50);
-        this.getUser3().setBounds(375, 300, 100, 50);
-        this.getUser4().setBounds(375, 375, 100, 50);
-        this.getUser5().setBounds(375, 450, 100, 50);
-
+        this.getUser1().setBounds(375, 150, 100, 100);
+        this.getWin1().setBounds(575, 150, 100, 100);
+        this.getUser2().setBounds(375, 225, 100, 100);
+        this.getWin2().setBounds(575, 225, 100, 100);
+        this.getUser3().setBounds(375, 300, 100, 100);
+        this.getWin3().setBounds(575, 300, 100, 100);
+        this.getUser4().setBounds(375, 375, 100, 100);
+        this.getWin4().setBounds(575, 375, 100, 100);
+        this.getUser5().setBounds(375, 450, 100, 100);
+        this.getWin5().setBounds(575, 450, 100, 100);
+        this.getLabelUser().setBounds(375, 100, 200, 100);
+        this.getLabelWin().setBounds(550, 100, 100, 100);
         if (ProyekPBONew.getUserList().size() > 0) {
-            this.getUser1().setText("1.  " + ProyekPBONew.getUserList().get(0).getUsername() + "     " + ProyekPBONew.getUserList().get(0).getTotalWin());
+            this.getUser1().setText("1.  " + ProyekPBONew.getUserList().get(0).getUsername());
+            this.getWin1().setText("$" + ProyekPBONew.getUserList().get(0).getTotalWin() + "");
         } else {
             this.getUser1().setText("1.  -");
+            this.getWin5().setText("-");
         }
 
         if (ProyekPBONew.getUserList().size() > 1) {
-            this.getUser2().setText("2.  " + ProyekPBONew.getUserList().get(1).getUsername() + "     " + ProyekPBONew.getUserList().get(1).getTotalWin());
+            this.getUser2().setText("2.  " + ProyekPBONew.getUserList().get(1).getUsername());
+            this.getWin2().setText("$" + ProyekPBONew.getUserList().get(1).getTotalWin() + "");
         } else {
             this.getUser2().setText("2.  -");
+            this.getWin5().setText("-");
         }
 
         if (ProyekPBONew.getUserList().size() > 2) {
-            this.getUser3().setText("3.  " + ProyekPBONew.getUserList().get(2).getUsername() + "     " + ProyekPBONew.getUserList().get(2).getTotalWin());
+            this.getUser3().setText("3.  " + ProyekPBONew.getUserList().get(2).getUsername());
+            this.getWin3().setText("$" + ProyekPBONew.getUserList().get(2).getTotalWin() + "");
+
         } else {
             this.getUser3().setText("3.  -");
+            this.getWin5().setText("-");
         }
 
         if (ProyekPBONew.getUserList().size() > 3) {
-            this.getUser4().setText("4.  " + ProyekPBONew.getUserList().get(3).getUsername() + "     " + ProyekPBONew.getUserList().get(3).getTotalWin());
+            this.getUser4().setText("4.  " + ProyekPBONew.getUserList().get(3).getUsername());
+            this.getWin4().setText("$" + ProyekPBONew.getUserList().get(3).getTotalWin() + "");
         } else {
             this.getUser4().setText("4.  -");
+            this.getWin5().setText("-");
         }
 
         if (ProyekPBONew.getUserList().size() > 4) {
-            this.getUser5().setText("5.  " + ProyekPBONew.getUserList().get(4).getUsername() + "     " + ProyekPBONew.getUserList().get(4).getTotalWin());
+            this.getUser5().setText("5.  " + ProyekPBONew.getUserList().get(4).getUsername());
+            this.getWin5().setText("$" + ProyekPBONew.getUserList().get(4).getTotalWin() + "");
+
         } else {
             this.getUser5().setText("5.  -");
+            this.getWin5().setText("-");
         }
 
+    }
+
+    public JLabel getLabelUser() {
+        return labelUser;
+    }
+
+    public JLabel getLabelWin() {
+        return labelWin;
+    }
+
+    public JLabel getWin1() {
+        return win1;
+    }
+
+    public void setWin1(JLabel win1) {
+        this.win1 = win1;
+    }
+
+    public JLabel getWin2() {
+        return win2;
+    }
+
+    public void setWin2(JLabel win2) {
+        this.win2 = win2;
+    }
+
+    public JLabel getWin3() {
+        return win3;
+    }
+
+    public void setWin3(JLabel win3) {
+        this.win3 = win3;
+    }
+
+    public JLabel getWin4() {
+        return win4;
+    }
+
+    public void setWin4(JLabel win4) {
+        this.win4 = win4;
+    }
+
+    public JLabel getWin5() {
+        return win5;
+    }
+
+    public void setWin5(JLabel win5) {
+        this.win5 = win5;
     }
 
     /**
@@ -87,12 +153,19 @@ public class Leaderboard extends javax.swing.JFrame {
         user3 = new javax.swing.JLabel();
         user4 = new javax.swing.JLabel();
         user5 = new javax.swing.JLabel();
+        win1 = new javax.swing.JLabel();
+        win2 = new javax.swing.JLabel();
+        win3 = new javax.swing.JLabel();
+        win4 = new javax.swing.JLabel();
+        win5 = new javax.swing.JLabel();
+        labelUser = new javax.swing.JLabel();
+        labelWin = new javax.swing.JLabel();
         BackgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        user1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        user1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         user1.setForeground(java.awt.Color.lightGray);
         getContentPane().add(user1);
         user1.setBounds(110, 90, 180, 40);
@@ -109,27 +182,64 @@ public class Leaderboard extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BackBtn);
-        BackBtn.setBounds(160, 230, 66, 25);
+        BackBtn.setBounds(160, 230, 66, 22);
 
-        user2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        user2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         user2.setForeground(java.awt.Color.lightGray);
         getContentPane().add(user2);
         user2.setBounds(160, 140, 0, 0);
 
-        user3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        user3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         user3.setForeground(java.awt.Color.lightGray);
         getContentPane().add(user3);
         user3.setBounds(310, 130, 0, 0);
 
-        user4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        user4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         user4.setForeground(java.awt.Color.lightGray);
         getContentPane().add(user4);
         user4.setBounds(320, 220, 0, 0);
 
-        user5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        user5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         user5.setForeground(java.awt.Color.lightGray);
         getContentPane().add(user5);
         user5.setBounds(60, 200, 0, 0);
+
+        win1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        win1.setForeground(java.awt.Color.lightGray);
+        getContentPane().add(win1);
+        win1.setBounds(250, 130, 37, 0);
+
+        win2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        win2.setForeground(java.awt.Color.lightGray);
+        getContentPane().add(win2);
+        win2.setBounds(310, 140, 37, 0);
+
+        win3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        win3.setForeground(java.awt.Color.lightGray);
+        getContentPane().add(win3);
+        win3.setBounds(240, 150, 37, 0);
+
+        win4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        win4.setForeground(java.awt.Color.lightGray);
+        getContentPane().add(win4);
+        win4.setBounds(230, 170, 37, 0);
+
+        win5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        win5.setForeground(java.awt.Color.lightGray);
+        getContentPane().add(win5);
+        win5.setBounds(250, 200, 37, 0);
+
+        labelUser.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        labelUser.setForeground(java.awt.Color.lightGray);
+        labelUser.setText("Username");
+        getContentPane().add(labelUser);
+        labelUser.setBounds(100, 80, 120, 32);
+
+        labelWin.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        labelWin.setForeground(java.awt.Color.lightGray);
+        labelWin.setText("Earnings");
+        getContentPane().add(labelWin);
+        labelWin.setBounds(350, 270, 45, 16);
 
         BackgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/background.jpg"))); // NOI18N
         getContentPane().add(BackgroundImage);
@@ -229,10 +339,17 @@ public class Leaderboard extends javax.swing.JFrame {
     private javax.swing.JButton BackBtn;
     private javax.swing.JLabel BackgroundImage;
     private javax.swing.JLabel TitleLB;
+    private javax.swing.JLabel labelUser;
+    private javax.swing.JLabel labelWin;
     private javax.swing.JLabel user1;
     private javax.swing.JLabel user2;
     private javax.swing.JLabel user3;
     private javax.swing.JLabel user4;
     private javax.swing.JLabel user5;
+    private javax.swing.JLabel win1;
+    private javax.swing.JLabel win2;
+    private javax.swing.JLabel win3;
+    private javax.swing.JLabel win4;
+    private javax.swing.JLabel win5;
     // End of variables declaration//GEN-END:variables
 }
