@@ -9,7 +9,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Stack;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sound.sampled.AudioSystem;
@@ -32,7 +31,7 @@ public class Game extends javax.swing.JFrame {
      */
     private ArrayList<Card> playerDeck = new ArrayList<>();
     private ArrayList<Card> dealerDeck = new ArrayList<>();
-    private Stack<Card> Deck = new Stack<>();
+    private stack<Card> Deck = new stack<>();
 
     public Game() {
         initComponents();
@@ -164,8 +163,8 @@ public class Game extends javax.swing.JFrame {
         for (int i = 1; i <= 13; i++) {
             Deck.push(new Hearts(i));
         }
-        Collections.shuffle(Deck);
-        Collections.shuffle(Deck);
+        Collections.shuffle(Deck.getA());
+        Collections.shuffle(Deck.getA());
         dealerDeck.add(Deck.pop());
         dealerDeck.add(Deck.pop());
         playerDeck.add(Deck.pop());

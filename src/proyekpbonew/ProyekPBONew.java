@@ -21,7 +21,7 @@ import javax.sound.sampled.*;
  *
  * @author Gary
  */
-public class ProyekPBONew {
+public class ProyekPBONew implements MainInterface, Saveable{
 
     private static ArrayList<User> userList = new ArrayList<>();
     private static MainFrame logframe = new MainFrame();
@@ -35,11 +35,14 @@ public class ProyekPBONew {
     private static Leaderboard2 LB2 = new Leaderboard2();
     private static User LoggedUser;
     private static Game frameGame = new Game();
-    private static Clip BGM;
+    
     private static File fileClick;
-    private static Clip Click;
+    private static File fileBGM;
     private static AudioInputStream audioClick;
-
+    private static AudioInputStream audioBGM;
+    private static Clip BGM;
+    private static Clip Click;
+    
     public static void clickSound() {
         ProyekPBONew.setFileClick(new File("src/res/Click.wav"));
         try {
@@ -65,7 +68,36 @@ public class ProyekPBONew {
 
         ProyekPBONew.getClick().start();
     }
+    
+    public static void BGM() throws LineUnavailableException{
+          ProyekPBONew.setFileBGM(new File("src/res/BGM.wav"));
+        try {
+            ProyekPBONew.setAudioBGM(AudioSystem.getAudioInputStream(ProyekPBONew.getFileBGM()));
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
+        try {
+            ProyekPBONew.setBGM(AudioSystem.getClip());
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            ProyekPBONew.getBGM().open(ProyekPBONew.getAudioBGM());
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ProyekPBONew.getBGM().start();
+        ProyekPBONew.getBGM().loop(BGM.LOOP_CONTINUOUSLY);
+        FloatControl volume = (FloatControl) BGM.getControl(FloatControl.Type.MASTER_GAIN);
+        double percent = 0.2;
+        float dB = (float) (Math.log(percent) / Math.log(10.0) * 20.0);
+        volume.setValue(dB);
+    }
     public static void setFrameGame(Game frameGame) {
         ProyekPBONew.frameGame = frameGame;
     }
@@ -119,19 +151,8 @@ public class ProyekPBONew {
     public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         load();
         new ProyekPBONew();
+        ProyekPBONew.BGM();
         logframe.setVisible(true);
-        File file = new File("src/res/BGM.wav");
-        AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
-        BGM = AudioSystem.getClip();
-        BGM.open(audioStream);
-        BGM.start();
-        BGM.loop(BGM.LOOP_CONTINUOUSLY);
-        FloatControl volume = (FloatControl) BGM.getControl(FloatControl.Type.MASTER_GAIN);
-        double percent = 0.2;
-        float dB = (float) (Math.log(percent) / Math.log(10.0) * 20.0);
-        volume.setValue(dB);
-
-        //sound effect
     }
 
     public static ArrayList<User> getUserList() {
@@ -238,4 +259,20 @@ public class ProyekPBONew {
         ProyekPBONew.audioClick = audioClick;
     }
 
+    public static File getFileBGM() {
+        return fileBGM;
+    }
+
+    public static AudioInputStream getAudioBGM() {
+        return audioBGM;
+    }
+
+    public static void setFileBGM(File fileBGM) {
+        ProyekPBONew.fileBGM = fileBGM;
+    }
+
+    public static void setAudioBGM(AudioInputStream AudioBGM) {
+        ProyekPBONew.audioBGM = AudioBGM;
+    }
+    
 }
