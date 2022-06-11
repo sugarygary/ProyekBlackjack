@@ -4,17 +4,19 @@
  */
 package proyekpbonew;
 
+import java.io.Serializable;
 
 /**
  *
  * @author Gary
  */
-public class User{
+public class User implements Serializable {
 
     private String username;
     private String password;
     private int saldo;
     private int totalWin;
+
     public User(String username, String password) {
         this.username = username;
         this.password = password;
@@ -54,8 +56,4 @@ public class User{
         this.totalWin = totalWin;
     }
 
-
-    
-    
-    
 }

@@ -146,7 +146,7 @@ public class Register extends javax.swing.JFrame {
 
     private void registerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBtnActionPerformed
         // TODO add your handling code here:
-         ProyekPBONew.clickSound();
+        ProyekPBONew.clickSound();
         String uname = this.usernameField.getText();
         String pass = this.passwordField.getText();
         String conpass = this.confirmPassword.getText();
@@ -168,6 +168,7 @@ public class Register extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Succesfully registered", "Success", JOptionPane.PLAIN_MESSAGE);
                 this.setVisible(false);
                 ProyekPBONew.getLogframe().setVisible(true);
+                ProyekPBONew.save();
             }
         } else {
             JOptionPane.showMessageDialog(this, "Username already exists", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -183,7 +184,7 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_confirmPasswordActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-         ProyekPBONew.clickSound();
+        ProyekPBONew.clickSound();
         ProyekPBONew.getLogframe().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_backButtonActionPerformed

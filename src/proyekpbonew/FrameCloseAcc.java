@@ -32,9 +32,9 @@ public class FrameCloseAcc extends javax.swing.JFrame {
         this.getTitleCA().setBounds(400, 70, 250, 50);
         //set width, height frame top up
         this.setSize(1100, 700);
-        
+
         this.getUserCA().setBounds(340, 200, 200, 50);
-        
+
         //set width, height background image top up frame
         this.getBackgroundImage().setSize(1100, 700);
 
@@ -113,7 +113,7 @@ public class FrameCloseAcc extends javax.swing.JFrame {
 
     private void ConfBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfBtnActionPerformed
         // TODO add your handling code here:
-       ProyekPBONew.clickSound();
+        ProyekPBONew.clickSound();
         String username = this.getUsernameField().getText();
         boolean checkUser = false;
         int tempDel = 0;
@@ -130,6 +130,7 @@ public class FrameCloseAcc extends javax.swing.JFrame {
             if (checkUser) {
                 ProyekPBONew.getUserList().remove(tempDel);
                 JOptionPane.showMessageDialog(this, "Account Deleted!", "Success", JOptionPane.PLAIN_MESSAGE);
+                ProyekPBONew.save();
             } else {
                 JOptionPane.showMessageDialog(this, "User not found!", "Warning", JOptionPane.WARNING_MESSAGE);
             }
@@ -183,8 +184,6 @@ public class FrameCloseAcc extends javax.swing.JFrame {
     public void setUserCA(JLabel UserCA) {
         this.UserCA = UserCA;
     }
-
-
 
     public JTextField getUsernameField() {
         return usernameField;

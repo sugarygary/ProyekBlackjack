@@ -114,6 +114,7 @@ public class Game extends javax.swing.JFrame {
 
     private void StartGame() {
         //game
+        ProyekPBONew.save();
         this.getBetField().setVisible(false);
         this.getBetLabel().setVisible(false);
         this.getBetConfirm().setVisible(false);
@@ -185,6 +186,7 @@ public class Game extends javax.swing.JFrame {
                 ProyekPBONew.setFrameGame(new Game());
                 this.setVisible(false);
                 ProyekPBONew.getFrameUser().setVisible(true);
+                ProyekPBONew.save();
             } else {
                 ProyekPBONew.getLoggedUser().setSaldo(ProyekPBONew.getLoggedUser().getSaldo() + Integer.parseInt(this.BetField.getText()));
                 JOptionPane.showMessageDialog(this, "You Won!", "Game", JOptionPane.PLAIN_MESSAGE);
@@ -192,6 +194,7 @@ public class Game extends javax.swing.JFrame {
                 this.setVisible(false);
                 ProyekPBONew.getFrameUser().setVisible(true);
                 ProyekPBONew.getLoggedUser().setTotalWin(ProyekPBONew.getLoggedUser().getTotalWin() + Integer.parseInt(this.BetField.getText()));
+                ProyekPBONew.save();
             }
         }
         if (getValue(dealerDeck) == 21) {
@@ -204,12 +207,15 @@ public class Game extends javax.swing.JFrame {
                 ProyekPBONew.setFrameGame(new Game());
                 this.setVisible(false);
                 ProyekPBONew.getFrameUser().setVisible(true);
+                ProyekPBONew.save();
+
             } else {
                 ProyekPBONew.getLoggedUser().setSaldo(ProyekPBONew.getLoggedUser().getSaldo() - Integer.parseInt(this.BetField.getText()));
                 JOptionPane.showMessageDialog(this, "You Lost!", "Game", JOptionPane.PLAIN_MESSAGE);
                 ProyekPBONew.setFrameGame(new Game());
                 this.setVisible(false);
                 ProyekPBONew.getFrameUser().setVisible(true);
+                ProyekPBONew.save();
             }
         }
     }
@@ -444,7 +450,7 @@ public class Game extends javax.swing.JFrame {
             ProyekPBONew.setFrameGame(new Game());
             this.setVisible(false);
             ProyekPBONew.getFrameUser().setVisible(true);
-            System.out.println("SUDAH BERAKHIR");
+            ProyekPBONew.save();
         }
     }//GEN-LAST:event_HitBtnActionPerformed
 
@@ -465,6 +471,7 @@ public class Game extends javax.swing.JFrame {
             this.setVisible(false);
             ProyekPBONew.getFrameUser().setVisible(true);
             ProyekPBONew.getLoggedUser().setTotalWin(ProyekPBONew.getLoggedUser().getTotalWin() + Integer.parseInt(this.BetField.getText()));
+            ProyekPBONew.save();
         } else {
             if (getValue(playerDeck) > getValue(dealerDeck)) {
                 ProyekPBONew.getLoggedUser().setSaldo(ProyekPBONew.getLoggedUser().getSaldo() + Integer.parseInt(this.BetField.getText()));
@@ -473,17 +480,21 @@ public class Game extends javax.swing.JFrame {
                 this.setVisible(false);
                 ProyekPBONew.getFrameUser().setVisible(true);
                 ProyekPBONew.getLoggedUser().setTotalWin(ProyekPBONew.getLoggedUser().getTotalWin() + Integer.parseInt(this.BetField.getText()));
+                ProyekPBONew.save();
             } else if (getValue(playerDeck) < getValue(dealerDeck)) {
                 ProyekPBONew.getLoggedUser().setSaldo(ProyekPBONew.getLoggedUser().getSaldo() - Integer.parseInt(this.BetField.getText()));
+                ProyekPBONew.save();
                 JOptionPane.showMessageDialog(this, "You Lost!", "Game", JOptionPane.PLAIN_MESSAGE);
                 ProyekPBONew.setFrameGame(new Game());
                 this.setVisible(false);
                 ProyekPBONew.getFrameUser().setVisible(true);
+                ProyekPBONew.save();
             } else {
                 JOptionPane.showMessageDialog(this, "Draw!", "Game", JOptionPane.PLAIN_MESSAGE);
                 ProyekPBONew.setFrameGame(new Game());
                 this.setVisible(false);
                 ProyekPBONew.getFrameUser().setVisible(true);
+                ProyekPBONew.save();
             }
         }
 

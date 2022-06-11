@@ -150,6 +150,7 @@ public class TopUp extends javax.swing.JFrame {
             if (checkUser) {
                 ProyekPBONew.getUserList().get(tempTopUp).setSaldo(ProyekPBONew.getUserList().get(tempTopUp).getSaldo() + Integer.parseInt(this.topUpValue.getText()));
                 JOptionPane.showMessageDialog(this, "Top Up Success!", "Success", JOptionPane.PLAIN_MESSAGE);
+                ProyekPBONew.save();
                 this.usernameField.setText("");
                 this.topUpValue.setText("");
             } else {

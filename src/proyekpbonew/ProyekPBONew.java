@@ -6,7 +6,12 @@ package proyekpbonew;
 
 import java.util.ArrayList;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,8 +39,8 @@ public class ProyekPBONew {
     private static File fileClick;
     private static Clip Click;
     private static AudioInputStream audioClick;
-    
-    public static void clickSound(){
+
+    public static void clickSound() {
         ProyekPBONew.setFileClick(new File("src/res/Click.wav"));
         try {
             ProyekPBONew.setAudioClick(AudioSystem.getAudioInputStream(ProyekPBONew.getFileClick()));
@@ -44,7 +49,7 @@ public class ProyekPBONew {
         } catch (IOException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         try {
             ProyekPBONew.setClick(AudioSystem.getClip());
         } catch (LineUnavailableException ex) {
@@ -57,9 +62,10 @@ public class ProyekPBONew {
         } catch (IOException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         ProyekPBONew.getClick().start();
     }
+
     public static void setFrameGame(Game frameGame) {
         ProyekPBONew.frameGame = frameGame;
     }
@@ -72,6 +78,36 @@ public class ProyekPBONew {
 //        frameGame.setVisible(true);
     }
 
+    public static void save() {
+        try {
+            FileOutputStream oStream = new FileOutputStream("data.dat");
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(oStream);
+            objectOutputStream.writeObject(userList);
+            objectOutputStream.flush();
+            objectOutputStream.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    public static void load() {
+        FileInputStream fileInputStream;
+        try {
+            fileInputStream = new FileInputStream("data.dat");
+            ObjectInputStream objectInputStream
+                    = new ObjectInputStream(fileInputStream);
+            userList = (ArrayList<User>) objectInputStream.readObject();
+            objectInputStream.close();
+        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException | ClassNotFoundException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     public static User getLoggedUser() {
         return LoggedUser;
     }
@@ -81,6 +117,7 @@ public class ProyekPBONew {
     }
 
     public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+        load();
         new ProyekPBONew();
         logframe.setVisible(true);
         File file = new File("src/res/BGM.wav");
@@ -90,10 +127,10 @@ public class ProyekPBONew {
         BGM.start();
         BGM.loop(BGM.LOOP_CONTINUOUSLY);
         FloatControl volume = (FloatControl) BGM.getControl(FloatControl.Type.MASTER_GAIN);
-        double percent = 0.2;   
+        double percent = 0.2;
         float dB = (float) (Math.log(percent) / Math.log(10.0) * 20.0);
         volume.setValue(dB);
-        
+
         //sound effect
     }
 
@@ -116,18 +153,19 @@ public class ProyekPBONew {
     public static void reInstanceLogin() {
         loginFrame = new Login();
     }
-    
-    public static void reInstanceLeaderboard(){
+
+    public static void reInstanceLeaderboard() {
         LB = new Leaderboard();
     }
-    
-    public static void reInstanceLeaderboard2(){
+
+    public static void reInstanceLeaderboard2() {
         LB2 = new Leaderboard2();
     }
+
     public static void reInstanceRegister() {
         registerFrame = new Register();
     }
-    
+
     public static void reInstanceFrameUser() {
         frameUser = new FrameUser();
     }
@@ -167,7 +205,7 @@ public class ProyekPBONew {
     public static void setLB2(Leaderboard2 LB2) {
         ProyekPBONew.LB2 = LB2;
     }
-    
+
     public static Clip getBGM() {
         return BGM;
     }
@@ -199,6 +237,5 @@ public class ProyekPBONew {
     public static void setAudioClick(AudioInputStream audioClick) {
         ProyekPBONew.audioClick = audioClick;
     }
-    
-    
+
 }

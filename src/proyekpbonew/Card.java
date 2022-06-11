@@ -4,13 +4,14 @@
  */
 package proyekpbonew;
 
+import java.io.Serializable;
 import javax.swing.ImageIcon;
 
 /**
  *
  * @author Inghwe
  */
-public abstract class Card {
+public abstract class Card implements Serializable {
 
     protected int value;
     protected ImageIcon png;
