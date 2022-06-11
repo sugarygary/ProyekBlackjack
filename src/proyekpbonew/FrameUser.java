@@ -41,10 +41,9 @@ public class FrameUser extends javax.swing.JFrame {
         this.getBackgroundImage().setSize(1100, 700);
 
         //set button frame admin
-        this.getGameBtn().setBounds(450, 200, 150, 50);
-        this.getMainBtn().setBounds(450, 300, 150, 50);
-        this.getLeaderboardBtn().setBounds(450, 400, 150, 50);
-        this.getLogoutBtn().setBounds(450, 500, 150, 50);
+        this.getMainBtn().setBounds(450, 200, 150, 50);
+        this.getLeaderboardBtn().setBounds(450, 300, 150, 50);
+        this.getLogoutBtn().setBounds(450, 400, 150, 50);
         this.setLocationRelativeTo(null);
     }
 
@@ -57,7 +56,6 @@ public class FrameUser extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        GameBtn = new javax.swing.JToggleButton();
         MainBtn = new javax.swing.JToggleButton();
         LeaderboardBtn = new javax.swing.JToggleButton();
         logoutBtn = new javax.swing.JButton();
@@ -67,23 +65,14 @@ public class FrameUser extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        GameBtn.setText("GAME");
-        GameBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GameBtnActionPerformed(evt);
-            }
-        });
-        getContentPane().add(GameBtn);
-        GameBtn.setBounds(169, 71, 63, 22);
-
-        MainBtn.setText("MAIN");
+        MainBtn.setText("PLAY");
         MainBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MainBtnActionPerformed(evt);
             }
         });
         getContentPane().add(MainBtn);
-        MainBtn.setBounds(169, 114, 61, 22);
+        MainBtn.setBounds(169, 114, 58, 22);
 
         LeaderboardBtn.setText("LEADERBOARD");
         LeaderboardBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -115,10 +104,6 @@ public class FrameUser extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void GameBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GameBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GameBtnActionPerformed
-
     private void MainBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainBtnActionPerformed
         ProyekPBONew.clickSound();
         if (ProyekPBONew.getLoggedUser().getSaldo() > 0) {
@@ -142,9 +127,6 @@ public class FrameUser extends javax.swing.JFrame {
         ProyekPBONew.getLogframe().setVisible(true);
     }//GEN-LAST:event_logoutBtnActionPerformed
 
-    public JToggleButton getGameBtn() {
-        return GameBtn;
-    }
 
     public JToggleButton getLeaderboardBtn() {
         return LeaderboardBtn;
@@ -173,7 +155,6 @@ public class FrameUser extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton GameBtn;
     private javax.swing.JToggleButton LeaderboardBtn;
     private javax.swing.JToggleButton MainBtn;
     private javax.swing.JLabel backgroundImage;
