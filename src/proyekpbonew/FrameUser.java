@@ -27,6 +27,12 @@ public class FrameUser extends javax.swing.JFrame {
     public FrameUser() {
         initComponents();
         this.setTitle("Menu User");
+        
+        if (ProyekPBONew.getLoggedUser() != null){
+            this.getTitleUser().setText("Welcome, " +ProyekPBONew.getLoggedUser().getUsername());
+        }
+        
+        this.getTitleUser().setBounds(365, 75, 1000, 100);
 
         //set width, height frame admin
         this.setSize(1100, 700);
@@ -35,10 +41,10 @@ public class FrameUser extends javax.swing.JFrame {
         this.getBackgroundImage().setSize(1100, 700);
 
         //set button frame admin
-        this.getGameBtn().setBounds(450, 100, 150, 50);
-        this.getMainBtn().setBounds(450, 200, 150, 50);
-        this.getLeaderboardBtn().setBounds(450, 300, 150, 50);
-        this.getLogoutBtn().setBounds(450, 400, 150, 50);
+        this.getGameBtn().setBounds(450, 200, 150, 50);
+        this.getMainBtn().setBounds(450, 300, 150, 50);
+        this.getLeaderboardBtn().setBounds(450, 400, 150, 50);
+        this.getLogoutBtn().setBounds(450, 500, 150, 50);
         this.setLocationRelativeTo(null);
     }
 
@@ -55,6 +61,7 @@ public class FrameUser extends javax.swing.JFrame {
         MainBtn = new javax.swing.JToggleButton();
         LeaderboardBtn = new javax.swing.JToggleButton();
         logoutBtn = new javax.swing.JButton();
+        titleUser = new javax.swing.JLabel();
         backgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -76,7 +83,7 @@ public class FrameUser extends javax.swing.JFrame {
             }
         });
         getContentPane().add(MainBtn);
-        MainBtn.setBounds(169, 114, 60, 22);
+        MainBtn.setBounds(169, 114, 61, 22);
 
         LeaderboardBtn.setText("LEADERBOARD");
         LeaderboardBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -85,7 +92,7 @@ public class FrameUser extends javax.swing.JFrame {
             }
         });
         getContentPane().add(LeaderboardBtn);
-        LeaderboardBtn.setBounds(144, 157, 112, 22);
+        LeaderboardBtn.setBounds(144, 157, 110, 22);
 
         logoutBtn.setText("LOGOUT");
         logoutBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -95,6 +102,11 @@ public class FrameUser extends javax.swing.JFrame {
         });
         getContentPane().add(logoutBtn);
         logoutBtn.setBounds(164, 210, 76, 22);
+
+        titleUser.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        titleUser.setForeground(java.awt.Color.lightGray);
+        getContentPane().add(titleUser);
+        titleUser.setBounds(180, 30, 0, 0);
 
         backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/background.jpg"))); // NOI18N
         getContentPane().add(backgroundImage);
@@ -118,6 +130,9 @@ public class FrameUser extends javax.swing.JFrame {
     private void LeaderboardBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeaderboardBtnActionPerformed
         // TODO add your handling code here:
         ProyekPBONew.clickSound();
+        ProyekPBONew.reInstanceLeaderboard2();
+        ProyekPBONew.getLB2().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_LeaderboardBtnActionPerformed
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
@@ -147,11 +162,22 @@ public class FrameUser extends javax.swing.JFrame {
         return backgroundImage;
     }
 
+    public JLabel getTitleUser() {
+        return titleUser;
+    }
+
+    public void setTitleUser(JLabel titleUser) {
+        this.titleUser = titleUser;
+    }
+    
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton GameBtn;
     private javax.swing.JToggleButton LeaderboardBtn;
     private javax.swing.JToggleButton MainBtn;
     private javax.swing.JLabel backgroundImage;
     private javax.swing.JButton logoutBtn;
+    private javax.swing.JLabel titleUser;
     // End of variables declaration//GEN-END:variables
 }

@@ -197,8 +197,9 @@ public class Login extends javax.swing.JFrame {
             } else {
                 if (loginSuccess) {
                     this.setVisible(false);
+                    ProyekPBONew.reInstanceFrameUser();
                     ProyekPBONew.getFrameUser().setVisible(true);
-
+                    
                 } else {
                     JOptionPane.showMessageDialog(this, "Login Failed", "Warning", JOptionPane.WARNING_MESSAGE);
                 }
@@ -212,7 +213,7 @@ public class Login extends javax.swing.JFrame {
 //        logframe.setLocationRelativeTo(null);
 //        logframe.setTitle("Blekjek");
 //        logframe.setResizable(false);
- ProyekPBONew.setFileClick(new File("src/res/Click.wav"));
+        ProyekPBONew.setFileClick(new File("src/res/Click.wav"));
         try {
             ProyekPBONew.setAudioClick(AudioSystem.getAudioInputStream(ProyekPBONew.getFileClick()));
         } catch (UnsupportedAudioFileException ex) {

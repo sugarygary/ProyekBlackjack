@@ -27,6 +27,7 @@ public class ProyekPBONew {
     private static FrameCloseAcc frameClose = new FrameCloseAcc();
     private static TopUp frameTopUp = new TopUp();
     private static Leaderboard LB = new Leaderboard();
+    private static Leaderboard2 LB2 = new Leaderboard2();
     private static User LoggedUser;
     private static Game frameGame = new Game();
     private static Clip BGM;
@@ -119,8 +120,16 @@ public class ProyekPBONew {
     public static void reInstanceLeaderboard(){
         LB = new Leaderboard();
     }
+    
+    public static void reInstanceLeaderboard2(){
+        LB2 = new Leaderboard2();
+    }
     public static void reInstanceRegister() {
         registerFrame = new Register();
+    }
+    
+    public static void reInstanceFrameUser() {
+        frameUser = new FrameUser();
     }
 
     public static Register getRegisterFrame() {
@@ -151,6 +160,14 @@ public class ProyekPBONew {
         ProyekPBONew.LB = LB;
     }
 
+    public static Leaderboard2 getLB2() {
+        return LB2;
+    }
+
+    public static void setLB2(Leaderboard2 LB2) {
+        ProyekPBONew.LB2 = LB2;
+    }
+    
     public static Clip getBGM() {
         return BGM;
     }
