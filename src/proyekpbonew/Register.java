@@ -146,29 +146,7 @@ public class Register extends javax.swing.JFrame {
 
     private void registerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBtnActionPerformed
         // TODO add your handling code here:
-         ProyekPBONew.setFileClick(new File("src/res/Click.wav"));
-        try {
-            ProyekPBONew.setAudioClick(AudioSystem.getAudioInputStream(ProyekPBONew.getFileClick()));
-        } catch (UnsupportedAudioFileException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        try {
-            ProyekPBONew.setClick(AudioSystem.getClip());
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            ProyekPBONew.getClick().open(ProyekPBONew.getAudioClick());
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        ProyekPBONew.getClick().start();
+         ProyekPBONew.clickSound();
         String uname = this.usernameField.getText();
         String pass = this.passwordField.getText();
         String conpass = this.confirmPassword.getText();
@@ -205,29 +183,7 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_confirmPasswordActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-         ProyekPBONew.setFileClick(new File("src/res/Click.wav"));
-        try {
-            ProyekPBONew.setAudioClick(AudioSystem.getAudioInputStream(ProyekPBONew.getFileClick()));
-        } catch (UnsupportedAudioFileException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        try {
-            ProyekPBONew.setClick(AudioSystem.getClip());
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            ProyekPBONew.getClick().open(ProyekPBONew.getAudioClick());
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        ProyekPBONew.getClick().start();
+         ProyekPBONew.clickSound();
         ProyekPBONew.getLogframe().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_backButtonActionPerformed

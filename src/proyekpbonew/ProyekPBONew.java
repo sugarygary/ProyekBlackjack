@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.sound.sampled.*;
 
 /**
@@ -32,6 +34,31 @@ public class ProyekPBONew {
     private static Clip Click;
     private static AudioInputStream audioClick;
     
+    public static void clickSound(){
+        ProyekPBONew.setFileClick(new File("src/res/Click.wav"));
+        try {
+            ProyekPBONew.setAudioClick(AudioSystem.getAudioInputStream(ProyekPBONew.getFileClick()));
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            ProyekPBONew.setClick(AudioSystem.getClip());
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            ProyekPBONew.getClick().open(ProyekPBONew.getAudioClick());
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        ProyekPBONew.getClick().start();
+    }
     public static void setFrameGame(Game frameGame) {
         ProyekPBONew.frameGame = frameGame;
     }
@@ -62,7 +89,7 @@ public class ProyekPBONew {
         BGM.start();
         BGM.loop(BGM.LOOP_CONTINUOUSLY);
         FloatControl volume = (FloatControl) BGM.getControl(FloatControl.Type.MASTER_GAIN);
-        double percent = 0.3;   
+        double percent = 0.2;   
         float dB = (float) (Math.log(percent) / Math.log(10.0) * 20.0);
         volume.setValue(dB);
         
@@ -88,7 +115,10 @@ public class ProyekPBONew {
     public static void reInstanceLogin() {
         loginFrame = new Login();
     }
-
+    
+    public static void reInstanceLeaderboard(){
+        LB = new Leaderboard();
+    }
     public static void reInstanceRegister() {
         registerFrame = new Register();
     }

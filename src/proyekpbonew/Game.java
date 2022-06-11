@@ -368,29 +368,7 @@ public class Game extends javax.swing.JFrame {
 
     private void BetConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BetConfirmActionPerformed
         // TODO add your handling code here
-         ProyekPBONew.setFileClick(new File("src/res/Click.wav"));
-        try {
-            ProyekPBONew.setAudioClick(AudioSystem.getAudioInputStream(ProyekPBONew.getFileClick()));
-        } catch (UnsupportedAudioFileException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        try {
-            ProyekPBONew.setClick(AudioSystem.getClip());
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            ProyekPBONew.getClick().open(ProyekPBONew.getAudioClick());
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        ProyekPBONew.getClick().start();
+         ProyekPBONew.clickSound();
         if (ProyekPBONew.getLoggedUser().getSaldo() >= Integer.parseInt(BetField.getText())) {
             StartGame();
         } else {
@@ -404,29 +382,7 @@ public class Game extends javax.swing.JFrame {
 
     private void HitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HitBtnActionPerformed
         // TODO add your handling code here:
-        ProyekPBONew.setFileClick(new File("src/res/Click.wav"));
-        try {
-            ProyekPBONew.setAudioClick(AudioSystem.getAudioInputStream(ProyekPBONew.getFileClick()));
-        } catch (UnsupportedAudioFileException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        try {
-            ProyekPBONew.setClick(AudioSystem.getClip());
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            ProyekPBONew.getClick().open(ProyekPBONew.getAudioClick());
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        ProyekPBONew.getClick().start();
+        ProyekPBONew.clickSound();
         
         playerDeck.add(Deck.pop());
         int ctr = playerDeck.size();
@@ -457,29 +413,7 @@ public class Game extends javax.swing.JFrame {
 
     private void StandBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StandBtnActionPerformed
         // TODO add your handling code here:
-         ProyekPBONew.setFileClick(new File("src/res/Click.wav"));
-        try {
-            ProyekPBONew.setAudioClick(AudioSystem.getAudioInputStream(ProyekPBONew.getFileClick()));
-        } catch (UnsupportedAudioFileException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        try {
-            ProyekPBONew.setClick(AudioSystem.getClip());
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            ProyekPBONew.getClick().open(ProyekPBONew.getAudioClick());
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        ProyekPBONew.getClick().start();
+        ProyekPBONew.clickSound();
         
         COVERDEALER.setVisible(false);
         this.HitBtn.setVisible(false);

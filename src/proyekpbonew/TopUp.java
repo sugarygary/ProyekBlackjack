@@ -127,29 +127,7 @@ public class TopUp extends javax.swing.JFrame {
 
     private void ConfBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfBtnActionPerformed
         // TODO add your handling code here:
-         ProyekPBONew.setFileClick(new File("src/res/Click.wav"));
-        try {
-            ProyekPBONew.setAudioClick(AudioSystem.getAudioInputStream(ProyekPBONew.getFileClick()));
-        } catch (UnsupportedAudioFileException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        try {
-            ProyekPBONew.setClick(AudioSystem.getClip());
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            ProyekPBONew.getClick().open(ProyekPBONew.getAudioClick());
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        ProyekPBONew.getClick().start();
+        ProyekPBONew.clickSound();
         String username = this.getUsernameField().getText();
         boolean checkUser = false;
         int tempTopUp = 0;
@@ -182,29 +160,7 @@ public class TopUp extends javax.swing.JFrame {
 
     private void BackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackBtnActionPerformed
         // TODO add your handling code here:
-         ProyekPBONew.setFileClick(new File("src/res/Click.wav"));
-        try {
-            ProyekPBONew.setAudioClick(AudioSystem.getAudioInputStream(ProyekPBONew.getFileClick()));
-        } catch (UnsupportedAudioFileException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        try {
-            ProyekPBONew.setClick(AudioSystem.getClip());
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            ProyekPBONew.getClick().open(ProyekPBONew.getAudioClick());
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        ProyekPBONew.getClick().start();
+        ProyekPBONew.clickSound();
         this.setVisible(false);
         this.usernameField.setText("");
         this.topUpValue.setText("");
