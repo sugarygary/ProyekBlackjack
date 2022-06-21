@@ -50,7 +50,7 @@ public class Leaderboard2 extends javax.swing.JFrame {
             this.getWin1().setText("$" + ProyekPBONew.getUserList().get(0).getTotalWin() + "");
         } else {
             this.getUser1().setText("1.  -");
-            this.getWin5().setText("-");
+            this.getWin1().setText("-");
         }
 
         if (ProyekPBONew.getUserList().size() > 1) {
@@ -58,7 +58,7 @@ public class Leaderboard2 extends javax.swing.JFrame {
             this.getWin2().setText("$" + ProyekPBONew.getUserList().get(1).getTotalWin() + "");
         } else {
             this.getUser2().setText("2.  -");
-            this.getWin5().setText("-");
+            this.getWin2().setText("-");
         }
 
         if (ProyekPBONew.getUserList().size() > 2) {
@@ -67,7 +67,7 @@ public class Leaderboard2 extends javax.swing.JFrame {
 
         } else {
             this.getUser3().setText("3.  -");
-            this.getWin5().setText("-");
+            this.getWin3().setText("-");
         }
 
         if (ProyekPBONew.getUserList().size() > 3) {
@@ -75,7 +75,7 @@ public class Leaderboard2 extends javax.swing.JFrame {
             this.getWin4().setText("$" + ProyekPBONew.getUserList().get(3).getTotalWin() + "");
         } else {
             this.getUser4().setText("4.  -");
-            this.getWin5().setText("-");
+            this.getWin4().setText("-");
         }
 
         if (ProyekPBONew.getUserList().size() > 4) {
