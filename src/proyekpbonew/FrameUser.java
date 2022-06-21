@@ -13,6 +13,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JToggleButton;
 
 /**
@@ -27,11 +28,11 @@ public class FrameUser extends javax.swing.JFrame {
     public FrameUser() {
         initComponents();
         this.setTitle("Menu User");
-        
-        if (ProyekPBONew.getLoggedUser() != null){
-            this.getTitleUser().setText("Welcome, " +ProyekPBONew.getLoggedUser().getUsername());
+
+        if (ProyekPBONew.getLoggedUser() != null) {
+            this.getTitleUser().setText("Welcome, " + ProyekPBONew.getLoggedUser().getUsername());
         }
-        
+
         this.getTitleUser().setBounds(365, 75, 1000, 100);
 
         //set width, height frame admin
@@ -109,6 +110,9 @@ public class FrameUser extends javax.swing.JFrame {
         if (ProyekPBONew.getLoggedUser().getSaldo() > 0) {
             ProyekPBONew.getFrameGame().setVisible(true);
             ProyekPBONew.getFrameGame().getCurSaldo().setText("$" + ProyekPBONew.getLoggedUser().getSaldo());
+        } else {
+            JOptionPane.showMessageDialog(this, "Not enough money!", "Warning", JOptionPane.WARNING_MESSAGE);
+
         }
     }//GEN-LAST:event_MainBtnActionPerformed
 
@@ -126,7 +130,6 @@ public class FrameUser extends javax.swing.JFrame {
         this.setVisible(false);
         ProyekPBONew.getLogframe().setVisible(true);
     }//GEN-LAST:event_logoutBtnActionPerformed
-
 
     public JToggleButton getLeaderboardBtn() {
         return LeaderboardBtn;
@@ -151,8 +154,6 @@ public class FrameUser extends javax.swing.JFrame {
     public void setTitleUser(JLabel titleUser) {
         this.titleUser = titleUser;
     }
-    
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton LeaderboardBtn;
