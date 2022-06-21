@@ -33,7 +33,7 @@ public class Leaderboard extends javax.swing.JFrame {
         this.getBackBtn().setBounds(450, 550, 150, 50);
         this.setLocationRelativeTo(null);
 
-        this.getUser1().setBounds(375, 150, 200, 100);
+        this.getUser1().setBounds(375, 150, 100, 100);
         this.getWin1().setBounds(575, 150, 100, 100);
         this.getUser2().setBounds(375, 225, 200, 100);
         this.getWin2().setBounds(575, 225, 100, 100);
@@ -43,7 +43,7 @@ public class Leaderboard extends javax.swing.JFrame {
         this.getWin4().setBounds(575, 375, 100, 100);
         this.getUser5().setBounds(375, 450, 200, 100);
         this.getWin5().setBounds(575, 450, 100, 100);
-        this.getLabelUser().setBounds(375, 200, 200, 100);
+        this.getLabelUser().setBounds(375, 100, 200, 100);
         this.getLabelWin().setBounds(550, 100, 100, 100);
         if (ProyekPBONew.getUserList().size() > 0) {
             this.getUser1().setText("1.  " + ProyekPBONew.getUserList().get(0).getUsername());
